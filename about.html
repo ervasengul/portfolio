@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Erva Şengül</title>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Permanent+Marker&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Caveat', cursive;
+            background: #f5f5f0;
+            color: #2d5016;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Navigation */
+        nav {
+            padding: 2rem 0;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            position: relative;
+            z-index: 100;
+        }
+
+        .logo {
+            font-family: "Lobster", sans-serif;
+            font-size: 1.8rem;
+            font-weight: 400;
+            color: #2d5016;
+            text-decoration: none;
+            line-height: 0.9;
+        }
+
+        .logo span {
+            display: block;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+            align-items: center;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .nav-links a {
+            color: #2d5016;
+            text-decoration: none;
+            font-size: 1.4rem;
+            transition: transform 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            transform: scale(1.1);
+        }
+
+        .email-icon {
+            position: absolute;
+            top: 1rem;
+            right: 2rem;
+            font-size: 1.2rem;
+            z-index: 100;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .email-icon:hover {
+            transform: scale(1.1);
+        }
+
+        .email-icon svg {
+            width: 80px;
+            height: 80px;
+            transform: rotate(10deg);
+        }
+
+        .email-icon text {
+            font-family: 'Caveat', cursive;
+        }
+
+        /* About Content */
+        .about-content {
+            min-height: 80vh;
+            padding: 4rem 2rem 8rem 2rem;
+        }
+
+        .about-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .about-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .about-title {
+            font-family: "Lobster", sans-serif;
+            font-size: 3.5rem;
+            font-weight: 400;
+            color: #4a7c59;
+            margin-bottom: 2rem;
+            transform: rotate(-2deg);
+        }
+
+        .about-intro {
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transform: rotate(-0.5deg);
+            margin-bottom: 3rem;
+        }
+
+        .about-text {
+            font-size: 1.4rem;
+            color: #2d5016;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .skills-section {
+            margin-top: 4rem;
+        }
+
+        .section-title {
+            font-family: "Lobster", sans-serif;
+            font-size: 2.5rem;
+            font-weight: 400;
+            color: #4a7c59;
+            margin-bottom: 2rem;
+            text-align: center;
+            transform: rotate(1deg);
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .skill-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transform: rotate(-1deg);
+            transition: all 0.3s ease;
+        }
+
+        .skill-card:hover {
+            transform: rotate(0deg) translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .skill-card:nth-child(even) {
+            transform: rotate(1deg);
+        }
+
+        .skill-card:nth-child(even):hover {
+            transform: rotate(0deg) translateY(-5px);
+        }
+
+        .skill-category {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #2d5016;
+            margin-bottom: 1rem;
+        }
+
+        .skill-list {
+            list-style: none;
+            font-size: 1.2rem;
+            color: #2d5016;
+            line-height: 1.8;
+        }
+
+        .skill-list li:before {
+            content: "→ ";
+            color: #4a7c59;
+            font-weight: bold;
+        }
+
+        @media (max-width: 1024px) {
+            .email-icon svg {
+                width: 70px;
+                height: 70px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                gap: 1.5rem;
+            }
+
+            .nav-links a {
+                font-size: 1.4rem;
+            }
+
+            .about-title {
+                font-size: 3rem;
+            }
+
+            .about-intro {
+                padding: 2rem;
+            }
+
+            .about-text {
+                font-size: 1.5rem;
+            }
+
+            .section-title {
+                font-size: 2.5rem;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .email-icon svg {
+                width: 60px;
+                height: 60px;
+            }
+        }
+
+        /* Footer */
+        .footer {
+            background: #2d5016;
+            padding: 1.5rem 0;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+        }
+
+        .footer-left {
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .footer-center {
+            font-size: 1.8rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .footer-center::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: white;
+        }
+
+        .footer-right {
+            font-size: 1.5rem;
+        }
+
+        .social-icons {
+            position: absolute;
+            top: -50px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 1rem;
+            background: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .social-icons a {
+            color: #2d5016;
+            font-size: 1.8rem;
+            transition: transform 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            transform: scale(1.2);
+        }
+
+        @media (max-width: 768px) {
+            .footer-content {
+                flex-direction: column;
+                gap: 0.5rem;
+                text-align: center;
+            }
+
+            .footer-left,
+            .footer-center,
+            .footer-right {
+                font-size: 1.2rem;
+            }
+
+            .social-icons {
+                top: -45px;
+                gap: 0.7rem;
+                padding: 0.4rem 1rem;
+            }
+
+            .social-icons a {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <a href="main.html" class="logo">
+                <span>Erva Şengül</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="main.html">home</a></li>
+                <li><a href="main.html#patents">patents</a></li>
+                <li><a href="main.html#contact">contact</a></li>
+            </ul>
+        </nav>
+
+        <a href="mailto:ervasengul004@gmail.com" class="email-icon">
+            <svg viewBox="0 0 100 80" fill="none" stroke="#2d5016" stroke-width="2">
+                <text x="10" y="15" font-family="Caveat" font-size="14" fill="#2d5016">MY EMAIL</text>
+                <rect x="10" y="20" width="60" height="45" rx="3" fill="white" stroke="#2d5016" stroke-width="2.5"/>
+                <path d="M 10 20 L 40 45 L 70 20" fill="none" stroke="#2d5016" stroke-width="2.5"/>
+                <path d="M 35 40 L 40 45 L 45 40" fill="#2d5016"/>
+            </svg>
+        </a>
+
+        <section class="about-content">
+            <div class="about-container">
+                <div class="about-header">
+                    <h1 class="about-title">About Me</h1>
+                </div>
+
+                <div class="about-intro">
+                    <p class="about-text">
+                        I build things that think, see, and adapt. Right now, I'm a computer engineering student at Istanbul Medipol University, graduating in 2026.
+                    </p>
+                    <p class="about-text">
+                        My world revolves around three things: AI systems that can actually see (computer vision), electric vehicles (where software meets motion), and tiny computers that control big things (embedded systems). I've worked on a range of projects, from training neural networks to recognise facial expressions, to programming microcontrollers that monitor car batteries, to designing Kubernetes operators that optimise cloud resources.
+                    </p>
+                    <p class="about-text">
+                        The iPhone wasn't the first smartphone. Tesla wasn't the first electric car. Kubernetes wasn't the first container orchestrator. But they were all done better.
+                    </p>
+                    <p class="about-text">
+                        That's what I'm after - not building something first, but building something that actually makes sense. Better execution, better results, better thinking about the problem. Taking existing ideas and asking "Why does it have to be this way?" Identifying the pain points that everyone accepts as normal and addressing them.
+                    </p>
+                    <p class="about-text">
+                        Whether it's making Kubernetes stop wasting cloud resources or teaching computers to recognize emotions more accurately- I want to work on things that move the needle. Places where "good enough" isn't good enough.
+                    </p>
+                    <p class="about-text">
+                        If you're working on something interesting, don't hesitate to contact!
+                    </p>
+                </div>
+
+                <div class="skills-section">
+                    <h2 class="section-title">Skills & Expertise</h2>
+
+                    <div class="skills-grid">
+                        <div class="skill-card">
+                            <h3 class="skill-category">Artificial Intelligence & Machine Learning</h3>
+                            <ul class="skill-list">
+                                <li>Machine Learning & Deep Learning</li>
+                                <li>Computer Vision</li>
+                                <li>Neural Networks (CNN for emotion recognition, image classification)</li>
+                                <li>TensorFlow, Keras, PyTorch</li>
+                                <li>OpenCV</li>
+                                <li>YOLO (v5, v8) - Object Detection</li>
+                                <li>Scikit-learn</li>
+                                <li>Data Analytics & Preprocessing</li>
+                            </ul>
+                        </div>
+
+                        <div class="skill-card">
+                            <h3 class="skill-category">Programming Languages</h3>
+                            <ul class="skill-list">
+                                <li>Python (AI/ML, Data Science, Computer Vision)</li>
+                                <li>Go (Kubernetes operators, Cloud-Native Development)</li>
+                                <li>C (Embedded Systems, Firmware)</li>
+                                <li>C# (ASP.NET Core MVC, Full-Stack Web Development)</li>
+                                <li>Java</li>
+                                <li>SQL (Database Management)</li>
+                                <li>HTML, CSS</li>
+                            </ul>
+                        </div>
+
+                        <div class="skill-card">
+                            <h3 class="skill-category">Cloud & DevOps</h3>
+                            <ul class="skill-list">
+                                <li>Kubernetes (Resource Optimization, Custom Operators)</li>
+                                <li>Docker & Docker Swarm (Container Orchestration)</li>
+                                <li>Cloud Infrastructure & Multi-cloud Architecture</li>
+                                <li>Linux System Administration</li>
+                            </ul>
+                        </div>
+
+                        <div class="skill-card">
+                            <h3 class="skill-category">IoT & Embedded Systems</h3>
+                            <ul class="skill-list">
+                                <li>Microcontrollers (PIC16F877A, ESP32, Arduino)</li>
+                                <li>Circuit Design & Hardware Debugging</li>
+                                <li>Embedded C Programming</li>
+                                <li>Sensor Integration</li>
+                                <li>Real-time Systems</li>
+                                <li>Firmware Development (PICkit 3)</li>
+                                <li>ADC, LCD interfacing</li>
+                            </ul>
+                        </div>
+
+                        <div class="skill-card">
+                            <h3 class="skill-category">Web Development</h3>
+                            <ul class="skill-list">
+                                <li>Backend: ASP.NET Core MVC, RESTful APIs </li>
+                                <li>Databases: MySQL, SQL Server, PHP</li>
+                            </ul>
+                        </div>
+
+                        <div class="skill-card">
+                            <h3 class="skill-category">Tools & Technologies</h3>
+                            <ul class="skill-list">
+                                <li>Git & GitHub</li>
+                                <li>VMware & Virtualization</li>
+                                <li>Data Structures & Algorithms</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer class="footer">
+        <div class="social-icons">
+            <a href="https://www.linkedin.com/in/erva-%C5%9Feng%C3%BCl-016945237/" target="_blank" aria-label="LinkedIn">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                </svg>
+            </a>
+            <a href="https://github.com/ervasengul" target="_blank" aria-label="GitHub">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                </svg>
+            </a>
+        </div>
+        <div class="footer-content">
+            <div class="footer-left">
+                <span>©</span>
+                <span></span>
+            </div>
+            <div class="footer-center">
+                ervasengul004@gmail.com
+            </div>
+            <div class="footer-right">
+                2025
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href !== '#' && document.querySelector(href)) {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

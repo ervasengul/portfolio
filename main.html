@@ -1,0 +1,1208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Permanent+Marker&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Caveat', cursive;
+            background: #f5f5f0;
+            color: #2d5016;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Navigation */
+        nav {
+            padding: 2rem 0;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            position: relative;
+            z-index: 100;
+        }
+
+        .logo {
+            font-family: "Lobster", sans-serif;
+            font-size: 1.8rem;
+            font-weight: 400;
+            color: #2d5016;
+            text-decoration: none;
+            line-height: 0.9;
+        }
+
+        .logo span {
+            display: block;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+            align-items: center;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .nav-links a {
+            color: #2d5016;
+            text-decoration: none;
+            font-size: 1.4rem;
+            transition: transform 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            transform: scale(1.1);
+        }
+
+        .email-icon {
+            position: absolute;
+            top: 1rem;
+            right: 2rem;
+            font-size: 1.2rem;
+            z-index: 100;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .email-icon:hover {
+            transform: scale(1.1);
+        }
+
+        .email-icon svg {
+            width: 80px;
+            height: 80px;
+            transform: rotate(10deg);
+        }
+
+        .email-icon text {
+            font-family: 'Caveat', cursive;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem 0 6rem 0;
+        }
+
+        .projects-header {
+            font-family: "Lobster", sans-serif;
+            font-size: 3rem;
+            font-weight: 400;
+            color: #4a7c59;
+            margin-bottom: 2rem;
+            transform: rotate(-2deg);
+            text-align: center;
+        }
+
+        /* Project Items */
+        .projects-container {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 1.5rem;
+            width: 100%;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .project-item:nth-child(1),
+        .project-item:nth-child(2),
+        .project-item:nth-child(3),
+        .project-item:nth-child(4) {
+            grid-column: span 3;
+        }
+
+        .project-item:nth-child(5) {
+            grid-column: 2 / 5;
+        }
+
+        .project-item:nth-child(6) {
+            grid-column: 5 / 8;
+        }
+
+        .project-item:nth-child(7) {
+            grid-column: 8 / 11;
+        }
+
+        .project-item {
+            opacity: 1;
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+        }
+
+        .project-item:hover {
+            transform: scale(1.05);
+            z-index: 10;
+        }
+
+        .project-item:active {
+            transform: scale(0.98);
+        }
+
+        .project-title-card {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 1rem;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #2d5016;
+            line-height: 1.2;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            transition: box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .project-item:hover .project-title-card {
+            box-shadow: 0 12px 35px rgba(0,0,0,0.15);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .projects-header {
+                font-size: 2.5rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .projects-container {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
+            }
+
+            .project-item:nth-child(1),
+            .project-item:nth-child(2),
+            .project-item:nth-child(3),
+            .project-item:nth-child(4),
+            .project-item:nth-child(5),
+            .project-item:nth-child(6),
+            .project-item:nth-child(7) {
+                grid-column: auto;
+            }
+
+            .project-title-card {
+                font-size: 1.3rem;
+                padding: 1.2rem;
+            }
+
+            .email-icon svg {
+                width: 70px;
+                height: 70px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                gap: 1.5rem;
+            }
+
+            .nav-links a {
+                font-size: 1.2rem;
+            }
+
+            .projects-header {
+                font-size: 2rem;
+                margin-bottom: 1rem;
+            }
+
+            .projects-container {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .project-item:nth-child(1),
+            .project-item:nth-child(2),
+            .project-item:nth-child(3),
+            .project-item:nth-child(4),
+            .project-item:nth-child(5),
+            .project-item:nth-child(6),
+            .project-item:nth-child(7) {
+                grid-column: auto;
+            }
+
+            .project-title-card {
+                font-size: 1.2rem;
+                padding: 1rem;
+            }
+
+            .email-icon svg {
+                width: 60px;
+                height: 60px;
+            }
+        }
+
+        /* About Section */
+        .about-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8rem 2rem 8rem 2rem;
+            position: relative;
+        }
+
+        .about-container {
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        .about-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .about-title {
+            font-family: "Lobster", sans-serif;
+            font-size: 3.5rem;
+            font-weight: 400;
+            color: #4a7c59;
+            margin-bottom: 1rem;
+            transform: rotate(-2deg);
+        }
+
+        .patents-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .patent-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transform: rotate(-1deg);
+            transition: all 0.3s ease;
+        }
+
+        .patent-card:hover {
+            transform: rotate(0deg) translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .patent-card:nth-child(even) {
+            transform: rotate(1deg);
+        }
+
+        .patent-card:nth-child(even):hover {
+            transform: rotate(0deg) translateY(-5px);
+        }
+
+        .patent-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #2d5016;
+            margin-bottom: 0.8rem;
+        }
+
+        .patent-number {
+            font-size: 1.2rem;
+            color: #4a7c59;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .patent-date {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .patent-description {
+            font-size: 1.3rem;
+            color: #2d5016;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 800px) {
+            .about-title {
+                font-size: 4.5rem;
+            }
+
+            .patents-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .patent-title {
+                font-size: 1.3rem;
+            }
+        }
+
+        /* Contact Section */
+        .contact-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8rem 2rem 8rem 2rem;
+            position: relative;
+        }
+
+        .contact-container {
+            max-width: 800px;
+            width: 100%;
+            position: relative;
+        }
+
+        .contact-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .contact-title {
+            font-family: "Lobster", sans-serif;
+            font-size: 3.5rem;
+            font-weight: 400;
+            color: #4a7c59;
+            margin-bottom: 1rem;
+            transform: rotate(-2deg);
+        }
+
+        .contact-subtitle {
+            font-size: 1.6rem;
+            color: #2d5016;
+            transform: rotate(1deg);
+        }
+
+        .contact-form {
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.1);
+            transform: rotate(-1deg);
+            position: relative;
+        }
+
+        .form-group {
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .form-label {
+            display: block;
+            font-size: 1.4rem;
+            color: #2d5016;
+            margin-bottom: 0.8rem;
+            font-weight: 600;
+            transform: rotate(-1deg);
+        }
+
+        .form-input,
+        .form-textarea {
+            width: 100%;
+            padding: 1rem 1.5rem;
+            font-family: 'Caveat', cursive;
+            font-size: 1.3rem;
+            color: #2d5016;
+            background: #f5f5f0;
+            border: 3px solid #4a7c59;
+            border-radius: 15px;
+            outline: none;
+            transition: all 0.3s ease;
+            transform: rotate(0.5deg);
+        }
+
+        .form-input:focus,
+        .form-textarea:focus {
+            border-color: #2d5016;
+            box-shadow: 0 0 0 4px rgba(74, 124, 89, 0.1);
+            transform: rotate(0deg) scale(1.02);
+        }
+
+        .form-textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 1rem;
+            font-family: 'Caveat', cursive;
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: white;
+            background: #4a7c59;
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            transform: rotate(-0.5deg);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+
+        .submit-btn:hover {
+            background: #2d5016;
+            transform: rotate(0deg) scale(1.05);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+        }
+
+        .decorative-element {
+            position: absolute;
+            font-size: 3rem;
+            opacity: 0.15;
+        }
+
+        .decorative-element:nth-child(1) {
+            top: -20px;
+            left: -20px;
+            transform: rotate(-25deg);
+        }
+
+        .decorative-element:nth-child(2) {
+            top: -20px;
+            right: -20px;
+            transform: rotate(25deg);
+        }
+
+        .decorative-element:nth-child(3) {
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%) rotate(15deg);
+        }
+
+        @media (max-width: 768px) {
+            .contact-title {
+                font-size: 2.5rem;
+            }
+
+            .contact-subtitle {
+                font-size: 1.3rem;
+            }
+
+            .contact-form {
+                padding: 2rem;
+            }
+
+            .form-label {
+                font-size: 1.2rem;
+            }
+
+            .form-input,
+            .form-textarea {
+                font-size: 1.2rem;
+            }
+        }
+
+        /* Project Detail Page */
+        .project-detail {
+            display: none;
+            min-height: 100vh;
+            padding: 6rem 2rem 8rem 2rem;
+            opacity: 0;
+            transition: opacity 0.5s ease-out;
+        }
+
+        .project-detail.active {
+            display: block;
+            opacity: 1;
+        }
+
+        .project-detail-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.8rem;
+            color: #2d5016;
+            text-decoration: none;
+            margin-bottom: 2rem;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+            background: none;
+            border: none;
+            font-family: 'Caveat', cursive;
+        }
+
+        .back-button:hover {
+            transform: translateX(-5px);
+        }
+
+        .project-image-container {
+            width: 100%;
+            height: 500px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.15);
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .project-image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            background: #f5f5f0;
+        }
+
+        .code-button {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            padding: 0.8rem 1.5rem;
+            background: white;
+            color: #2d5016;
+            border: 2px solid #4a7c59;
+            border-radius: 10px;
+            font-family: 'Caveat', cursive;
+            font-size: 1.5rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+        }
+
+        .code-button:hover {
+            background: #4a7c59;
+            color: white;
+            transform: scale(1.05);
+        }
+
+        .project-content {
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            transform: rotate(-0.5deg);
+        }
+
+        .project-title {
+            font-family: "Lobster", sans-serif;
+            font-size: 2.5rem;
+            font-weight: 400;
+            color: #4a7c59;
+            margin-bottom: 1rem;
+            transform: rotate(-1deg);
+        }
+
+        .project-description {
+            font-size: 1.4rem;
+            color: #2d5016;
+            line-height: 1.6;
+            margin-bottom: 2.5rem;
+        }
+
+        .technologies-section {
+            margin-top: 2.5rem;
+        }
+
+        .technologies-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #2d5016;
+            margin-bottom: 1.5rem;
+        }
+
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .tech-tag {
+            padding: 0.7rem 1.5rem;
+            background: #f5f5f0;
+            color: #2d5016;
+            border: 2px solid #4a7c59;
+            border-radius: 25px;
+            font-size: 1.4rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .tech-tag:hover {
+            background: #4a7c59;
+            color: white;
+            transform: rotate(-2deg) scale(1.05);
+        }
+
+        @media (max-width: 768px) {
+            .project-image-container {
+                height: 300px;
+            }
+
+            .project-title {
+                font-size: 2rem;
+            }
+
+            .project-description {
+                font-size: 1.2rem;
+            }
+
+            .project-content {
+                padding: 2rem;
+            }
+
+            .code-button {
+                font-size: 1.2rem;
+                padding: 0.6rem 1.2rem;
+            }
+
+            .project-detail {
+                padding: 5rem 1.5rem 8rem 1.5rem;
+            }
+        }
+
+        /* Hide main sections when project detail is active */
+        body.viewing-project .hero,
+        body.viewing-project .about-section,
+        body.viewing-project .contact-section,
+        body.viewing-project .reading-widget {
+            display: none;
+        }
+
+        /* Footer */
+        .footer {
+            background: #2d5016;
+            padding: 1.5rem 0;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+        }
+
+        .footer-left {
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .footer-center {
+            font-size: 1.8rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .footer-center::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: white;
+        }
+
+        .footer-right {
+            font-size: 1.5rem;
+        }
+
+        .social-icons {
+            position: absolute;
+            top: -50px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 1rem;
+            background: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .social-icons a {
+            color: #2d5016;
+            font-size: 1.8rem;
+            transition: transform 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            transform: scale(1.2);
+        }
+
+        @media (max-width: 768px) {
+            .footer-content {
+                flex-direction: column;
+                gap: 0.5rem;
+                text-align: center;
+            }
+
+            .footer-left,
+            .footer-center,
+            .footer-right {
+                font-size: 1.2rem;
+            }
+
+            .social-icons {
+                top: -45px;
+                gap: 0.7rem;
+                padding: 0.4rem 1rem;
+            }
+
+            .social-icons a {
+                font-size: 1.5rem;
+            }
+        }
+
+        /* Currently Reading Section */
+        .reading-widget {
+            position: fixed;
+            bottom: 100px;
+            left: 30px;
+            background: white;
+            padding: 1.2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            width: 220px;
+            z-index: 999;
+            transform: rotate(2deg);
+            transition: transform 0.3s ease;
+        }
+
+        .reading-widget:hover {
+            transform: rotate(0deg) scale(1.05);
+        }
+
+        .reading-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #4a7c59;
+            margin-bottom: 0.6rem;
+            text-align: center;
+        }
+
+        .book-info {
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .book-name {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #2d5016;
+            margin-bottom: 0.3rem;
+            line-height: 1.2;
+        }
+
+        .book-author {
+            font-size: 1rem;
+            color: #666;
+            margin-bottom: 0.4rem;
+        }
+
+        .suggestions-btn {
+            display: block;
+            width: 100%;
+            padding: 0.6rem;
+            background: #4a7c59;
+            color: white;
+            text-align: center;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-family: 'Caveat', cursive;
+        }
+
+        .suggestions-btn:hover {
+            background: #2d5016;
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 1024px) {
+            .reading-widget {
+                width: 150px;
+                padding: 0.8rem;
+                bottom: 90px;
+                left: 20px;
+            }
+
+            .reading-title {
+                font-size: 1rem;
+            }
+
+            .book-name {
+                font-size: 0.9rem;
+            }
+
+            .book-author {
+                font-size: 0.8rem;
+            }
+
+            .suggestions-btn {
+                font-size: 0.9rem;
+                padding: 0.4rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .reading-widget {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <a href="main.html" class="logo">
+                <span>Erva Şengül</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="about.html">about</a></li>
+                <li><a href="#patents">patents</a></li>
+                <li><a href="#contact">contact</a></li>
+            </ul>
+        </nav>
+
+        <a href="mailto:ervasengul004@gmail.com" class="email-icon">
+            <svg viewBox="0 0 100 80" fill="none" stroke="#2d5016" stroke-width="2">
+                <text x="10" y="15" font-family="Caveat" font-size="14" fill="#2d5016">MY EMAIL</text>
+                <rect x="10" y="20" width="60" height="45" rx="3" fill="white" stroke="#2d5016" stroke-width="2.5"/>
+                <path d="M 10 20 L 40 45 L 70 20" fill="none" stroke="#2d5016" stroke-width="2.5"/>
+                <path d="M 35 40 L 40 45 L 45 40" fill="#2d5016"/>
+            </svg>
+        </a>
+
+        <section class="hero">
+            <h1 class="projects-header">Projects</h1>
+            <div class="projects-container">
+                <!-- Project 1 -->
+                <div class="project-item">
+                    <div class="project-title-card">Weather Forecasting System</div>
+                </div>
+                <!-- Project 2 -->
+                <div class="project-item">
+                    <div class="project-title-card">Battery Voltage Monitoring</div>
+                </div>
+                <!-- Project 3 -->
+                <div class="project-item">
+                    <div class="project-title-card">Este - Women's Health App</div>
+                </div>
+                <!-- Project 4 -->
+                <div class="project-item">
+                    <div class="project-title-card">Autonomous Car</div>
+                </div>
+                <!-- Project 5 -->
+                <div class="project-item">
+                    <div class="project-title-card">Fraud Detection System</div>
+                </div>
+                <!-- Project 6 -->
+                <div class="project-item">
+                    <div class="project-title-card">Emotion Detection Game</div>
+                </div>
+                <!-- Project 7 -->
+                <div class="project-item">
+                    <div class="project-title-card">Kubernetes Optimizer</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Project Detail Section -->
+        <section class="project-detail" id="project-detail">
+            <div class="project-detail-container">
+                <button class="back-button" onclick="closeProjectDetail()">
+                    ← Back to Portfolio
+                </button>
+
+                <div class="project-image-container">
+                    <img id="detail-project-image" src="" alt="Project Image">
+                    <a id="detail-code-link" href="#" target="_blank" class="code-button">
+                        <span>{ }</span> Code
+                    </a>
+                </div>
+
+                <div class="project-content">
+                    <h1 class="project-title" id="detail-project-title"></h1>
+                    <p class="project-description" id="detail-project-description"></p>
+
+                    <div class="technologies-section">
+                        <h3 class="technologies-title">Technologies Used</h3>
+                        <div class="tech-tags" id="detail-tech-tags"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Patents Section -->
+        <section id="patents" class="about-section">
+            <div class="about-container">
+                <div class="about-header">
+                    <h2 class="about-title">Patents & Innovation</h2>
+                </div>
+
+                <div class="patents-grid">
+                    <!-- Patent -->
+                    <div class="patent-card">
+                        <h3 class="patent-title">AI-Assisted Optimization and Accurate Billing of Contracted Institution Transactions in Private Healthcare Organizations</h3>
+                        <p class="patent-number">Turkish Patent Application No. 2025/006365</p>
+                        <p class="patent-date">Filed: 2025</p>
+                        <p class="patent-description">
+                            An innovative AI-powered system designed to optimize and ensure accurate billing processes for contracted institution transactions in private healthcare settings, streamlining financial operations and reducing billing errors.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section">
+            <div class="contact-container">
+                <div class="contact-header">
+                    <h2 class="contact-title">Reach Out!</h2>
+                    <p class="contact-subtitle"></p>
+                </div>
+
+                <form class="contact-form" action="mailto:ervasengul004@gmail.com" method="post" enctype="text/plain">
+                    <div class="decorative-element">✉️</div>
+                    <div class="decorative-element">💌</div>
+                    <div class="decorative-element">📮</div>
+
+                    <div class="form-group">
+                        <label for="name" class="form-label">Your Name</label>
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            class="form-input"
+                            placeholder="What should I call you?"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email" class="form-label">Your Email</label>
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            class="form-input"
+                            placeholder="Where can I reach you?"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message" class="form-label">Your Message</label>
+                        <textarea
+                            id="message"
+                            name="message"
+                            class="form-textarea"
+                            placeholder="Message"
+                            required
+                        ></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Send Message </button>
+                </form>
+            </div>
+        </section>
+    </div>
+
+    <!-- Currently Reading Widget -->
+    <div class="reading-widget">
+        <div class="reading-title">Currently Reading</div>
+        <div class="book-info">
+            <div class="book-name">The Phoenix Project</div>
+            <div class="book-author">by Gene Kim, Kevin Behr & George Spafford</div>
+        </div>
+        <a href="#contact" class="suggestions-btn">Other Suggestions?</a>
+    </div>
+
+    <footer class="footer">
+        <div class="social-icons">
+            <a href="https://www.linkedin.com/in/erva-%C5%9Feng%C3%BCl-016945237/" target="_blank" aria-label="LinkedIn">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                </svg>
+            </a>
+            <a href="https://github.com/ervasengul" target="_blank" aria-label="GitHub">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                </svg>
+            </a>
+        </div>
+        <div class="footer-content">
+            <div class="footer-left">
+                <span>©</span>
+                <span></span>
+            </div>
+            <div class="footer-center">
+                ervasengul004@gmail.com
+            </div>
+            <div class="footer-right">
+                2025
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Project data - customize this with your actual projects
+        const projects = [
+            {
+                title: "Weather Forecasting System - Orlando, FL",
+                description: "A data science project developing weather forecasts for Orlando, Florida using NOAA meteorological data (2015-2024). Implemented multiple interpolation methods (linear, polynomial, spline) and time series decomposition for seasonal pattern detection. The model separates weather data into trend, seasonal, and residual components using Fourier analysis and autocorrelation functions. Achieved efficient performance on standard hardware suitable for rapid prototyping and educational applications.",
+                image: "images/weather-project.png",
+                technologies: ["Python", "NumPy", "pandas", "matplotlib", "scipy", "NOAA APIs", "Time Series Analysis", "Fourier Analysis"],
+                codeLink: "https://github.com/yourusername/weather-forecast"
+            },
+            {
+                title: "PIC16F877A Car Battery Voltage Monitoring System",
+                description: "An embedded system that monitors car battery voltage in real-time and displays voltage readings with health status on LCD. Designed a voltage divider circuit (20kΩ/10kΩ resistors) to safely scale 8-15V battery range to 0-5V for ADC input. Implemented intelligent status indicators (GOOD/OK/LOW/CRITICAL) based on voltage thresholds. Programmed in embedded C with complete firmware for ADC sampling, LCD interfacing via HD44780 protocol, and power supply design using 7805 regulator.",
+                image: "images/BATTERY.png",
+                technologies: ["PIC16F877A", "Embedded C", "MPLAB X IDE", "PICkit 3", "ADC Configuration", "LCD Interfacing", "Circuit Design", "Automotive Electronics"],
+                codeLink: "https://github.com/yourusername/pic-battery-monitor"
+            },
+            {
+                title: "Este - Women's Health Tracking Application",
+                description: "A comprehensive Flutter mobile app providing period tracking, fertility monitoring, pregnancy management, and AI-powered health assistance. Features blood test OCR integration using Google ML Kit for automatic hormone level extraction (FSH, LH, estrogen, progesterone), PCOS-friendly irregular cycle tracking, and conversational AI chatbot using OpenAI/Gemini APIs. Backend built on Firebase with authentication, Firestore database, cloud storage, and GDPR-compliant data encryption. Completely free with all premium features included.",
+                image: "images/ESTE.png",
+                technologies: ["Flutter", "Dart", "Firebase", "OpenAI/Gemini API", "Google ML Kit OCR", "Provider/Riverpod", "RESTful API", "Data Encryption", "Push Notifications"],
+                codeLink: "https://github.com/yourusername/este-health-app"
+            },
+            {
+                title: "Autonomous Car",
+                description: "A computer vision system for traffic sign detection and recognition using ESP32 camera and YOLOv5 architecture. Created a custom dataset of 100+ traffic signs captured under varying conditions (lighting, angles, weather). Implemented real-time detection pipeline with OpenCV for preprocessing, YOLOv5 for inference, and vehicle control integration. Achieved 20-30 FPS on embedded hardware with transfer learning from COCO dataset for improved accuracy.",
+                image: "images/CAR.jpeg",
+                technologies: ["Python", "YOLOv5", "PyTorch", "OpenCV", "ESP32", "Object Detection", "CNN", "Transfer Learning", "Embedded Systems"],
+                codeLink: "https://github.com/yourusername/autonomous-car"
+            },
+            {
+                title: "Real-Time Financial Fraud Detection System",
+                description: "A full-stack web application for real-time financial transaction monitoring and fraud detection. The system analyzes transactions across six parameters: amount anomalies, temporal patterns, geographical inconsistencies, transaction frequency, velocity analysis, and spending behaviors. Features RESTful API architecture, MySQL database with normalized schema, user authentication with bcrypt hashing, customizable security profiles, and real-time alerts with severity levels. Achieved sub-500ms response times for concurrent transaction processing.",
+                image: "images/FRAUD.jpeg",
+                technologies: ["PHP", "MySQL", "HTML5", "CSS3", "JavaScript", "RESTful API", "bcrypt", "PDO", "JSON", "Session Management"],
+                codeLink: "https://github.com/yourusername/fraud-detection-system"
+            },
+            {
+                title: "Facial Emotion Detection Game",
+                description: "An AI-powered interactive game that detects and classifies seven facial emotions (Angry, Disgust, Fear, Happy, Sad, Surprise, Neutral) in real-time through webcam feed. The system uses a hybrid approach combining CNN, SVM, LBP, and ORB features for improved accuracy. Initially trained on FER-2013 dataset and later upgraded to RAF-DB for better performance. Features include face tracking in multi-person scenarios, 30-second timed gameplay with scoring, Turkish language interface optimized for kiosk deployment, and persistent leaderboards. Achieved 15-25 FPS on standard hardware.",
+                image: "images/EMOTION.jpg",
+                technologies: ["Python", "TensorFlow", "Keras", "OpenCV", "CNN", "SVM", "LBP", "ORB", "FER-2013/RAF-DB", "Game Development"],
+                codeLink: "https://github.com/yourusername/emotion-detection-game"
+            },
+            {
+                title: "Kubernetes Resource Optimization Operator",
+                description: "A custom Kubernetes operator developed in Go to optimize cloud resource allocation across multi-cloud environments. The project involved analyzing six existing tools (VPA, KEDA, Goldilocks, Polaris, Cluster Autoscaler, Karpenter) to identify their limitations and design a hybrid solution combining vertical and horizontal scaling without pod restarts. The operator monitors resource usage via Prometheus, applies predictive algorithms, and dynamically adjusts CPU/memory allocations while maintaining zero downtime. This addresses inefficiencies causing enterprises to overspend on cloud infrastructure by 40-60%.",
+                image: "images/kubernetes-project.png",
+                technologies: ["Go", "Kubernetes API", "Prometheus", "Docker", "kubectl", "Helm", "AWS/GCP/Azure", "Time-Series Analysis", "Resource Optimization"],
+                codeLink: "https://github.com/yourusername/k8s-resource-optimizer"
+            }
+        ];
+
+        // Add click handlers for projects
+        document.querySelectorAll('.project-item').forEach(function(item, index) {
+            item.addEventListener('click', function() {
+                openProjectDetail(index);
+            });
+        });
+
+        // Function to open project detail
+        function openProjectDetail(projectIndex) {
+            const project = projects[projectIndex];
+
+            // Update project detail content immediately
+            document.getElementById('detail-project-title').textContent = project.title;
+            document.getElementById('detail-project-description').textContent = project.description;
+            document.getElementById('detail-project-image').src = project.image;
+            document.getElementById('detail-code-link').href = project.codeLink;
+
+            // Update technology tags
+            const techTagsContainer = document.getElementById('detail-tech-tags');
+            techTagsContainer.innerHTML = '';
+            project.technologies.forEach(function(tech) {
+                const tag = document.createElement('div');
+                tag.className = 'tech-tag';
+                tag.textContent = tech;
+                techTagsContainer.appendChild(tag);
+            });
+
+            // Hide other sections first
+            document.body.classList.add('viewing-project');
+
+            // Make the element display:block, then trigger fade in after reflow
+            const detailElement = document.getElementById('project-detail');
+            detailElement.style.display = 'block';
+
+            // Use requestAnimationFrame to ensure browser reflow before fading in
+            requestAnimationFrame(function() {
+                requestAnimationFrame(function() {
+                    detailElement.classList.add('active');
+                });
+            });
+
+            // Scroll to top smoothly
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Function to close project detail
+        function closeProjectDetail() {
+            const detailElement = document.getElementById('project-detail');
+
+            // Remove active class to trigger fade out
+            detailElement.classList.remove('active');
+
+            // Wait for fade out transition, then hide and show main sections
+            setTimeout(function() {
+                detailElement.style.display = 'none';
+                document.body.classList.remove('viewing-project');
+            }, 500);
+
+            // Scroll to top smoothly
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href !== '#' && document.querySelector(href)) {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
