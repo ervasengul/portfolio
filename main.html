@@ -506,10 +506,38 @@
             box-shadow: 0 8px 20px rgba(0,0,0,0.15);
         }
 
-        .submit-btn:hover {
+        .submit-btn:hover:not(:disabled) {
             background: #2d5016;
             transform: rotate(0deg) scale(1.05);
             box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+        }
+
+        .submit-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        .form-message {
+            padding: 1rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            font-size: 1.3rem;
+            text-align: center;
+            display: none;
+        }
+
+        .form-message.success {
+            background: #d4edda;
+            color: #155724;
+            border: 2px solid #c3e6cb;
+            display: block;
+        }
+
+        .form-message.error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 2px solid #f5c6cb;
+            display: block;
         }
 
         .decorative-element {
@@ -556,6 +584,10 @@
             .form-input,
             .form-textarea {
                 font-size: 1.2rem;
+            }
+
+            .form-message {
+                font-size: 1.1rem;
             }
         }
 
@@ -1040,10 +1072,12 @@
                     <p class="contact-subtitle"></p>
                 </div>
 
-                <form class="contact-form" action="mailto:ervasengul004@gmail.com" method="post" enctype="text/plain">
+                <form class="contact-form" id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
                     <div class="decorative-element">✉️</div>
                     <div class="decorative-element">💌</div>
                     <div class="decorative-element">📮</div>
+
+                    <div id="formMessage" class="form-message"></div>
 
                     <div class="form-group">
                         <label for="name" class="form-label">Your Name</label>
@@ -1080,7 +1114,7 @@
                         ></textarea>
                     </div>
 
-                    <button type="submit" class="submit-btn">Send Message </button>
+                    <button type="submit" class="submit-btn" id="submitBtn">Send Message</button>
                 </form>
             </div>
         </section>
@@ -1131,42 +1165,42 @@
                 description: "A data science project developing weather forecasts for Orlando, Florida using NOAA meteorological data (2015-2024). Implemented multiple interpolation methods (linear, polynomial, spline) and time series decomposition for seasonal pattern detection. The model separates weather data into trend, seasonal, and residual components using Fourier analysis and autocorrelation functions. Achieved efficient performance on standard hardware suitable for rapid prototyping and educational applications.",
                 image: "images/weather-project.png",
                 technologies: ["Python", "NumPy", "pandas", "matplotlib", "scipy", "NOAA APIs", "Time Series Analysis", "Fourier Analysis"],
-                codeLink: "https://github.com/yourusername/weather-forecast"
+                codeLink: "https://github.com/ervasengul/Numerical-Analysis-Cubic-Splines-in-Pythonc-Interpolation"
             },
             {
                 title: "PIC16F877A Car Battery Voltage Monitoring System",
                 description: "An embedded system that monitors car battery voltage in real-time and displays voltage readings with health status on LCD. Designed a voltage divider circuit (20kΩ/10kΩ resistors) to safely scale 8-15V battery range to 0-5V for ADC input. Implemented intelligent status indicators (GOOD/OK/LOW/CRITICAL) based on voltage thresholds. Programmed in embedded C with complete firmware for ADC sampling, LCD interfacing via HD44780 protocol, and power supply design using 7805 regulator.",
                 image: "images/BATTERY.png",
                 technologies: ["PIC16F877A", "Embedded C", "MPLAB X IDE", "PICkit 3", "ADC Configuration", "LCD Interfacing", "Circuit Design", "Automotive Electronics"],
-                codeLink: "https://github.com/yourusername/pic-battery-monitor"
+                codeLink: "https://github.com/ervasengul/car-battery-voltage-monitoring"
             },
             {
                 title: "Este - Women's Health Tracking Application",
                 description: "A comprehensive Flutter mobile app providing period tracking, fertility monitoring, pregnancy management, and AI-powered health assistance. Features blood test OCR integration using Google ML Kit for automatic hormone level extraction (FSH, LH, estrogen, progesterone), PCOS-friendly irregular cycle tracking, and conversational AI chatbot using OpenAI/Gemini APIs. Backend built on Firebase with authentication, Firestore database, cloud storage, and GDPR-compliant data encryption. Completely free with all premium features included.",
                 image: "images/ESTE.png",
                 technologies: ["Flutter", "Dart", "Firebase", "OpenAI/Gemini API", "Google ML Kit OCR", "Provider/Riverpod", "RESTful API", "Data Encryption", "Push Notifications"],
-                codeLink: "https://github.com/yourusername/este-health-app"
+                // codeLink: "https://github.com/yourusername/este-health-app"
             },
             {
                 title: "Autonomous Car",
                 description: "A computer vision system for traffic sign detection and recognition using ESP32 camera and YOLOv5 architecture. Created a custom dataset of 100+ traffic signs captured under varying conditions (lighting, angles, weather). Implemented real-time detection pipeline with OpenCV for preprocessing, YOLOv5 for inference, and vehicle control integration. Achieved 20-30 FPS on embedded hardware with transfer learning from COCO dataset for improved accuracy.",
                 image: "images/CAR.jpeg",
                 technologies: ["Python", "YOLOv5", "PyTorch", "OpenCV", "ESP32", "Object Detection", "CNN", "Transfer Learning", "Embedded Systems"],
-                codeLink: "https://github.com/yourusername/autonomous-car"
+                // codeLink: "https://github.com/yourusername/autonomous-car"
             },
             {
                 title: "Real-Time Financial Fraud Detection System",
                 description: "A full-stack web application for real-time financial transaction monitoring and fraud detection. The system analyzes transactions across six parameters: amount anomalies, temporal patterns, geographical inconsistencies, transaction frequency, velocity analysis, and spending behaviors. Features RESTful API architecture, MySQL database with normalized schema, user authentication with bcrypt hashing, customizable security profiles, and real-time alerts with severity levels. Achieved sub-500ms response times for concurrent transaction processing.",
                 image: "images/FRAUD.jpeg",
                 technologies: ["PHP", "MySQL", "HTML5", "CSS3", "JavaScript", "RESTful API", "bcrypt", "PDO", "JSON", "Session Management"],
-                codeLink: "https://github.com/yourusername/fraud-detection-system"
+                // codeLink: "https://github.com/yourusername/fraud-detection-system"
             },
             {
                 title: "Facial Emotion Detection Game",
                 description: "An AI-powered interactive game that detects and classifies seven facial emotions (Angry, Disgust, Fear, Happy, Sad, Surprise, Neutral) in real-time through webcam feed. The system uses a hybrid approach combining CNN, SVM, LBP, and ORB features for improved accuracy. Initially trained on FER-2013 dataset and later upgraded to RAF-DB for better performance. Features include face tracking in multi-person scenarios, 30-second timed gameplay with scoring, Turkish language interface optimized for kiosk deployment, and persistent leaderboards. Achieved 15-25 FPS on standard hardware.",
                 image: "images/EMOTION.jpg",
                 technologies: ["Python", "TensorFlow", "Keras", "OpenCV", "CNN", "SVM", "LBP", "ORB", "FER-2013/RAF-DB", "Game Development"],
-                codeLink: "https://github.com/yourusername/emotion-detection-game"
+                codeLink: "https://github.com/ervasengul/real_time_emotion_recognition"
             },
             {
                 title: "Kubernetes Resource Optimization Operator",
@@ -1250,6 +1284,61 @@
                 }
             });
         });
+
+        // Contact form handling
+        const contactForm = document.getElementById('contactForm');
+        const submitBtn = document.getElementById('submitBtn');
+        const formMessage = document.getElementById('formMessage');
+
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+
+                // Disable submit button
+                submitBtn.disabled = true;
+                submitBtn.textContent = 'Sending...';
+
+                // Get form data
+                const formData = new FormData(contactForm);
+
+                // Send to Formspree
+                fetch(contactForm.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                })
+                .then(function(response) {
+                    if (response.ok) {
+                        // Success
+                        formMessage.textContent = 'Thank you! Your message has been sent successfully.';
+                        formMessage.className = 'form-message success';
+                        contactForm.reset();
+                    } else {
+                        // Error from server
+                        response.json().then(function(data) {
+                            if (data.errors) {
+                                formMessage.textContent = data.errors.map(function(error) { return error.message; }).join(', ');
+                            } else {
+                                formMessage.textContent = 'Oops! There was a problem sending your message. Please try again.';
+                            }
+                            formMessage.className = 'form-message error';
+                        });
+                    }
+                })
+                .catch(function(error) {
+                    // Network error
+                    formMessage.textContent = 'Oops! There was a problem sending your message. Please try again.';
+                    formMessage.className = 'form-message error';
+                })
+                .finally(function() {
+                    // Re-enable submit button
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = 'Send Message';
+                });
+            });
+        }
     </script>
 </body>
 </html>
