@@ -3,6 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; script-src 'self' 'unsafe-inline'; connect-src 'self' https://formspree.io; form-action 'self' https://formspree.io; frame-ancestors 'none'; base-uri 'self'; upgrade-insecure-requests;">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
     <title>Portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -148,6 +152,10 @@
             grid-column: 8 / 11;
         }
 
+        .project-item:nth-child(8) {
+            grid-column: 5 / 8;
+        }
+
         .project-item {
             opacity: 1;
             transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -203,7 +211,8 @@
             .project-item:nth-child(4),
             .project-item:nth-child(5),
             .project-item:nth-child(6),
-            .project-item:nth-child(7) {
+            .project-item:nth-child(7),
+            .project-item:nth-child(8) {
                 grid-column: auto;
             }
 
@@ -271,7 +280,8 @@
             .project-item:nth-child(4),
             .project-item:nth-child(5),
             .project-item:nth-child(6),
-            .project-item:nth-child(7) {
+            .project-item:nth-child(7),
+            .project-item:nth-child(8) {
                 grid-column: auto;
             }
 
@@ -974,7 +984,7 @@
             </ul>
         </nav>
 
-        <a href="mailto:ervasengul004@gmail.com" class="email-icon">
+        <a href="#" class="email-icon email-link">
             <svg viewBox="0 0 100 80" fill="none" stroke="#2d5016" stroke-width="2">
                 <text x="10" y="15" font-family="Caveat" font-size="14" fill="#2d5016">MY EMAIL</text>
                 <rect x="10" y="20" width="60" height="45" rx="3" fill="white" stroke="#2d5016" stroke-width="2.5"/>
@@ -1014,6 +1024,10 @@
                 <div class="project-item">
                     <div class="project-title-card">Kubernetes Optimizer</div>
                 </div>
+                <!-- Project 8 -->
+                <div class="project-item">
+                    <div class="project-title-card">Medipol Student Hub</div>
+                </div>
             </div>
         </section>
 
@@ -1026,7 +1040,7 @@
 
                 <div class="project-image-container">
                     <img id="detail-project-image" src="" alt="Project Image">
-                    <a id="detail-code-link" href="#" target="_blank" class="code-button">
+                    <a id="detail-code-link" href="#" target="_blank" rel="noopener noreferrer" class="code-button">
                         <span>{ }</span> Code
                     </a>
                 </div>
@@ -1054,7 +1068,7 @@
                     <!-- Patent -->
                     <div class="patent-card">
                         <h3 class="patent-title">AI-Assisted Optimization and Accurate Billing of Contracted Institution Transactions in Private Healthcare Organizations</h3>
-                        <p class="patent-number">Turkish Patent Application No. <a href="https://portal.turkpatent.gov.tr/anonim/arastirma/patent/sonuc/dosya?patentAppNo=2025/006365&documentsTpye=all">2025/006365</a></p>
+                        <p class="patent-number">Turkish Patent Application No. <a href="https://portal.turkpatent.gov.tr/anonim/arastirma/patent/sonuc/dosya?patentAppNo=2025/006365&documentsTpye=all" target="_blank" rel="noopener noreferrer">2025/006365</a></p>
                         <p class="patent-date">Filed: 2025</p>
                         <p class="patent-description">
                             An innovative AI-powered system designed to optimize and ensure accurate billing processes for contracted institution transactions in private healthcare settings, streamlining financial operations and reducing billing errors.
@@ -1132,12 +1146,12 @@
 
     <footer class="footer">
         <div class="social-icons">
-            <a href="https://www.linkedin.com/in/erva-%C5%9Feng%C3%BCl-016945237/" target="_blank" aria-label="LinkedIn">
+            <a href="https://www.linkedin.com/in/erva-%C5%9Feng%C3%BCl-016945237/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
                 </svg>
             </a>
-            <a href="https://github.com/ervasengul" target="_blank" aria-label="GitHub">
+            <a href="https://github.com/ervasengul" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
                 </svg>
@@ -1148,8 +1162,7 @@
                 <span>©</span>
                 <span></span>
             </div>
-            <div class="footer-center">
-                ervasengul004@gmail.com
+            <div class="footer-center email-text">
             </div>
             <div class="footer-right">
                 2025
@@ -1158,6 +1171,44 @@
     </footer>
 
     <script>
+        // Email obfuscation to prevent spam bots from harvesting email addresses
+        function createMailto() {
+            const user = 'ervasengul004';
+            const domain = 'gmail.com';
+            return 'mailto:' + user + '@' + domain;
+        }
+
+        function getEmail() {
+            const user = 'ervasengul004';
+            const domain = 'gmail.com';
+            return user + '@' + domain;
+        }
+
+        // Initialize email links and text on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set mailto links
+            document.querySelectorAll('.email-link').forEach(function(link) {
+                link.href = createMailto();
+            });
+
+            // Set email text
+            document.querySelectorAll('.email-text').forEach(function(el) {
+                el.textContent = getEmail();
+            });
+        });
+
+        // URL validation function to prevent URL injection attacks
+        function isValidUrl(url) {
+            if (!url) return false;
+            try {
+                const parsed = new URL(url, window.location.origin);
+                // Only allow http and https protocols
+                return ['http:', 'https:'].includes(parsed.protocol);
+            } catch {
+                return false;
+            }
+        }
+
         // Project data - customize this with your actual projects
         const projects = [
             {
@@ -1207,7 +1258,14 @@
                 description: "A custom Kubernetes operator developed in Go to optimize cloud resource allocation across multi-cloud environments. The project involved analyzing six existing tools (VPA, KEDA, Goldilocks, Polaris, Cluster Autoscaler, Karpenter) to identify their limitations and design a hybrid solution combining vertical and horizontal scaling without pod restarts. The operator monitors resource usage via Prometheus, applies predictive algorithms, and dynamically adjusts CPU/memory allocations while maintaining zero downtime. This addresses inefficiencies causing enterprises to overspend on cloud infrastructure by 40-60%.",
                 image: "images/kubernetes-project.png",
                 technologies: ["Go", "Kubernetes API", "Prometheus", "Docker", "kubectl", "Helm", "AWS/GCP/Azure", "Time-Series Analysis", "Resource Optimization"],
-                codeLink: "https://github.com/yourusername/k8s-resource-optimizer"
+                // codeLink: "https://github.com/yourusername/k8s-resource-optimizer"
+            },
+            {
+                title: "Medipol Student Hub",
+                description: "Developed a collaborative platform addressing cross-faculty communication challenges at Istanbul Medipol University. The system enables students to post project ideas, form interdisciplinary teams, and manage project milestones while receiving faculty supervision. Designed and implemented RESTful API backend with user authentication, project management features, team collaboration workflows including join request approval systems, and progress tracking with milestone management. Created comprehensive software requirements specification (IEEE SRS format) and detailed design documentation including class diagrams, sequence diagrams, and activity diagrams to guide development process.",
+                image: "images/medipol-hub.png",
+                technologies: ["Django REST Framework", "Python 3", "MySQL", "JWT", "RESTful API", "CORS", "Flutter", "IEEE SRS", "Software Design"],
+                codeLink: "https://github.com/ervasengul/Medipol-Student-Project-Hub"
             }
         ];
 
@@ -1222,11 +1280,28 @@
         function openProjectDetail(projectIndex) {
             const project = projects[projectIndex];
 
-            // Update project detail content immediately
+            // SECURITY: Always use textContent (not innerHTML) to prevent XSS attacks
             document.getElementById('detail-project-title').textContent = project.title;
             document.getElementById('detail-project-description').textContent = project.description;
-            document.getElementById('detail-project-image').src = project.image;
-            document.getElementById('detail-code-link').href = project.codeLink;
+
+            // Validate and set image URL
+            if (project.image && isValidUrl(project.image)) {
+                document.getElementById('detail-project-image').src = project.image;
+            } else if (project.image) {
+                // If it's a relative path, allow it
+                document.getElementById('detail-project-image').src = project.image;
+            }
+
+            // Validate and set code link URL
+            const codeLinkElement = document.getElementById('detail-code-link');
+            if (project.codeLink && isValidUrl(project.codeLink)) {
+                codeLinkElement.href = project.codeLink;
+                codeLinkElement.style.display = 'inline-flex';
+            } else {
+                // Hide the code button if no valid link
+                codeLinkElement.href = '#';
+                codeLinkElement.style.display = 'none';
+            }
 
             // Update technology tags
             const techTagsContainer = document.getElementById('detail-tech-tags');
@@ -1234,6 +1309,7 @@
             project.technologies.forEach(function(tech) {
                 const tag = document.createElement('div');
                 tag.className = 'tech-tag';
+                // SECURITY: Using textContent to prevent XSS
                 tag.textContent = tech;
                 techTagsContainer.appendChild(tag);
             });
