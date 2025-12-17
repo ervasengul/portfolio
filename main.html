@@ -876,13 +876,14 @@
             bottom: 100px;
             left: 30px;
             background: white;
-            padding: 1.2rem;
+            padding: 0.9rem;
             border-radius: 15px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-            width: 220px;
+            width: 180px;
             z-index: 999;
             transform: rotate(2deg);
-            transition: transform 0.3s ease;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+            opacity: 1;
         }
 
         .reading-widget:hover {
@@ -890,20 +891,20 @@
         }
 
         .reading-title {
-            font-size: 1.3rem;
+            font-size: 1.1rem;
             font-weight: 700;
             color: #4a7c59;
-            margin-bottom: 0.6rem;
+            margin-bottom: 0.5rem;
             text-align: center;
         }
 
         .book-info {
             text-align: center;
-            margin-bottom: 1rem;
+            margin-bottom: 0.8rem;
         }
 
         .book-name {
-            font-size: 1.15rem;
+            font-size: 0.95rem;
             font-weight: 700;
             color: #2d5016;
             margin-bottom: 0.3rem;
@@ -911,7 +912,7 @@
         }
 
         .book-author {
-            font-size: 1rem;
+            font-size: 0.85rem;
             color: #666;
             margin-bottom: 0.4rem;
         }
@@ -919,13 +920,13 @@
         .suggestions-btn {
             display: block;
             width: 100%;
-            padding: 0.6rem;
+            padding: 0.5rem;
             background: #4a7c59;
             color: white;
             text-align: center;
             border-radius: 8px;
             text-decoration: none;
-            font-size: 1.1rem;
+            font-size: 0.95rem;
             font-weight: 600;
             transition: all 0.3s ease;
             border: none;
@@ -1022,7 +1023,7 @@
                 </div>
                 <!-- Project 7 -->
                 <div class="project-item">
-                    <div class="project-title-card">Kubernetes Optimizer</div>
+                    <div class="project-title-card">Intelligent Cluster Optimization</div>
                 </div>
                 <!-- Project 8 -->
                 <div class="project-item">
@@ -1254,7 +1255,7 @@
                 codeLink: "https://github.com/ervasengul/real_time_emotion_recognition"
             },
             {
-                title: "Kubernetes Resource Optimization Operator",
+                title: "Intelligent Cluster Optimization",
                 description: "A custom Kubernetes operator developed in Go to optimize cloud resource allocation across multi-cloud environments. The project involved analyzing six existing tools (VPA, KEDA, Goldilocks, Polaris, Cluster Autoscaler, Karpenter) to identify their limitations and design a hybrid solution combining vertical and horizontal scaling without pod restarts. The operator monitors resource usage via Prometheus, applies predictive algorithms, and dynamically adjusts CPU/memory allocations while maintaining zero downtime. This addresses inefficiencies causing enterprises to overspend on cloud infrastructure by 40-60%.",
                 image: "images/kubernetes-project.png",
                 technologies: ["Go", "Kubernetes API", "Prometheus", "Docker", "kubectl", "Helm", "AWS/GCP/Azure", "Time-Series Analysis", "Resource Optimization"],
@@ -1413,6 +1414,28 @@
                     submitBtn.disabled = false;
                     submitBtn.textContent = 'Send Message';
                 });
+            });
+        }
+
+        // Fade out reading widget on scroll
+        const readingWidget = document.querySelector('.reading-widget');
+        if (readingWidget) {
+            window.addEventListener('scroll', function() {
+                const scrollPosition = window.scrollY;
+                const windowHeight = window.innerHeight;
+
+                // Start fading at 50vh scroll, completely hidden at 100vh
+                const fadeStart = windowHeight * 0.5;
+                const fadeEnd = windowHeight * 1.0;
+
+                if (scrollPosition <= fadeStart) {
+                    readingWidget.style.opacity = '1';
+                } else if (scrollPosition >= fadeEnd) {
+                    readingWidget.style.opacity = '0';
+                } else {
+                    const fadeProgress = (scrollPosition - fadeStart) / (fadeEnd - fadeStart);
+                    readingWidget.style.opacity = (1 - fadeProgress).toString();
+                }
             });
         }
     </script>
