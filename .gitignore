@@ -1,0 +1,17 @@
+# Large CLI binaries / checksums that don't belong in a website repo
+minikube-darwin-arm64
+kubectl
+kubectl.sha256
+*.sha256
+
+# Dependencies
+node_modules/
+
+# Python
+venv/
+.venv/
+__pycache__/
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
