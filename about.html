@@ -3,604 +3,216 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; script-src 'self' 'unsafe-inline'; frame-ancestors 'none'; base-uri 'self'; upgrade-insecure-requests;">
-    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; script-src 'self'; frame-ancestors 'none'; base-uri 'self'; upgrade-insecure-requests;">
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta name="referrer" content="strict-origin-when-cross-origin">
-    <title>About - Erva Şengül</title>
+    <title>About — Erva Şengül</title>
+    <meta name="description" content="About Erva Şengül — computer engineering student in Istanbul working on healthcare AI, Kubernetes, and computer vision.">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%233e6b4f'/%3E%3Ctext x='32' y='45' font-family='Georgia,serif' font-style='italic' font-size='38' fill='%23f6f4ec' text-anchor='middle'%3EE%3C/text%3E%3C/svg%3E">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --font-body: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
-            --font-display: 'Space Grotesk', 'Inter', system-ui, sans-serif;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: var(--font-body);
-            background: #f5f5f0;
-            color: #2d5016;
-            overflow-x: hidden;
-        }
-
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        /* Navigation */
-        nav {
-            padding: 2rem 0;
-            display: flex;
-            justify-content: flex-start;
-            align-items: center;
-            position: relative;
-            z-index: 100;
-        }
-
-        .logo {
-            font-family: var(--font-body);
-            font-size: 1.8rem;
-            font-weight: 400;
-            color: #2d5016;
-            text-decoration: none;
-            line-height: 0.9;
-        }
-
-        .logo span {
-            display: block;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2.5rem;
-            list-style: none;
-            align-items: center;
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        .nav-links a {
-            color: #2d5016;
-            text-decoration: none;
-            font-size: 1.4rem;
-            transition: transform 0.3s ease;
-        }
-
-        .nav-links a:hover {
-            transform: scale(1.1);
-        }
-
-        .email-icon {
-            position: absolute;
-            top: 1rem;
-            right: 2rem;
-            font-size: 1.2rem;
-            z-index: 100;
-            cursor: pointer;
-            transition: transform 0.3s ease;
-        }
-
-        .email-icon:hover {
-            transform: scale(1.1);
-        }
-
-        .email-icon svg {
-            width: 80px;
-            height: 80px;
-            
-        }
-
-        .email-icon text {
-            font-family: var(--font-body);
-        }
-
-        /* About Content */
-        .about-content {
-            min-height: 80vh;
-            padding: 4rem 2rem 8rem 2rem;
-        }
-
-        .about-container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .about-header {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-
-        .about-title {
-            font-family: var(--font-body);
-            font-size: 3.5rem;
-            font-weight: 400;
-            color: #4a7c59;
-            margin-bottom: 2rem;
-            
-        }
-
-        .about-intro {
-            background: white;
-            padding: 3rem;
-            border-radius: 14px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            
-            margin-bottom: 3rem;
-        }
-
-        .about-text {
-            font-size: 1.4rem;
-            color: #2d5016;
-            line-height: 1.8;
-            margin-bottom: 1.5rem;
-        }
-
-        .skills-section {
-            margin-top: 4rem;
-        }
-
-        .section-title {
-            font-family: var(--font-body);
-            font-size: 2.5rem;
-            font-weight: 400;
-            color: #4a7c59;
-            margin-bottom: 2rem;
-            text-align: center;
-            
-        }
-
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .skill-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 14px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            
-            transition: all 0.3s ease;
-        }
-
-        .skill-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
-        }
-
-        .skill-card:nth-child(even) {
-            
-        }
-
-        .skill-card:nth-child(even):hover {
-            transform: translateY(-5px);
-        }
-
-        .skill-category {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: #2d5016;
-            margin-bottom: 1rem;
-        }
-
-        .skill-list {
-            list-style: none;
-            font-size: 1.2rem;
-            color: #2d5016;
-            line-height: 1.8;
-        }
-
-        .skill-list li:before {
-            content: "→ ";
-            color: #4a7c59;
-            font-weight: bold;
-        }
-
-        @media (max-width: 1024px) {
-            .email-icon svg {
-                width: 70px;
-                height: 70px;
-            }
-        }
-
-        @media (max-width: 768px) {
-            nav {
-                padding: 1rem 0;
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 1rem;
-            }
-
-            .logo {
-                font-size: 1.5rem;
-                position: relative;
-                left: 0;
-            }
-
-            .nav-links {
-                position: static;
-                transform: none;
-                gap: 1.5rem;
-                width: 100%;
-                justify-content: flex-start;
-            }
-
-            .nav-links a {
-                font-size: 1.2rem;
-            }
-
-            .email-icon {
-                top: 1.5rem;
-                right: 1rem;
-            }
-
-            .email-icon svg {
-                width: 60px;
-                height: 60px;
-            }
-
-            .about-title {
-                font-size: 3rem;
-            }
-
-            .about-intro {
-                padding: 2rem;
-            }
-
-            .about-text {
-                font-size: 1.5rem;
-            }
-
-            .section-title {
-                font-size: 2.5rem;
-            }
-
-            .skills-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .logo {
-                font-size: 1.3rem;
-            }
-
-            .nav-links {
-                gap: 1rem;
-            }
-
-            .nav-links a {
-                font-size: 1.1rem;
-            }
-
-            .email-icon {
-                top: 1rem;
-                right: 0.5rem;
-            }
-
-            .email-icon svg {
-                width: 50px;
-                height: 50px;
-            }
-        }
-
-        /* Footer */
-        .footer {
-            background: #2d5016;
-            padding: 1.5rem 0;
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
-        }
-
-        .footer-content {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            color: white;
-        }
-
-        .footer-left {
-            font-size: 1.5rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .footer-center {
-            font-size: 1.8rem;
-            text-align: center;
-            position: relative;
-        }
-
-        .footer-center::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            right: 0;
-            height: 2px;
-            background: white;
-        }
-
-        .footer-right {
-            font-size: 1.5rem;
-        }
-
-        .social-icons {
-            position: absolute;
-            top: -50px;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            gap: 1rem;
-            background: white;
-            padding: 0.5rem 1.5rem;
-            border-radius: 30px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        }
-
-        .social-icons a {
-            color: #2d5016;
-            font-size: 1.8rem;
-            transition: transform 0.3s ease;
-        }
-
-        .social-icons a:hover {
-            transform: scale(1.2);
-        }
-
-        @media (max-width: 768px) {
-            .footer-content {
-                flex-direction: column;
-                gap: 0.5rem;
-                text-align: center;
-            }
-
-            .footer-left,
-            .footer-center,
-            .footer-right {
-                font-size: 1.2rem;
-            }
-
-            .social-icons {
-                top: -45px;
-                gap: 0.7rem;
-                padding: 0.4rem 1rem;
-            }
-
-            .social-icons a {
-                font-size: 1.5rem;
-            }
-        }
-
-        /* Professional type system */
-        body {
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-        }
-
-        h1, h2, h3 { font-family: var(--font-display); letter-spacing: -0.02em; }
-        .logo { font-family: var(--font-display); font-weight: 700; }
-        .nav-links a { font-family: var(--font-body); font-weight: 500; }
-        .about-title { font-family: var(--font-display); font-weight: 600; font-size: 2.8rem; }
-        .section-title { font-family: var(--font-display); font-weight: 600; font-size: 2rem; }
-        .skill-category { font-family: var(--font-display); font-weight: 600; font-size: 1.15rem; }
-        .about-text { font-family: var(--font-body); font-size: 1.15rem; line-height: 1.75; }
-        .skill-list { font-family: var(--font-body); font-size: 1.02rem; line-height: 1.9; }
-        .email-icon svg { width: 30px !important; height: 30px !important; }
-
-        @media (max-width: 768px) {
-            .about-title { font-size: 2.1rem; }
-            .section-title { font-size: 1.7rem; }
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..650;1,9..144,400..650&family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <nav>
-            <a href="main.html" class="logo">
-                <span>Erva Şengül</span>
-            </a>
-            <ul class="nav-links">
-                <li><a href="main.html">home</a></li>
-                <li><a href="main.html#experience">experience</a></li>
-                <li><a href="main.html#contact">contact</a></li>
-            </ul>
-        </nav>
+    <a class="skip-link" href="#main">Skip to content</a>
 
-        <a href="#" class="email-icon email-link" aria-label="Email me">
-            <svg viewBox="0 0 24 24" fill="none" stroke="#4a7c59" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="3" y="5" width="18" height="14" rx="2.5"/>
-                <path d="M3 7l9 6 9-6"/>
-            </svg>
-        </a>
+    <header class="site-nav">
+        <div class="nav-inner">
+            <a href="index.html" class="brand">Erva Şengül<span class="dot">.</span></a>
+            <nav aria-label="Primary">
+                <ul class="nav-links">
+                    <li><a href="index.html#projects">Projects</a></li>
+                    <li class="hide-mobile"><a href="index.html#experience">Experience</a></li>
+                    <li><a href="about.html" aria-current="page">About</a></li>
+                    <li class="hide-mobile"><a href="index.html#contact">Contact</a></li>
+                    <li>
+                        <a class="nav-cta" href="https://github.com/ervasengul" target="_blank" rel="noopener noreferrer">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                            GitHub
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-        <section class="about-content">
-            <div class="about-container">
-                <div class="about-header">
-                    <h1 class="about-title">About Me</h1>
+    <main id="main">
+
+        <!-- ============ Story ============ -->
+        <section class="section" style="padding-bottom: clamp(3rem, 7vw, 5rem);">
+            <div class="container">
+                <div class="section-head reveal">
+                    <p class="eyebrow">About me</p>
+                    <h1 class="section-title">Building things that actually <em>make sense</em></h1>
                 </div>
 
-                <div class="about-intro">
-                    <p class="about-text">
-                        I build things that think, see, and adapt. I'm a Computer Engineering student at Istanbul Medipol University (B.S., English), graduating June 2026, and I'm heading toward a US master's at the intersection of AI and business.
-                    </p>
-                    <p class="about-text">
-                        My world revolves around three things: AI and machine learning applied to healthcare, cloud infrastructure and Kubernetes, and computer vision. I've fine-tuned large language models (QLoRA) to turn messy multilingual clinical documents into structured data, built a Go-based Kubernetes optimizer that cuts cloud waste safely, and trained neural networks to recognise facial expressions in real time.
-                    </p>
-                    <p class="about-text">
-                        The iPhone wasn't the first smartphone. Tesla wasn't the first electric car. Kubernetes wasn't the first container orchestrator. But they were all done better.
-                    </p>
-                    <p class="about-text">
-                        That's what I'm after - not building something first, but building something that actually makes sense. Better execution, better results, better thinking about the problem. Taking existing ideas and asking "Why does it have to be this way?" Identifying the pain points that everyone accepts as normal and addressing them.
-                    </p>
-                    <p class="about-text">
-                        Whether it's making Kubernetes stop wasting cloud resources or teaching computers to recognize emotions more accurately- I want to work on things that move the needle. Places where "good enough" isn't good enough.
-                    </p>
-                    <p class="about-text">
-                        If you're working on something interesting, don't hesitate to contact!
-                    </p>
-                </div>
+                <div class="about-grid">
+                    <div class="about-copy reveal">
+                        <p>
+                            I build things that think, see, and adapt. I'm a Computer Engineering student at
+                            Istanbul Medipol University (B.S., English), graduating June 2026, and I'm heading
+                            toward a US master's at the intersection of <strong>AI and business</strong>.
+                        </p>
+                        <p>
+                            My world revolves around three things: AI and machine learning applied to healthcare,
+                            cloud infrastructure and Kubernetes, and computer vision. I've fine-tuned large
+                            language models (QLoRA) to turn messy multilingual clinical documents into structured
+                            data, built a Go-based Kubernetes optimizer that cuts cloud waste safely, and trained
+                            neural networks to recognise facial expressions in real time.
+                        </p>
+                        <blockquote class="pull-quote">
+                            The iPhone wasn't the first smartphone. Tesla wasn't the first electric car.
+                            Kubernetes wasn't the first container orchestrator. But they were all done
+                            <em>better</em>.
+                        </blockquote>
+                        <p>
+                            That's what I'm after — not building something first, but building something that
+                            actually makes sense. Better execution, better results, better thinking about the
+                            problem. Taking existing ideas and asking <em>“why does it have to be this way?”</em>
+                            Identifying the pain points that everyone accepts as normal, and addressing them.
+                        </p>
+                        <p>
+                            Whether it's making Kubernetes stop wasting cloud resources or teaching computers to
+                            recognize emotions more accurately — I want to work on things that move the needle.
+                            Places where “good enough” isn't good enough.
+                        </p>
+                        <p>
+                            If you're working on something interesting, don't hesitate to
+                            <a href="index.html#contact">reach out</a>.
+                        </p>
+                    </div>
 
-                <div class="skills-section">
-                    <h2 class="section-title">Skills & Expertise</h2>
-
-                    <div class="skills-grid">
-                        <div class="skill-card">
-                            <h3 class="skill-category">Artificial Intelligence & Machine Learning</h3>
-                            <ul class="skill-list">
-                                <li>Machine Learning & Deep Learning</li>
-                                <li>LLM Fine-Tuning (QLoRA, MedGemma)</li>
-                                <li>Natural Language Processing (NLP)</li>
-                                <li>Computer Vision</li>
-                                <li>Neural Networks (CNN for emotion recognition, image classification)</li>
-                                <li>TensorFlow, Keras, PyTorch</li>
-                                <li>OpenCV</li>
-                                <li>Scikit-learn</li>
-                                <li>Data Analytics & Preprocessing</li>
-                            </ul>
+                    <div class="side-cards">
+                        <div class="portrait-wrap reveal reveal-delay-1" style="width: min(100%, 300px); margin: 0 auto 0.6rem;">
+                            <div class="portrait-frame">
+                                <img src="images/opt/portrait.webp" alt="Painted portrait of Erva Şengül surrounded by green leaves" width="832" height="1248">
+                            </div>
                         </div>
-
-                        <div class="skill-card">
-                            <h3 class="skill-category">Cloud & DevOps</h3>
-                            <ul class="skill-list">
-                                <li>Kubernetes (Resource Optimization, Custom Operators)</li>
-                                <li>Google Kubernetes Engine (GKE)</li>
-                                <li>Go (Kubernetes Operators)</li>
-                                <li>Docker (Container Orchestration)</li>
-                                <li>Prometheus (Monitoring)</li>
-                                <li>Cloud Infrastructure & Multi-cloud Architecture</li>
-                                <li>Linux System Administration</li>
-                            </ul>
+                        <div class="side-card reveal reveal-delay-2">
+                            <h3>Education</h3>
+                            <p class="book-title" style="font-style: normal;">B.S. Computer Engineering</p>
+                            <p class="book-author">Istanbul Medipol University (English) · Class of 2026</p>
                         </div>
-
-                        <div class="skill-card">
-                            <h3 class="skill-category">IoT & Embedded Systems</h3>
-                            <ul class="skill-list">
-                                <li>Microcontrollers (PIC16F877A, ESP32, Arduino)</li>
-                                <li>Circuit Design & Hardware Debugging</li>
-                                <li>Embedded C Programming</li>
-                                <li>Sensor Integration</li>
-                                <li>Real-time Systems</li>
-                                <li>Firmware Development (PICkit 3)</li>
-                                <li>ADC, LCD interfacing</li>
-                            </ul>
-                        </div>
-
-                        <div class="skill-card">
-                            <h3 class="skill-category">Programming & Web Development</h3>
-                            <ul class="skill-list">
-                                <li><strong>Languages:</strong></li>
-                                <li>Python, Go, C#, C</li>
-                                <li>SQL, JavaScript</li>
-                                <li><strong>Backend:</strong></li>
-                                <li>ASP.NET Core MVC</li>
-                                <li>Django (REST Framework)</li>
-                                <li>RESTful APIs</li>
-                                <li><strong>Frontend:</strong></li>
-                                <li>HTML, CSS, JavaScript</li>
-                                <li>Flutter</li>
-                                <li><strong>Databases:</strong></li>
-                                <li>MySQL, SQL Server</li>
-                            </ul>
-                        </div>
-
-                        <div class="skill-card">
-                            <h3 class="skill-category">Tools & Technologies</h3>
-                            <ul class="skill-list">
-                                <li>Git & GitHub</li>
-                                <li>VMware & Virtualization</li>
-                                <li>Data Structures & Algorithms</li>
-                            </ul>
+                        <div class="side-card reveal reveal-delay-3">
+                            <h3>Currently reading</h3>
+                            <p class="book-title">The Phoenix Project</p>
+                            <p class="book-author">Gene Kim, Kevin Behr &amp; George Spafford</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-    </div>
 
-    <footer class="footer">
-        <div class="social-icons">
-            <a href="https://www.linkedin.com/in/erva-%C5%9Feng%C3%BCl-016945237/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                </svg>
-            </a>
-            <a href="https://github.com/ervasengul" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                </svg>
-            </a>
-        </div>
-        <div class="footer-content">
-            <div class="footer-left">
-                <span>©</span>
-                <span>Erva Şengül</span>
+        <!-- ============ Skills ============ -->
+        <section class="section section-band">
+            <div class="container">
+                <div class="section-head centered reveal">
+                    <p class="eyebrow centered">The toolbox</p>
+                    <h2 class="section-title">Skills &amp; expertise</h2>
+                </div>
+
+                <div class="skills-grid">
+                    <div class="skill-card reveal">
+                        <h3>AI &amp; Machine Learning</h3>
+                        <ul>
+                            <li>Machine Learning &amp; Deep Learning</li>
+                            <li>LLM Fine-Tuning (QLoRA, MedGemma)</li>
+                            <li>Natural Language Processing</li>
+                            <li>Computer Vision &amp; CNNs</li>
+                            <li>TensorFlow, Keras, PyTorch</li>
+                            <li>OpenCV, Scikit-learn</li>
+                            <li>Data Analytics &amp; Preprocessing</li>
+                        </ul>
+                    </div>
+                    <div class="skill-card reveal reveal-delay-1">
+                        <h3>Cloud &amp; DevOps</h3>
+                        <ul>
+                            <li>Kubernetes (Resource Optimization, Custom Operators)</li>
+                            <li>Google Kubernetes Engine (GKE)</li>
+                            <li>Go (Kubernetes Operators)</li>
+                            <li>Docker &amp; Container Orchestration</li>
+                            <li>Prometheus Monitoring</li>
+                            <li>Multi-cloud Architecture</li>
+                            <li>Linux System Administration</li>
+                        </ul>
+                    </div>
+                    <div class="skill-card reveal reveal-delay-2">
+                        <h3>IoT &amp; Embedded Systems</h3>
+                        <ul>
+                            <li>Microcontrollers (PIC16F877A, ESP32, Arduino)</li>
+                            <li>Circuit Design &amp; Hardware Debugging</li>
+                            <li>Embedded C Programming</li>
+                            <li>Sensor Integration &amp; Real-time Systems</li>
+                            <li>Firmware Development (PICkit 3)</li>
+                            <li>ADC &amp; LCD Interfacing</li>
+                        </ul>
+                    </div>
+                    <div class="skill-card reveal">
+                        <h3>Programming &amp; Web</h3>
+                        <ul>
+                            <li class="group-label">Languages</li>
+                            <li>Python, Go, C#, C, SQL, JavaScript</li>
+                            <li class="group-label">Backend</li>
+                            <li>ASP.NET Core MVC, Django REST, RESTful APIs</li>
+                            <li class="group-label">Frontend</li>
+                            <li>HTML, CSS, JavaScript, Flutter</li>
+                            <li class="group-label">Databases</li>
+                            <li>MySQL, SQL Server</li>
+                        </ul>
+                    </div>
+                    <div class="skill-card reveal reveal-delay-1">
+                        <h3>Tools &amp; Practices</h3>
+                        <ul>
+                            <li>Git &amp; GitHub</li>
+                            <li>VMware &amp; Virtualization</li>
+                            <li>Data Structures &amp; Algorithms</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-            <div class="footer-center email-text">
+        </section>
+
+        <!-- ============ CTA ============ -->
+        <section class="section">
+            <div class="container contact-wrap">
+                <h2 class="contact-title reveal">Curious what I've <em>built</em>?</h2>
+                <div class="contact-actions reveal reveal-delay-1" style="margin-top: 2rem;">
+                    <a class="btn btn-primary" href="index.html#projects">
+                        Browse my projects
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                    </a>
+                    <a class="btn btn-ghost email-link" href="#">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                        Email me
+                    </a>
+                </div>
             </div>
-            <div class="footer-right">
-                2026
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <p class="footer-brand">Erva Şengül<span class="dot">.</span></p>
+            <div class="footer-social">
+                <a href="https://github.com/ervasengul" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                    <svg viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                </a>
+                <a href="https://www.linkedin.com/in/erva-%C5%9Feng%C3%BCl-016945237/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                    <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                </a>
+                <a href="#" class="email-link" aria-label="Email">
+                    <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                </a>
             </div>
+            <p class="footer-meta">
+                Designed &amp; built by Erva Şengül · © <span class="footer-year">2026</span><br>
+                <a href="https://www.ervasengul.com">www.ervasengul.com</a>
+            </p>
         </div>
     </footer>
 
-    <script>
-        // Email obfuscation to prevent spam bots from harvesting email addresses
-        function createMailto() {
-            const user = 'ervasengul004';
-            const domain = 'gmail.com';
-            return 'mailto:' + user + '@' + domain;
-        }
-
-        function getEmail() {
-            const user = 'ervasengul004';
-            const domain = 'gmail.com';
-            return user + '@' + domain;
-        }
-
-        // Initialize email links and text on page load
-        document.addEventListener('DOMContentLoaded', function() {
-            // Set mailto links
-            document.querySelectorAll('.email-link').forEach(function(link) {
-                link.href = createMailto();
-            });
-
-            // Set email text
-            document.querySelectorAll('.email-text').forEach(function(el) {
-                el.textContent = getEmail();
-            });
-        });
-
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
-            anchor.addEventListener('click', function(e) {
-                const href = this.getAttribute('href');
-                if (href !== '#' && document.querySelector(href)) {
-                    e.preventDefault();
-                    const target = document.querySelector(href);
-                    target.scrollIntoView({ behavior: 'smooth' });
-                }
-            });
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>

@@ -3,252 +3,504 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; script-src 'self' 'unsafe-inline'; frame-ancestors 'none'; base-uri 'self'; upgrade-insecure-requests;">
-    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; script-src 'self'; frame-ancestors 'none'; base-uri 'self'; upgrade-insecure-requests;">
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta name="referrer" content="strict-origin-when-cross-origin">
-    <title>Welcome - Erva Şengül</title>
+    <title>Erva Şengül — Computer Engineer · AI &amp; Machine Learning</title>
+    <meta name="description" content="Portfolio of Erva Şengül — computer engineer working on AI in healthcare, Kubernetes resource optimization, and computer vision. Based in Istanbul.">
+    <meta property="og:title" content="Erva Şengül — Computer Engineer">
+    <meta property="og:description" content="AI in healthcare, Kubernetes optimization, and computer vision. I build things that think, see, and adapt.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.ervasengul.com/">
+    <meta property="og:image" content="https://www.ervasengul.com/images/opt/portrait.webp">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%233e6b4f'/%3E%3Ctext x='32' y='45' font-family='Georgia,serif' font-style='italic' font-size='38' fill='%23f6f4ec' text-anchor='middle'%3EE%3C/text%3E%3C/svg%3E">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --font-body: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
-            --font-display: 'Space Grotesk', 'Inter', system-ui, sans-serif;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: var(--font-body);
-            background: #f5f5f0;
-            color: #2d5016;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-        }
-
-        .welcome-container {
-            text-align: center;
-            position: relative;
-            z-index: 10;
-        }
-
-        .welcome-title {
-            font-family: var(--font-body);
-            font-size: 5rem;
-            font-weight: 400;
-            color: #4a7c59;
-            margin-bottom: 1rem;
-            
-            animation: fadeInDown 1s ease-out;
-        }
-
-        .welcome-subtitle {
-            font-family: var(--font-body);
-            font-size: 2rem;
-            font-weight: 400;
-            color: #2d5016;
-            margin-bottom: 1rem;
-            
-            animation: fadeInUp 1s ease-out 0.3s backwards;
-        }
-
-        .welcome-name {
-            font-family: var(--font-body);
-            font-size: 2.5rem;
-            font-weight: 400;
-            color: #4a7c59;
-            margin-bottom: 0.75rem;
-            
-            animation: fadeInUp 1s ease-out 0.5s backwards;
-        }
-
-        .welcome-role {
-            font-family: var(--font-body);
-            font-size: 1.5rem;
-            font-weight: 400;
-            color: #2d5016;
-            margin-bottom: 3rem;
-            
-            animation: fadeInUp 1s ease-out 0.6s backwards;
-        }
-
-        .projects-button {
-            display: inline-block;
-            padding: 1rem 2.5rem;
-            font-family: var(--font-body);
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: white;
-            background: #4a7c59;
-            border: none;
-            border-radius: 14px;
-            text-decoration: none;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-            animation: fadeInUp 1s ease-out 0.7s backwards;
-        }
-
-        .projects-button:hover {
-            background: #2d5016;
-            transform: scale(1.1);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
-        }
-
-        /* Floating decorative elements */
-        .floating-element {
-            position: absolute;
-            opacity: 0.1;
-            animation: float 6s ease-in-out infinite;
-        }
-
-        .floating-element:nth-child(1) {
-            top: 10%;
-            left: 10%;
-            font-size: 5rem;
-            animation-delay: 0s;
-        }
-
-        .floating-element:nth-child(2) {
-            top: 20%;
-            right: 15%;
-            font-size: 4rem;
-            animation-delay: 1s;
-        }
-
-        .floating-element:nth-child(3) {
-            bottom: 15%;
-            left: 20%;
-            font-size: 6rem;
-            animation-delay: 2s;
-        }
-
-        .floating-element:nth-child(4) {
-            bottom: 20%;
-            right: 10%;
-            font-size: 4.5rem;
-            animation-delay: 3s;
-        }
-
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes float {
-            0%, 100% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-20px);
-            }
-        }
-
-        @media (max-width: 768px) {
-            .welcome-title {
-                font-size: 3rem;
-            }
-
-            .welcome-subtitle {
-                font-size: 1.5rem;
-            }
-
-            .welcome-name {
-                font-size: 2rem;
-            }
-
-            .welcome-role {
-                font-size: 1.2rem;
-            }
-
-            .projects-button {
-                padding: 0.8rem 2rem;
-                font-size: 1.5rem;
-            }
-
-            .floating-element {
-                font-size: 3rem !important;
-            }
-        }
-
-        /* Professional type system */
-        body {
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-        }
-
-        .welcome-subtitle {
-            font-family: var(--font-body);
-            font-size: 0.95rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.22em;
-            color: #4a7c59;
-            margin-bottom: 1rem;
-        }
-
-        .welcome-name {
-            font-family: var(--font-display);
-            font-size: 4rem;
-            font-weight: 700;
-            letter-spacing: -0.03em;
-            color: #2d5016;
-            margin-bottom: 0.6rem;
-        }
-
-        .welcome-role {
-            font-family: var(--font-display);
-            font-size: 1.35rem;
-            font-weight: 500;
-            color: #4a7c59;
-        }
-
-        .projects-button {
-            font-family: var(--font-body);
-            font-weight: 600;
-            letter-spacing: 0.01em;
-            box-shadow: 0 8px 24px rgba(45, 80, 22, 0.18);
-        }
-
-        @media (max-width: 768px) {
-            .welcome-name { font-size: 2.6rem; }
-            .welcome-role { font-size: 1.1rem; }
-            .welcome-subtitle { font-size: 0.8rem; }
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..650;1,9..144,400..650&family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="welcome-container">
-        <p class="welcome-subtitle">Hello, I'm</p>
-        <h1 class="welcome-name">Erva Şengül</h1>
-        <p class="welcome-role">Computer Engineer · AI &amp; Machine Learning</p>
-        <a href="main.html" class="projects-button">View Projects</a>
-    </div>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-nav">
+        <div class="nav-inner">
+            <a href="index.html" class="brand">Erva Şengül<span class="dot">.</span></a>
+            <nav aria-label="Primary">
+                <ul class="nav-links">
+                    <li><a href="#projects">Projects</a></li>
+                    <li class="hide-mobile"><a href="#experience">Experience</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li class="hide-mobile"><a href="#contact">Contact</a></li>
+                    <li>
+                        <a class="nav-cta" href="https://github.com/ervasengul" target="_blank" rel="noopener noreferrer">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                            GitHub
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main">
+
+        <!-- ============ Hero ============ -->
+        <section class="hero">
+            <div class="leaf-decor" style="width: 130px; top: 8%; left: -40px; transform: rotate(-25deg);" aria-hidden="true">
+                <svg viewBox="0 0 100 100"><path d="M50 5 C80 25 85 65 50 95 C15 65 20 25 50 5 Z M50 15 L50 85" stroke="currentColor" stroke-width="2" fill="none"/><path d="M50 30 L32 42 M50 45 L30 60 M50 60 L34 74 M50 30 L68 42 M50 45 L70 60 M50 60 L66 74" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
+            </div>
+            <div class="leaf-decor" style="width: 90px; bottom: 6%; right: -20px; transform: rotate(35deg);" aria-hidden="true">
+                <svg viewBox="0 0 100 100"><path d="M50 5 C80 25 85 65 50 95 C15 65 20 25 50 5 Z M50 15 L50 85" stroke="currentColor" stroke-width="2" fill="none"/><path d="M50 30 L32 42 M50 45 L30 60 M50 60 L34 74 M50 30 L68 42 M50 45 L70 60 M50 60 L66 74" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
+            </div>
+
+            <div class="container hero-grid">
+                <div>
+                    <p class="eyebrow reveal">Computer Engineer · AI &amp; Machine Learning</p>
+                    <h1 class="hero-title reveal reveal-delay-1">I build things that <em>think</em>, <em>see</em>, and <em>adapt</em>.</h1>
+                    <p class="hero-lede reveal reveal-delay-2">
+                        From fine-tuning medical language models to right-sizing Kubernetes clusters —
+                        I take ideas everyone accepts as “good enough” and make them actually make sense.
+                    </p>
+                    <div class="hero-actions reveal reveal-delay-2">
+                        <a class="btn btn-primary" href="#projects">
+                            See my work
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+                        </a>
+                        <a class="btn btn-ghost" href="https://www.linkedin.com/in/erva-%C5%9Feng%C3%BCl-016945237/" target="_blank" rel="noopener noreferrer">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                            LinkedIn
+                        </a>
+                    </div>
+                    <div class="hero-meta reveal reveal-delay-3">
+                        <span>
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                            Istanbul, Türkiye
+                        </span>
+                        <span>
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 10 12 5 2 10l10 5 10-5Z"/><path d="M6 12v5c0 1.7 2.7 3 6 3s6-1.3 6-3v-5"/></svg>
+                            B.S. Computer Engineering, Istanbul Medipol University
+                        </span>
+                        <span>
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+                            Class of 2026
+                        </span>
+                    </div>
+                </div>
+                <div class="portrait-wrap reveal reveal-delay-2">
+                    <div class="portrait-frame">
+                        <img src="images/opt/portrait.webp" alt="Painted portrait of Erva Şengül surrounded by green leaves" width="832" height="1248" fetchpriority="high">
+                    </div>
+                    <p class="portrait-caption">— Erva, somewhere between code and canvas</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ Featured projects ============ -->
+        <section id="projects" class="section">
+            <div class="container">
+                <div class="section-head reveal">
+                    <p class="eyebrow">Selected work</p>
+                    <h2 class="section-title">Projects I'm <em>proud of</em></h2>
+                    <p class="section-lede">
+                        Six projects across healthcare AI, cloud infrastructure, computer vision,
+                        numerical analysis, and embedded systems — each one built to fix a pain point
+                        everyone else had accepted as normal.
+                    </p>
+                </div>
+
+                <div class="project-list">
+
+                    <!-- 01 -->
+                    <article class="project-row reveal">
+                        <div class="project-media">
+                            <img src="images/opt/kubernetes.webp" alt="Painterly illustration of the Go gopher balancing Kubernetes workloads in the clouds" loading="lazy" width="1024" height="1024">
+                        </div>
+                        <div>
+                            <p class="project-num">01 · Graduation project</p>
+                            <h3 class="project-title">Intelligent Cluster Optimizer</h3>
+                            <p class="project-desc">
+                                A Go-based Kubernetes resource optimizer that right-sizes CPU and memory requests
+                                to cut cloud waste without risking workload stability. A statistical engine analyzes
+                                historical usage from Prometheus, and a four-layer safety framework validates every
+                                change before it lands — designed after studying where VPA, KEDA, Goldilocks,
+                                Polaris, and Karpenter fall short.
+                            </p>
+                            <ul class="tech-chips">
+                                <li>Go</li><li>Kubernetes API</li><li>Custom Operators</li><li>Prometheus</li><li>Docker</li><li>Statistical Analysis</li>
+                            </ul>
+                            <div class="project-links">
+                                <a class="link-arrow" href="https://github.com/k8s-resource-optimizer/intelligent-cluster-optimizer" target="_blank" rel="noopener noreferrer">
+                                    View the code
+                                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- 02 -->
+                    <article class="project-row reveal">
+                        <div class="project-media">
+                            <img src="images/opt/este.webp" alt="Flat illustration of orchids beside a clinical document icon" loading="lazy" width="1024" height="1024">
+                        </div>
+                        <div>
+                            <p class="project-num">02 · Healthcare AI</p>
+                            <h3 class="project-title">AI Pre-Evaluation for Medical Tourism</h3>
+                            <p class="project-desc">
+                                An AI pipeline that turns messy, multilingual clinical documents into clean,
+                                structured data. I fine-tuned MedGemma-4B with QLoRA to extract clinical
+                                information into structured JSON, paired NLLB-200 for translation, and assembled
+                                the results into a chronological clinical timeline that gives clinicians an
+                                ordered view of a patient's history before treatment planning.
+                            </p>
+                            <ul class="tech-chips">
+                                <li>Python</li><li>MedGemma-4B</li><li>QLoRA</li><li>NLLB-200</li><li>LLM Fine-Tuning</li><li>NLP</li>
+                            </ul>
+                            <div class="project-links">
+                                <a class="link-arrow" href="https://github.com/ervasengul/ai-medical-document-structuring" target="_blank" rel="noopener noreferrer">
+                                    View the code
+                                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- 03 -->
+                    <article class="project-row reveal">
+                        <div class="project-media">
+                            <img src="images/opt/billing.webp" alt="Dashboard of a healthcare billing anomaly detection system showing flagged transactions" loading="lazy" width="1176" height="668">
+                        </div>
+                        <div>
+                            <p class="project-num">03 · Healthcare AI</p>
+                            <h3 class="project-title">AI Billing Anomaly Detection</h3>
+                            <p class="project-desc">
+                                A hybrid system that flags billing anomalies and SUT rule violations in healthcare
+                                transactions. A machine-learning model learns normal billing patterns while a
+                                deterministic rule engine encodes regulatory billing rules — catching both
+                                statistical outliers and explicit policy breaches, and cutting manual review effort.
+                            </p>
+                            <ul class="tech-chips">
+                                <li>Python</li><li>Machine Learning</li><li>Rule Engine</li><li>Anomaly Detection</li><li>Healthcare Data</li>
+                            </ul>
+                            <div class="project-links">
+                                <span class="badge-note">Built during my internship at Medipol · private codebase</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- 04 -->
+                    <article class="project-row reveal">
+                        <div class="project-media">
+                            <img src="images/opt/emotion.webp" alt="The emotion recognition game running on a large screen at the TEKNOFEST stand" loading="lazy" width="1400" height="788">
+                        </div>
+                        <div>
+                            <p class="project-num">04 · TEKNOFEST 2025</p>
+                            <h3 class="project-title">Real-Time Emotion Recognition</h3>
+                            <p class="project-desc">
+                                A TEKNOFEST 2025 project that detects and classifies seven facial expressions in
+                                real time from a live webcam feed. Built on a CNN trained on facial-expression
+                                datasets, with an OpenCV pipeline for face tracking in multi-person scenes —
+                                delivered as an interactive, timed game with scoring and leaderboards that ran
+                                smoothly on standard hardware at the festival stand.
+                            </p>
+                            <ul class="tech-chips">
+                                <li>Python</li><li>TensorFlow</li><li>Keras</li><li>OpenCV</li><li>CNN</li><li>Computer Vision</li>
+                            </ul>
+                            <div class="project-links">
+                                <a class="link-arrow" href="https://github.com/ervasengul/real_time_emotion_recognition" target="_blank" rel="noopener noreferrer">
+                                    View the code
+                                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- 05 -->
+                    <article class="project-row reveal">
+                        <div class="project-media">
+                            <img src="images/opt/weather.webp" alt="Painterly illustration of clouds, a rainbow, and weather data over a map" loading="lazy" width="1024" height="1024">
+                        </div>
+                        <div>
+                            <p class="project-num">05 · Numerical analysis</p>
+                            <h3 class="project-title">Weather Forecast Interpolation</h3>
+                            <p class="project-desc">
+                                Reconstructing and forecasting weather trends from NOAA meteorological data.
+                                I implemented and compared interpolation methods — linear, polynomial, and cubic
+                                splines — alongside time-series decomposition with Fourier analysis and
+                                autocorrelation to separate trend, seasonal, and residual components.
+                            </p>
+                            <ul class="tech-chips">
+                                <li>Python</li><li>NumPy</li><li>pandas</li><li>SciPy</li><li>Cubic Splines</li><li>Fourier Analysis</li>
+                            </ul>
+                            <div class="project-links">
+                                <a class="link-arrow" href="https://github.com/ervasengul/Numerical-Analysis-Cubic-Splines-in-Pythonc-Interpolation" target="_blank" rel="noopener noreferrer">
+                                    View the code
+                                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- 06 -->
+                    <article class="project-row reveal">
+                        <div class="project-media">
+                            <img src="images/opt/battery.webp" alt="Breadboard circuit with an LCD showing battery voltage 13.3V and status OK" loading="lazy" width="1200" height="551">
+                        </div>
+                        <div>
+                            <p class="project-num">06 · Embedded systems</p>
+                            <h3 class="project-title">Car Battery Voltage Monitor</h3>
+                            <p class="project-desc">
+                                An embedded system on a PIC16F877A that monitors car battery voltage in real time
+                                and shows readings plus a health status (GOOD / OK / LOW / CRITICAL) on an LCD.
+                                I designed a voltage-divider circuit to safely scale the 8–15&nbsp;V battery range
+                                to the ADC's 0–5&nbsp;V input, and wrote the firmware in embedded C.
+                            </p>
+                            <ul class="tech-chips">
+                                <li>PIC16F877A</li><li>Embedded C</li><li>MPLAB X</li><li>ADC</li><li>LCD Interfacing</li><li>Circuit Design</li>
+                            </ul>
+                            <div class="project-links">
+                                <a class="link-arrow" href="https://github.com/ervasengul/car-battery-voltage-monitoring" target="_blank" rel="noopener noreferrer">
+                                    View the code
+                                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ Also on GitHub ============ -->
+        <section id="github" class="section section-band">
+            <div class="container">
+                <div class="section-head centered reveal">
+                    <p class="eyebrow centered">The full shelf</p>
+                    <h2 class="section-title">Also on <em>GitHub</em></h2>
+                    <p class="section-lede">
+                        Coursework, systems programming, and experiments — the fundamentals behind the bigger projects.
+                    </p>
+                </div>
+
+                <div class="repo-grid">
+                    <a class="repo-card reveal" href="https://github.com/ervasengul/ck_dataset_project" target="_blank" rel="noopener noreferrer">
+                        <span class="repo-name">ck_dataset_project <span class="arrow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></span></span>
+                        <span class="repo-desc">Experiments with the CK+ facial-expression dataset — groundwork for the emotion-recognition project.</span>
+                        <span class="repo-lang"><span class="lang-dot lang-python"></span>Python</span>
+                    </a>
+                    <a class="repo-card reveal" href="https://github.com/ervasengul/CSMA_CD" target="_blank" rel="noopener noreferrer">
+                        <span class="repo-name">CSMA_CD <span class="arrow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></span></span>
+                        <span class="repo-desc">Simulation of the CSMA/CD medium-access protocol from computer networks.</span>
+                        <span class="repo-lang"><span class="lang-dot lang-python"></span>Python</span>
+                    </a>
+                    <a class="repo-card reveal" href="https://github.com/ervasengul/ASP.NET-core-MVC-example" target="_blank" rel="noopener noreferrer">
+                        <span class="repo-name">ASP.NET-core-MVC-example <span class="arrow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></span></span>
+                        <span class="repo-desc">An example web application built with ASP.NET Core MVC.</span>
+                        <span class="repo-lang"><span class="lang-dot lang-csharp"></span>C#</span>
+                    </a>
+                    <a class="repo-card reveal" href="https://github.com/ervasengul/CustomCommandLine-in-C" target="_blank" rel="noopener noreferrer">
+                        <span class="repo-name">CustomCommandLine-in-C <span class="arrow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></span></span>
+                        <span class="repo-desc">A custom shell with command execution and process management.</span>
+                        <span class="repo-lang"><span class="lang-dot lang-c"></span>C</span>
+                    </a>
+                    <a class="repo-card reveal" href="https://github.com/ervasengul/Matter-of-life-and-death-game-in-C-" target="_blank" rel="noopener noreferrer">
+                        <span class="repo-name">Matter-of-life-and-death <span class="arrow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></span></span>
+                        <span class="repo-desc">A Josephus-problem simulation built on process creation.</span>
+                        <span class="repo-lang"><span class="lang-dot lang-c"></span>C</span>
+                    </a>
+                    <a class="repo-card reveal" href="https://github.com/ervasengul/Dcitonary-Merging-in-C" target="_blank" rel="noopener noreferrer">
+                        <span class="repo-name">Dictionary-Merging-in-C <span class="arrow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></span></span>
+                        <span class="repo-desc">Merging dictionaries via binary search tree conversion.</span>
+                        <span class="repo-lang"><span class="lang-dot lang-c"></span>C</span>
+                    </a>
+                    <a class="repo-card reveal" href="https://github.com/ervasengul/Turkish-to-English-Dictionary-in-C" target="_blank" rel="noopener noreferrer">
+                        <span class="repo-name">Turkish-to-English-Dictionary <span class="arrow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></span></span>
+                        <span class="repo-desc">A menu-driven Turkish–English dictionary management utility.</span>
+                        <span class="repo-lang"><span class="lang-dot lang-c"></span>C</span>
+                    </a>
+                    <a class="repo-card reveal" href="https://github.com/ervasengul/Circular-Matrix-in-C-" target="_blank" rel="noopener noreferrer">
+                        <span class="repo-name">Circular-Matrix-in-C <span class="arrow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></span></span>
+                        <span class="repo-desc">2D matrix generation with circular row shifting.</span>
+                        <span class="repo-lang"><span class="lang-dot lang-c"></span>C</span>
+                    </a>
+                    <a class="repo-card reveal" href="https://github.com/ervasengul/XOXO-game-in-C" target="_blank" rel="noopener noreferrer">
+                        <span class="repo-name">XOXO-game-in-C <span class="arrow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></span></span>
+                        <span class="repo-desc">A tic-tac-toe variant with row and column win detection.</span>
+                        <span class="repo-lang"><span class="lang-dot lang-c"></span>C</span>
+                    </a>
+                    <a class="repo-card reveal" href="https://github.com/ervasengul/Paint-Calculator-in-JAVA" target="_blank" rel="noopener noreferrer">
+                        <span class="repo-name">Paint-Calculator-in-JAVA <span class="arrow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></span></span>
+                        <span class="repo-desc">Shape-based paint cost calculation using inheritance.</span>
+                        <span class="repo-lang"><span class="lang-dot lang-java"></span>Java</span>
+                    </a>
+                    <a class="repo-card reveal" href="https://github.com/ervasengul/DB-PROJECT" target="_blank" rel="noopener noreferrer">
+                        <span class="repo-name">DB-PROJECT <span class="arrow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></span></span>
+                        <span class="repo-desc">Web front end for a database course project.</span>
+                        <span class="repo-lang"><span class="lang-dot lang-html"></span>HTML</span>
+                    </a>
+                    <a class="repo-card reveal" href="https://github.com/ervasengul?tab=repositories" target="_blank" rel="noopener noreferrer">
+                        <span class="repo-name">All repositories <span class="arrow"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></span></span>
+                        <span class="repo-desc">Browse everything else — including whatever I pushed last night.</span>
+                        <span class="repo-lang"><span class="lang-dot" style="background: var(--green);"></span>github.com/ervasengul</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ Experience ============ -->
+        <section id="experience" class="section">
+            <div class="container">
+                <div class="section-head centered reveal">
+                    <p class="eyebrow centered">Where I've been</p>
+                    <h2 class="section-title">Experience</h2>
+                </div>
+
+                <div class="timeline">
+                    <div class="timeline-item reveal">
+                        <p class="timeline-date">Aug – Oct 2025</p>
+                        <h3 class="timeline-role">Software Engineer Intern</h3>
+                        <p class="timeline-org">Medipol Healthcare Group · Istanbul</p>
+                        <p class="timeline-desc">
+                            Worked in a hospital group's technology team on AI and data solutions for healthcare
+                            workflows — machine-learning approaches to billing anomaly detection and processing
+                            of clinical documents.
+                        </p>
+                    </div>
+                    <div class="timeline-item reveal">
+                        <p class="timeline-date">2025</p>
+                        <h3 class="timeline-role">Competitor, TEKNOFEST 2025</h3>
+                        <p class="timeline-org">TEKNOFEST — Turkey's national aerospace &amp; technology festival</p>
+                        <p class="timeline-desc">
+                            Competed with a real-time facial emotion recognition system built on convolutional
+                            neural networks and computer vision, presented live as an interactive game.
+                        </p>
+                    </div>
+                    <div class="timeline-item reveal">
+                        <p class="timeline-date">Mar – May 2025</p>
+                        <h3 class="timeline-role">Engineering Program Participant</h3>
+                        <p class="timeline-org">TEI — TUSAŞ Engine Industries</p>
+                        <p class="timeline-desc">
+                            Selected for a competitive engineering program at one of Turkey's leading aerospace
+                            organizations, gaining exposure to real-world engineering practice.
+                        </p>
+                    </div>
+                    <div class="timeline-item reveal">
+                        <p class="timeline-date">Sep – Oct 2024</p>
+                        <h3 class="timeline-role">Software Engineer Intern</h3>
+                        <p class="timeline-org">Conovel IT</p>
+                        <p class="timeline-desc">
+                            Contributed to web and software development projects, working across the stack
+                            within a professional development team.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ About ============ -->
+        <section id="about" class="section section-band">
+            <div class="container">
+                <div class="section-head reveal">
+                    <p class="eyebrow">Behind the code</p>
+                    <h2 class="section-title">A little about <em>me</em></h2>
+                </div>
+
+                <div class="about-grid">
+                    <div class="about-copy reveal">
+                        <p>
+                            I'm a Computer Engineering student at Istanbul Medipol University (B.S., English),
+                            graduating in June 2026 and heading toward a US master's at the intersection of
+                            <strong>AI and business</strong>. My world revolves around three things: AI applied
+                            to healthcare, cloud infrastructure and Kubernetes, and computer vision.
+                        </p>
+                        <blockquote class="pull-quote">
+                            The iPhone wasn't the first smartphone. Tesla wasn't the first electric car.
+                            Kubernetes wasn't the first orchestrator. They were all just done <em>better</em>.
+                        </blockquote>
+                        <p>
+                            That's what I'm after — not building something first, but building something that
+                            actually makes sense. Identifying the pain points everyone accepts as normal, and
+                            addressing them. I want to work on things that move the needle — places where
+                            “good enough” isn't good enough.
+                        </p>
+                        <p style="margin-top: 1.6rem;">
+                            <a class="link-arrow" href="about.html">
+                                The full story &amp; my skill set
+                                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                            </a>
+                        </p>
+                    </div>
+
+                    <div class="side-cards">
+                        <div class="side-card reveal reveal-delay-1">
+                            <h3>Current focus</h3>
+                            <ul class="focus-list">
+                                <li>LLM fine-tuning for clinical data (QLoRA, MedGemma)</li>
+                                <li>Kubernetes resource optimization in Go</li>
+                                <li>Real-time computer vision</li>
+                                <li>Applying to US master's programs</li>
+                            </ul>
+                        </div>
+                        <div class="side-card reveal reveal-delay-2">
+                            <h3>Currently reading</h3>
+                            <p class="book-title">The Phoenix Project</p>
+                            <p class="book-author">Gene Kim, Kevin Behr &amp; George Spafford</p>
+                            <p style="margin-top: 0.8rem;"><a href="#contact">Got a suggestion? Tell me →</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ Contact ============ -->
+        <section id="contact" class="section">
+            <div class="container contact-wrap">
+                <p class="eyebrow centered reveal">Reach out</p>
+                <h2 class="contact-title reveal reveal-delay-1">Working on something interesting? <em>Let's talk.</em></h2>
+                <p class="contact-lede reveal reveal-delay-2">
+                    Whether it's an internship, a research idea, or a project that needs
+                    someone who won't settle for “good enough” — my inbox is open.
+                </p>
+                <div class="contact-actions reveal reveal-delay-2">
+                    <a class="btn btn-primary email-link" href="#">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                        Email me
+                    </a>
+                    <a class="btn btn-ghost" href="https://www.linkedin.com/in/erva-%C5%9Feng%C3%BCl-016945237/" target="_blank" rel="noopener noreferrer">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                        LinkedIn
+                    </a>
+                    <a class="btn btn-ghost" href="https://github.com/ervasengul" target="_blank" rel="noopener noreferrer">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                        GitHub
+                    </a>
+                </div>
+                <p class="contact-note reveal reveal-delay-3">Or write directly: <a class="email-link email-text" href="#"></a></p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <p class="footer-brand">Erva Şengül<span class="dot">.</span></p>
+            <div class="footer-social">
+                <a href="https://github.com/ervasengul" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                    <svg viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                </a>
+                <a href="https://www.linkedin.com/in/erva-%C5%9Feng%C3%BCl-016945237/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                    <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                </a>
+                <a href="#" class="email-link" aria-label="Email">
+                    <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                </a>
+            </div>
+            <p class="footer-meta">
+                Designed &amp; built by Erva Şengül · © <span class="footer-year">2026</span><br>
+                <a href="https://www.ervasengul.com">www.ervasengul.com</a>
+            </p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
