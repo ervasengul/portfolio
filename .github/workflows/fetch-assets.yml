@@ -1,0 +1,33 @@
+name: Fetch illustration assets
+
+# One-off helper: downloads the generated illustrations, converts them to WebP
+# and commits them to the branch the workflow is run on.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install Pillow
+        run: pip install --quiet pillow
+
+      - name: Download and convert
+        run: python3 scripts/fetch_illustrations.py
+
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add images/illustrations
+          git commit -m "Add illustrated hero and project covers" || echo "nothing to commit"
+          git push
