@@ -3,36 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://d8j0ntlcm91z4.cloudfront.net; script-src 'self'; frame-ancestors 'none'; base-uri 'self'; upgrade-insecure-requests;">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; script-src 'self'; frame-ancestors 'none'; base-uri 'self'; upgrade-insecure-requests;">
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <title>Erva Şengül — Computer Engineer</title>
-    <meta name="description" content="Erva Şengül — computer engineer working on AI in healthcare, Kubernetes resource optimization, and computer vision. Istanbul, Türkiye.">
-    <meta name="theme-color" content="#0d0e0b">
+    <meta name="description" content="Erva Şengül — computer engineering student in Istanbul working on cloud infrastructure, applied AI and mobile products. Published on arXiv; building Yedik, a social dining app.">
+    <meta name="theme-color" content="#f8f6f1">
     <meta property="og:title" content="Erva Şengül — Computer Engineer">
-    <meta property="og:description" content="AI in healthcare · Kubernetes · computer vision. Engineer of things that think, see & adapt.">
+    <meta property="og:description" content="Cloud infrastructure · applied AI · mobile. Computer engineering student in Istanbul, class of 2026.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.ervasengul.com/">
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230d0e0b'/%3E%3Ctext x='32' y='46' font-family='Arial,sans-serif' font-weight='bold' font-size='40' fill='%23c8f169' text-anchor='middle'%3EE%3C/text%3E%3C/svg%3E">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23f8f6f1'/%3E%3Ctext x='32' y='47' font-family='Georgia,serif' font-size='42' fill='%231b1b19' text-anchor='middle'%3EE%3C/text%3E%3C/svg%3E">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;1,6..96,400&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <a class="skip-link" href="#work">Skip to content</a>
+    <a class="skip-link" href="#projects">Skip to content</a>
 
     <header class="site-nav">
-        <div class="nav-inner">
-            <a href="index.html" class="brand">Erva Şengül<em>&nbsp;©26</em></a>
+        <div class="container nav-inner">
+            <a href="index.html" class="brand">Erva Şengül</a>
+            <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nav-links"><span></span></button>
             <nav aria-label="Primary">
-                <ul class="nav-links">
-                    <li><a href="#work">Work<span class="sup">6</span></a></li>
-                    <li class="hide-mobile"><a href="#archive">Archive</a></li>
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#yedik">Yedik</a></li>
                     <li><a href="#about">About</a></li>
-                    <li class="hide-mobile"><a href="#experience">Experience</a></li>
+                    <li><a href="#experience">Experience</a></li>
                     <li><a href="#contact">Contact</a></li>
-                    <li><a href="CVLER/Erva_Sengul_Resume.pdf" target="_blank" rel="noopener noreferrer">CV</a></li>
+                    <li><a class="btn btn-ghost" href="CVLER/Erva_Sengul_Resume.pdf" target="_blank" rel="noopener noreferrer">Résumé</a></li>
                 </ul>
             </nav>
         </div>
@@ -42,269 +43,398 @@
 
         <!-- ================= HERO ================= -->
         <section class="hero">
-            <div class="container hero-top">
-                <p class="mono reveal">Portfolio <span class="tick">/</span> Vol. 03</p>
-                <p class="mono reveal">Istanbul, Türkiye <span class="tick">·</span> 41.01° N, 28.97° E</p>
-            </div>
-
-            <div class="container hero-name-block" aria-label="Erva Şengül">
-                <h1 class="hero-name">
-                    <span class="row reveal"><span>Erva</span><span class="serif reveal reveal-delay-2">— computer engineer</span></span>
-                    <span class="row indent reveal reveal-delay-1"><span class="outline">Şengül</span></span>
-                </h1>
-            </div>
-
-            <div class="container hero-sub">
-                <p class="hero-statement reveal">
-                    I engineer things that <span class="hl">think</span>, <span class="hl">see</span>
-                    &amp; <span class="hl">adapt</span> — AI for healthcare, Kubernetes that stops
-                    wasting money, and vision systems that run in real time.
-                </p>
-                <div class="hero-status reveal reveal-delay-1">
-                    <span class="status-pill"><span class="dot"></span> Open to opportunities</span>
-                    <p class="mono">B.S. Computer Engineering · Class of 2026</p>
+            <div class="container hero-grid">
+                <div>
+                    <p class="mono hero-eyebrow">Computer Engineering · Istanbul Medipol University · Class of 2026</p>
+                    <h1 class="hero-title">Erva Şengül</h1>
+                    <p class="hero-role">Computer engineer in infrastructure, applied AI &amp; mobile</p>
+                    <p class="hero-lead">
+                        I build software end to end: a Kubernetes cost optimizer that became a
+                        published paper, clinical-document pipelines with fine-tuned language models,
+                        and Yedik — a social dining app for Istanbul that I'm taking to the App Store.
+                    </p>
+                    <div class="hero-actions">
+                        <a class="btn btn-solid" href="#projects">View projects <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12l7 7 7-7"/></svg></a>
+                        <a class="btn btn-ghost" href="CVLER/Erva_Sengul_Resume.pdf" target="_blank" rel="noopener noreferrer">Résumé (PDF) <svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+                    </div>
                 </div>
-            </div>
 
-            <div class="marquee" aria-hidden="true">
-                <div class="marquee-track">
-                    <span>AI in Healthcare</span><span class="star">✦</span>
-                    <span>Kubernetes</span><span class="star">✦</span>
-                    <span>Computer Vision</span><span class="star">✦</span>
-                    <span>LLM Fine-Tuning</span><span class="star">✦</span>
-                    <span>Embedded Systems</span><span class="star">✦</span>
-                    <span>Numerical Analysis</span><span class="star">✦</span>
+                <aside class="hero-card" aria-label="At a glance">
+                    <p class="mono">At a glance</p>
+                    <ul class="spec-list">
+                        <li><span class="k">Status</span><span class="v"><span class="status-dot"></span>Graduating June 2026 · open to opportunities</span></li>
+                        <li><span class="k">Based in</span><span class="v">Istanbul, Türkiye</span></li>
+                        <li><span class="k">Focus</span><span class="v">Cloud &amp; DevOps · Applied AI · Mobile</span></li>
+                        <li><span class="k">Paper</span><span class="v"><a href="https://arxiv.org/abs/2607.26503" target="_blank" rel="noopener noreferrer">Safety-Gated Autoscaling — arXiv:2607.26503</a></span></li>
+                        <li><span class="k">Building</span><span class="v"><a href="#yedik">Yedik: The App</a> — social dining, Istanbul</span></li>
+                        <li><span class="k">Stack</span><span class="v">Go · Python · React Native · Kubernetes · PostgreSQL</span></li>
+                    </ul>
+                </aside>
+            </div>
+        </section>
+
+        <!-- ================= PROJECTS ================= -->
+        <section id="projects" class="section">
+            <div class="container">
+                <div class="section-head reveal">
+                    <h2 class="section-title">Selected Projects<span class="count">06 · 2024 — 2026</span></h2>
+                    <p class="section-sub">Real photos where the project ran in the real world; system diagrams where it lives in code.</p>
                 </div>
-                <div class="marquee-track">
-                    <span>AI in Healthcare</span><span class="star">✦</span>
-                    <span>Kubernetes</span><span class="star">✦</span>
-                    <span>Computer Vision</span><span class="star">✦</span>
-                    <span>LLM Fine-Tuning</span><span class="star">✦</span>
-                    <span>Embedded Systems</span><span class="star">✦</span>
-                    <span>Numerical Analysis</span><span class="star">✦</span>
+
+                <div class="project-grid">
+
+                    <!-- 01 Cluster Optimizer -->
+                    <article class="project reveal">
+                        <figure class="project-media" aria-label="Diagram: metrics from Prometheus flow through a statistical engine and four safety gates before Kubernetes resources are right-sized; a chart shows requested versus actual usage.">
+                            <svg class="diagram" viewBox="0 0 600 400" role="img">
+                                <text class="t-title" x="24" y="34">Vertical right-sizing pipeline</text>
+                                <text class="t-sub" x="24" y="50">GKE · Go operator · 1,118 tests · 80.3% coverage</text>
+
+                                <rect class="box" x="24" y="70" width="118" height="54" rx="8"/>
+                                <text class="t-strong" x="83" y="93" text-anchor="middle">Prometheus</text>
+                                <text class="t-sub" x="83" y="109" text-anchor="middle">usage history</text>
+
+                                <path class="arrow" d="M142 97h20"/><path class="arrow-head" d="M162 93l8 4-8 4z"/>
+
+                                <rect class="box" x="170" y="70" width="128" height="54" rx="8"/>
+                                <text class="t-strong" x="234" y="93" text-anchor="middle">Statistical engine</text>
+                                <text class="t-sub" x="234" y="109" text-anchor="middle">Holt-Winters · p95</text>
+
+                                <path class="arrow" d="M298 97h20"/><path class="arrow-head" d="M318 93l8 4-8 4z"/>
+
+                                <rect class="box-accent" x="326" y="70" width="128" height="54" rx="8"/>
+                                <text class="t-strong" x="390" y="93" text-anchor="middle">4 safety gates</text>
+                                <text class="t-sub" x="390" y="109" text-anchor="middle">memory-leak check</text>
+
+                                <path class="arrow" d="M454 97h20"/><path class="arrow-head" d="M474 93l8 4-8 4z"/>
+
+                                <rect class="box" x="482" y="70" width="94" height="54" rx="8"/>
+                                <text class="t-strong" x="529" y="93" text-anchor="middle">Kubernetes</text>
+                                <text class="t-sub" x="529" y="109" text-anchor="middle">new requests</text>
+
+                                <!-- chart: requested vs actual -->
+                                <g>
+                                    <path class="grid" d="M40 160H560M40 205H560M40 250H560M40 300H560"/>
+                                    <path class="fill-waste" d="M40 160H560V192.1H40Z"/>
+                                    <path class="fill-accent" d="M40.0 249.0 L46.6 239.4 L53.2 225.8 L59.7 218.4 L66.3 213.0 L72.9 216.4 L79.5 224.2 L86.1 224.0 L92.7 227.5 L99.2 222.9 L105.8 219.5 L112.4 213.3 L119.0 201.0 L125.6 208.5 L132.2 208.4 L138.7 214.0 L145.3 214.8 L151.9 226.6 L158.5 242.2 L165.1 254.3 L171.6 264.7 L178.2 266.9 L184.8 269.8 L191.4 264.4 L198.0 267.7 L204.6 269.5 L211.1 269.6 L217.7 285.9 L224.3 289.5 L230.9 299.7 L237.5 297.5 L244.1 298.1 L250.6 296.1 L257.2 289.5 L263.8 282.3 L270.4 270.1 L277.0 258.2 L283.5 249.9 L290.1 248.5 L296.7 254.8 L303.3 246.9 L309.9 250.4 L316.5 248.0 L323.0 234.1 L329.6 231.1 L336.2 225.5 L342.8 202.1 L349.4 201.2 L355.9 198.5 L362.5 196.7 L369.1 207.1 L375.7 212.5 L382.3 215.1 L388.9 231.1 L395.4 234.7 L402.0 237.3 L408.6 238.8 L415.2 233.7 L421.8 233.4 L428.4 231.3 L434.9 246.3 L441.5 251.8 L448.1 264.7 L454.7 273.3 L461.3 284.1 L467.8 291.5 L474.4 300.1 L481.0 284.3 L487.6 281.6 L494.2 283.1 L500.8 283.9 L507.3 278.9 L513.9 270.1 L520.5 270.2 L527.1 284.2 L533.7 280.3 L540.3 275.8 L546.8 277.2 L553.4 267.1 L560.0 250.6 L560 300 L40 300 Z"/>
+                                    <path class="line-dashed" d="M40 160H560"/>
+                                    <path class="line-accent" d="M40 192.1H560"/>
+                                    <path class="line-muted" d="M40.0 249.0 L46.6 239.4 L53.2 225.8 L59.7 218.4 L66.3 213.0 L72.9 216.4 L79.5 224.2 L86.1 224.0 L92.7 227.5 L99.2 222.9 L105.8 219.5 L112.4 213.3 L119.0 201.0 L125.6 208.5 L132.2 208.4 L138.7 214.0 L145.3 214.8 L151.9 226.6 L158.5 242.2 L165.1 254.3 L171.6 264.7 L178.2 266.9 L184.8 269.8 L191.4 264.4 L198.0 267.7 L204.6 269.5 L211.1 269.6 L217.7 285.9 L224.3 289.5 L230.9 299.7 L237.5 297.5 L244.1 298.1 L250.6 296.1 L257.2 289.5 L263.8 282.3 L270.4 270.1 L277.0 258.2 L283.5 249.9 L290.1 248.5 L296.7 254.8 L303.3 246.9 L309.9 250.4 L316.5 248.0 L323.0 234.1 L329.6 231.1 L336.2 225.5 L342.8 202.1 L349.4 201.2 L355.9 198.5 L362.5 196.7 L369.1 207.1 L375.7 212.5 L382.3 215.1 L388.9 231.1 L395.4 234.7 L402.0 237.3 L408.6 238.8 L415.2 233.7 L421.8 233.4 L428.4 231.3 L434.9 246.3 L441.5 251.8 L448.1 264.7 L454.7 273.3 L461.3 284.1 L467.8 291.5 L474.4 300.1 L481.0 284.3 L487.6 281.6 L494.2 283.1 L500.8 283.9 L507.3 278.9 L513.9 270.1 L520.5 270.2 L527.1 284.2 L533.7 280.3 L540.3 275.8 L546.8 277.2 L553.4 267.1 L560.0 250.6"/>
+                                    <text class="t-sub" x="44" y="153">requested (before) — 2.0 CPU</text>
+                                    <text class="t-accent" x="44" y="186">right-sized (after) — 1.2 CPU</text>
+                                    <text class="t-sub" x="560" y="176" text-anchor="end">↓ 20–40% cost on GKE</text>
+                                    <text class="t-sub" x="44" y="316">actual usage · 7 days</text>
+                                </g>
+
+                                <g>
+                                    <rect class="chip" x="24" y="340" width="150" height="26" rx="13"/>
+                                    <text x="99" y="357" text-anchor="middle">1,118 automated tests</text>
+                                    <rect class="chip" x="184" y="340" width="130" height="26" rx="13"/>
+                                    <text x="249" y="357" text-anchor="middle">80.3% coverage</text>
+                                    <rect class="chip" x="324" y="340" width="176" height="26" rx="13"/>
+                                    <text x="412" y="357" text-anchor="middle">published · arXiv 2607.26503</text>
+                                </g>
+                            </svg>
+                        </figure>
+                        <div class="project-meta">
+                            <span class="mono">01 · Cloud infrastructure</span>
+                            <span class="mono">Go · Kubernetes · 2026</span>
+                        </div>
+                        <h3 class="project-title"><a href="https://github.com/medipol-srg/intelligent-cluster-optimizer" target="_blank" rel="noopener noreferrer">Intelligent Cluster Optimizer</a></h3>
+                        <p class="project-desc">
+                            My graduation project, now a <strong>published arXiv paper</strong>. A Go operator reads
+                            container usage history from Prometheus, forecasts demand with Holt-Winters and
+                            right-sizes Kubernetes resource requests — every change passes four safety gates,
+                            including a memory-leak check, before it is applied. It cut cost by
+                            <strong>20–40% on GKE</strong> in evaluation.
+                        </p>
+                        <ul class="tags"><li>Go</li><li>Kubernetes API</li><li>Custom Operator</li><li>Prometheus</li><li>Holt-Winters</li><li>Docker</li></ul>
+                        <div class="project-links">
+                            <a class="u-link" href="https://github.com/medipol-srg/intelligent-cluster-optimizer" target="_blank" rel="noopener noreferrer">Source code <svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+                            <a class="u-link" href="https://arxiv.org/abs/2607.26503" target="_blank" rel="noopener noreferrer">Read the paper <svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+                        </div>
+                    </article>
+
+                    <!-- 02 Yedik -->
+                    <article class="project reveal reveal-delay-1">
+                        <figure class="project-media">
+                            <img src="images/work/yedik-cover.webp" alt="Three screens of the Yedik app: the feed of friends' ratings, the welcome screen, and a ranked list of visited restaurants" loading="lazy" width="1500" height="1000">
+                        </figure>
+                        <div class="project-meta">
+                            <span class="mono">02 · Mobile product</span>
+                            <span class="mono">React Native · Go · 2026</span>
+                        </div>
+                        <h3 class="project-title"><a href="#yedik">Yedik: The App</a></h3>
+                        <p class="project-desc">
+                            A social restaurant-rating app for Istanbul, built end to end: <strong>Go API</strong>,
+                            <strong>React Native</strong> client, PostgreSQL with 225,000+ venues, and a GitHub Actions
+                            pipeline that tests and ships every push. Your feed shows only the people you follow —
+                            no algorithm, no ads.
+                        </p>
+                        <ul class="tags"><li>React Native</li><li>Expo</li><li>Go</li><li>PostgreSQL</li><li>Docker</li><li>GitHub Actions</li></ul>
+                        <div class="project-links">
+                            <a class="u-link" href="#yedik">See the app <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12l7 7 7-7"/></svg></a>
+                            <span class="note">Private repository · App Store launch in preparation</span>
+                        </div>
+                    </article>
+
+                    <!-- 03 Medical Document AI -->
+                    <article class="project reveal">
+                        <figure class="project-media" aria-label="Diagram: multilingual clinical documents are translated with NLLB-200, chunked, and passed to a QLoRA fine-tuned MedGemma model that outputs structured JSON and a clinical timeline.">
+                            <svg class="diagram" viewBox="0 0 600 400" role="img">
+                                <text class="t-title" x="24" y="34">Clinical document structuring</text>
+                                <text class="t-sub" x="24" y="50">multilingual PDFs &amp; scans → structured, chronological data</text>
+
+                                <!-- left: pipeline steps -->
+                                <rect class="box" x="24" y="76" width="220" height="48" rx="8"/>
+                                <text class="t-strong" x="40" y="96">1 · Clinical documents</text>
+                                <text class="t-sub" x="40" y="112">PDF · scan · TR / AR / RU / EN</text>
+                                <path class="arrow" d="M134 124v14"/><path class="arrow-head" d="M130 138l4 8 4-8z"/>
+
+                                <rect class="box" x="24" y="148" width="220" height="48" rx="8"/>
+                                <text class="t-strong" x="40" y="168">2 · Translate</text>
+                                <text class="t-sub" x="40" y="184">NLLB-200 · 200 languages → English</text>
+                                <path class="arrow" d="M134 196v14"/><path class="arrow-head" d="M130 210l4 8 4-8z"/>
+
+                                <rect class="box" x="24" y="220" width="220" height="48" rx="8"/>
+                                <text class="t-strong" x="40" y="240">3 · Chunk &amp; prompt</text>
+                                <text class="t-sub" x="40" y="256">section-aware chunks · schema prompt</text>
+                                <path class="arrow" d="M134 268v14"/><path class="arrow-head" d="M130 282l4 8 4-8z"/>
+
+                                <rect class="box-accent" x="24" y="292" width="220" height="48" rx="8"/>
+                                <text class="t-strong" x="40" y="312">4 · Extract</text>
+                                <text class="t-sub" x="40" y="328">MedGemma-4B · QLoRA fine-tuned</text>
+
+                                <path class="arrow" d="M244 316h34"/><path class="arrow-head" d="M278 312l8 4-8 4z"/>
+
+                                <!-- right: structured output -->
+                                <rect class="box" x="290" y="76" width="286" height="176" rx="8"/>
+                                <text class="t-sub" x="306" y="98">output.json</text>
+                                <text x="306" y="120"><tspan class="t-accent">"patient_age"</tspan>: 54,</text>
+                                <text x="306" y="138"><tspan class="t-accent">"diagnoses"</tspan>: ["Type 2 diabetes", ...],</text>
+                                <text x="306" y="156"><tspan class="t-accent">"medications"</tspan>: [{ "name": "Metformin",</text>
+                                <text x="306" y="174">                  "dose": "500 mg" }],</text>
+                                <text x="306" y="192"><tspan class="t-accent">"procedures"</tspan>: ["Coronary angiography"],</text>
+                                <text x="306" y="210"><tspan class="t-accent">"lab_results"</tspan>: [{ "HbA1c": "7.8%" }],</text>
+                                <text x="306" y="228"><tspan class="t-accent">"dates"</tspan>: ["2024-03-12", "2024-06-30"]</text>
+
+                                <!-- timeline -->
+                                <text class="t-sub" x="290" y="284">clinical timeline</text>
+                                <path class="arrow" d="M300 312H566"/>
+                                <circle class="dot-accent" cx="316" cy="312" r="4"/>
+                                <circle class="dot-accent" cx="402" cy="312" r="4"/>
+                                <circle class="dot-accent" cx="470" cy="312" r="4"/>
+                                <circle class="dot-accent" cx="548" cy="312" r="4"/>
+                                <text class="t-sub" x="316" y="334" text-anchor="middle">diagnosis</text>
+                                <text class="t-sub" x="402" y="334" text-anchor="middle">lab</text>
+                                <text class="t-sub" x="470" y="334" text-anchor="middle">procedure</text>
+                                <text class="t-sub" x="548" y="334" text-anchor="middle">follow-up</text>
+
+                                <rect class="chip" x="24" y="354" width="200" height="26" rx="13"/>
+                                <text x="124" y="371" text-anchor="middle">medical-tourism pre-evaluation</text>
+                            </svg>
+                        </figure>
+                        <div class="project-meta">
+                            <span class="mono">03 · Healthcare NLP</span>
+                            <span class="mono">Python · MedGemma · 2025</span>
+                        </div>
+                        <h3 class="project-title"><a href="https://github.com/ervasengul/ai-medical-document-structuring" target="_blank" rel="noopener noreferrer">Medical Document AI</a></h3>
+                        <p class="project-desc">
+                            Turns messy, multilingual clinical documents into clean structured data for
+                            medical-tourism pre-evaluation. I <strong>fine-tuned MedGemma-4B with QLoRA</strong> to
+                            extract diagnoses, medications, procedures and dates into JSON, paired it with
+                            NLLB-200 for translation, and assembled the output into a chronological timeline
+                            clinicians can read at a glance.
+                        </p>
+                        <ul class="tags"><li>Python</li><li>MedGemma-4B</li><li>QLoRA</li><li>NLLB-200</li><li>Hugging Face</li></ul>
+                        <div class="project-links">
+                            <a class="u-link" href="https://github.com/ervasengul/ai-medical-document-structuring" target="_blank" rel="noopener noreferrer">Source code <svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+                        </div>
+                    </article>
+
+                    <!-- 04 Emotion Recognition -->
+                    <article class="project reveal reveal-delay-1">
+                        <figure class="project-media">
+                            <img src="images/work/emotion.webp" alt="The TEKNOFEST 2025 stand: a large screen running the emotion-recognition game with a live webcam feed and leaderboard, a tripod-mounted camera and a laptop" loading="lazy" width="1500" height="1000">
+                        </figure>
+                        <div class="project-meta">
+                            <span class="mono">04 · Computer vision</span>
+                            <span class="mono">TEKNOFEST · CNN · 2025</span>
+                        </div>
+                        <h3 class="project-title"><a href="https://github.com/ervasengul/real_time_emotion_recognition" target="_blank" rel="noopener noreferrer">Real-Time Emotion Recognition</a></h3>
+                        <p class="project-desc">
+                            Detects and classifies <strong>seven facial expressions in real time</strong> from a
+                            webcam: a CNN trained on facial-expression datasets, an OpenCV pipeline for
+                            multi-person face tracking, and a timed game with scoring and a leaderboard. Ran
+                            live for visitors at our TEKNOFEST 2025 stand — that's it in the photo.
+                        </p>
+                        <ul class="tags"><li>Python</li><li>TensorFlow</li><li>Keras</li><li>OpenCV</li><li>CNN</li></ul>
+                        <div class="project-links">
+                            <a class="u-link" href="https://github.com/ervasengul/real_time_emotion_recognition" target="_blank" rel="noopener noreferrer">Source code <svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+                        </div>
+                    </article>
+
+                    <!-- 05 Weather Interpolation -->
+                    <article class="project reveal">
+                        <figure class="project-media" aria-label="Chart: NOAA temperature samples with a smooth cubic-spline curve fitted through them, compared against straight linear segments.">
+                            <svg class="diagram" viewBox="0 0 600 400" role="img">
+                                <text class="t-title" x="24" y="34">Cubic-spline interpolation of NOAA data</text>
+                                <text class="t-sub" x="24" y="50">daily temperature · linear vs. cubic spline · trend / seasonal / residual</text>
+
+                                <path class="grid" d="M50 80H560M50 135H560M50 190H560M50 245H560M50 300H560"/>
+                                <text class="t-sub" x="44" y="84" text-anchor="end">30°</text>
+                                <text class="t-sub" x="44" y="194" text-anchor="end">20°</text>
+                                <text class="t-sub" x="44" y="304" text-anchor="end">10°</text>
+
+                                <path class="line-dashed" d="M50 236 L110 190 L175 205 L235 150 L300 120 L360 160 L425 132 L490 96 L550 118"/>
+                                <path class="line-accent" d="M50.0 236.0 L54.3 231.3 L58.6 226.6 L62.9 222.0 L67.1 217.5 L71.4 213.2 L75.7 209.1 L80.0 205.3 L84.3 201.8 L88.6 198.7 L92.9 196.0 L97.1 193.7 L101.4 191.9 L105.7 190.7 L110.0 190.0 L114.6 190.0 L119.3 190.5 L123.9 191.6 L128.6 193.1 L133.2 194.9 L137.9 196.9 L142.5 198.9 L147.1 200.8 L151.8 202.6 L156.4 204.1 L161.1 205.2 L165.7 205.8 L170.4 205.8 L175.0 205.0 L179.3 203.6 L183.6 201.5 L187.9 198.8 L192.1 195.6 L196.4 192.0 L200.7 188.0 L205.0 183.6 L209.3 179.1 L213.6 174.3 L217.9 169.4 L222.1 164.4 L226.4 159.5 L230.7 154.7 L235.0 150.0 L239.6 145.2 L244.3 140.6 L248.9 136.4 L253.6 132.5 L258.2 129.0 L262.9 126.0 L267.5 123.3 L272.1 121.2 L276.8 119.5 L281.4 118.4 L286.1 117.9 L290.7 118.0 L295.4 118.6 L300.0 120.0 L304.3 121.8 L308.6 124.2 L312.9 127.0 L317.1 130.0 L321.4 133.4 L325.7 136.9 L330.0 140.4 L334.3 144.0 L338.6 147.4 L342.9 150.7 L347.1 153.6 L351.4 156.2 L355.7 158.4 L360.0 160.0 L364.6 161.1 L369.3 161.4 L373.9 161.2 L378.6 160.4 L383.2 159.0 L387.9 157.2 L392.5 155.0 L397.1 152.4 L401.8 149.4 L406.4 146.3 L411.1 142.9 L415.7 139.3 L420.4 135.7 L425.0 132.0 L429.6 128.3 L434.3 124.7 L438.9 121.1 L443.6 117.6 L448.2 114.3 L452.9 111.1 L457.5 108.1 L462.1 105.4 L466.8 103.0 L471.4 100.8 L476.1 99.0 L480.7 97.6 L485.4 96.6 L490.0 96.0 L494.3 95.9 L498.6 96.1 L502.9 96.7 L507.1 97.7 L511.4 98.9 L515.7 100.3 L520.0 102.0 L524.3 103.9 L528.6 106.0 L532.9 108.2 L537.1 110.6 L541.4 113.0 L545.7 115.5 L550.0 118.0"/>
+                                <g class="dot">
+                                    <circle cx="50" cy="236" r="4"/><circle cx="110" cy="190" r="4"/><circle cx="175" cy="205" r="4"/>
+                                    <circle cx="235" cy="150" r="4"/><circle cx="300" cy="120" r="4"/><circle cx="360" cy="160" r="4"/>
+                                    <circle cx="425" cy="132" r="4"/><circle cx="490" cy="96" r="4"/><circle cx="550" cy="118" r="4"/>
+                                </g>
+                                <text class="t-sub" x="50" y="322">day 1</text>
+                                <text class="t-sub" x="550" y="322" text-anchor="end">day 30</text>
+
+                                <g>
+                                    <circle class="dot" cx="32" cy="356" r="4"/>
+                                    <text x="44" y="360">NOAA samples</text>
+                                    <path class="line-accent" d="M150 356h22"/>
+                                    <text x="180" y="360">cubic spline (C² smooth)</text>
+                                    <path class="line-dashed" d="M356 356h22"/>
+                                    <text x="386" y="360">linear interpolation</text>
+                                </g>
+                            </svg>
+                        </figure>
+                        <div class="project-meta">
+                            <span class="mono">05 · Numerical analysis</span>
+                            <span class="mono">Python · SciPy · 2025</span>
+                        </div>
+                        <h3 class="project-title"><a href="https://github.com/ervasengul/Numerical-Analysis-Cubic-Splines-in-Pythonc-Interpolation" target="_blank" rel="noopener noreferrer">Weather Interpolation</a></h3>
+                        <p class="project-desc">
+                            Reconstructs and forecasts weather trends from NOAA meteorological data. I implemented
+                            and compared <strong>linear, polynomial and cubic-spline interpolation</strong>, then
+                            separated trend, seasonal and residual components with time-series decomposition,
+                            Fourier analysis and autocorrelation.
+                        </p>
+                        <ul class="tags"><li>Python</li><li>NumPy</li><li>SciPy</li><li>Cubic Splines</li><li>Fourier Analysis</li></ul>
+                        <div class="project-links">
+                            <a class="u-link" href="https://github.com/ervasengul/Numerical-Analysis-Cubic-Splines-in-Pythonc-Interpolation" target="_blank" rel="noopener noreferrer">Source code <svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+                        </div>
+                    </article>
+
+                    <!-- 06 Battery Monitor -->
+                    <article class="project reveal reveal-delay-1">
+                        <figure class="project-media">
+                            <img src="images/work/battery.webp" alt="The working prototype on a breadboard: a PIC microcontroller wired to an LCD reading 'Battery: 13.3V — Status: OK', powered from a bench supply" loading="lazy" width="1500" height="1000">
+                        </figure>
+                        <div class="project-meta">
+                            <span class="mono">06 · Embedded systems</span>
+                            <span class="mono">PIC16F877A · C · 2024</span>
+                        </div>
+                        <h3 class="project-title"><a href="https://github.com/ervasengul/car-battery-voltage-monitoring" target="_blank" rel="noopener noreferrer">Car Battery Monitor</a></h3>
+                        <p class="project-desc">
+                            An embedded system on a PIC16F877A that reads car-battery voltage in real time and
+                            reports a health status (GOOD / OK / LOW / CRITICAL) on an LCD. I designed the
+                            <strong>voltage-divider circuit</strong> that scales the 8–15&nbsp;V range into the ADC's
+                            0–5&nbsp;V input and wrote the firmware in embedded C — the photo is the prototype
+                            reading 13.3&nbsp;V on the bench.
+                        </p>
+                        <ul class="tags"><li>PIC16F877A</li><li>Embedded C</li><li>MPLAB X</li><li>ADC</li><li>Circuit Design</li></ul>
+                        <div class="project-links">
+                            <a class="u-link" href="https://github.com/ervasengul/car-battery-voltage-monitoring" target="_blank" rel="noopener noreferrer">Source code <svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+                        </div>
+                    </article>
+
                 </div>
             </div>
         </section>
 
-        <!-- ================= SELECTED WORK ================= -->
-        <section id="work" class="section">
+        <!-- ================= YEDIK ================= -->
+        <section id="yedik" class="section yedik">
             <div class="container">
-                <div class="section-head reveal">
-                    <h2 class="section-title">Selected Work<span class="count">(07)</span></h2>
-                    <p class="mono">2024 — 2026</p>
+                <div class="yedik-head reveal">
+                    <p class="mono">Yedik: The App · 2026 · Founder &amp; sole developer</p>
+                    <h2 class="yedik-title">Where your friends ate, <em>and how much they liked it.</em></h2>
+                    <p class="yedik-tagline">
+                        A social restaurant-rating app for Istanbul. No algorithm, no ads, no sponsored
+                        spots: your feed is only the people you follow.
+                    </p>
                 </div>
 
-                <div class="work-list">
-
-                    <div class="work-item reveal" data-preview="cluster">
-                        <button class="work-row" aria-expanded="false">
-                            <span class="work-num">01</span>
-                            <span class="work-title">Cluster Optimizer</span>
-                            <span class="work-meta">Cloud Infrastructure<small>Go · Kubernetes · Published on arXiv</small></span>
-                            <span class="work-toggle"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
-                        </button>
-                        <div class="work-panel"><div class="work-panel-inner">
-                            <div class="work-case">
-                                <div class="case-body">
-                                    <p class="case-desc">
-                                        My graduation project, <strong>published as a research paper on arXiv</strong>:
-                                        a Go-based Kubernetes optimizer that achieved <strong>20–40% cost savings on
-                                        GKE</strong> through ML-driven vertical right-sizing. A statistical engine with
-                                        Holt-Winters forecasting reads historical usage from Prometheus, and a
-                                        four-layer safety framework with memory-leak gating validates every change —
-                                        backed by 1,118 automated tests at 80.3% coverage.
-                                    </p>
-                                    <ul class="case-tags"><li>Go</li><li>Kubernetes API</li><li>Custom Operators</li><li>Prometheus</li><li>Holt-Winters</li><li>Docker</li></ul>
-                                    <div class="case-links">
-                                        <a class="u-link" href="https://github.com/medipol-srg/intelligent-cluster-optimizer" target="_blank" rel="noopener noreferrer">View code <svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
-                                        <a class="u-link" href="https://arxiv.org/abs/2607.26503" target="_blank" rel="noopener noreferrer">Read the paper <svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
-                                    </div>
-                                </div>
-                                <div class="case-media"><img src="images/work/01-cluster.webp" alt="Abstract render of dark containers balanced on luminous chartreuse lines" loading="lazy" width="1216" height="810"></div>
-                            </div>
-                        </div></div>
-                    </div>
-
-                    <div class="work-item reveal" data-preview="medical">
-                        <button class="work-row" aria-expanded="false">
-                            <span class="work-num">02</span>
-                            <span class="work-title">Medical Document AI</span>
-                            <span class="work-meta">Healthcare NLP<small>MedGemma · QLoRA · 2025</small></span>
-                            <span class="work-toggle"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
-                        </button>
-                        <div class="work-panel"><div class="work-panel-inner">
-                            <div class="work-case">
-                                <div class="case-body">
-                                    <p class="case-desc">
-                                        An AI pipeline that turns messy, multilingual clinical documents into clean,
-                                        structured data for medical-tourism pre-evaluation. I
-                                        <strong>fine-tuned MedGemma-4B with QLoRA</strong> to extract clinical
-                                        information into structured JSON, paired NLLB-200 for translation, and
-                                        assembled the output into a chronological clinical timeline for clinicians.
-                                    </p>
-                                    <ul class="case-tags"><li>Python</li><li>MedGemma-4B</li><li>QLoRA</li><li>NLLB-200</li><li>NLP</li></ul>
-                                    <div class="case-links">
-                                        <a class="u-link" href="https://github.com/ervasengul/ai-medical-document-structuring" target="_blank" rel="noopener noreferrer">View code <svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
-                                    </div>
-                                </div>
-                                <div class="case-media"><img src="images/work/02-medical.webp" alt="Abstract render of glass document sheets dissolving into ordered particles" loading="lazy" width="1216" height="810"></div>
-                            </div>
-                        </div></div>
-                    </div>
-
-                    <div class="work-item reveal" data-preview="billing">
-                        <button class="work-row" aria-expanded="false">
-                            <span class="work-num">03</span>
-                            <span class="work-title">Billing Anomaly Detection</span>
-                            <span class="work-meta">Applied ML<small>Python · Rule Engine · 2025</small></span>
-                            <span class="work-toggle"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
-                        </button>
-                        <div class="work-panel"><div class="work-panel-inner">
-                            <div class="work-case">
-                                <div class="case-body">
-                                    <p class="case-desc">
-                                        A hybrid system that flags billing anomalies and SUT rule violations in
-                                        healthcare transactions. A machine-learning model learns normal billing
-                                        patterns while a <strong>deterministic rule engine</strong> encodes regulatory
-                                        rules — catching both statistical outliers and explicit policy breaches, and
-                                        cutting manual review effort.
-                                    </p>
-                                    <ul class="case-tags"><li>Python</li><li>Machine Learning</li><li>Rule Engine</li><li>Anomaly Detection</li></ul>
-                                    <div class="case-links">
-                                        <span class="case-note">Internship work at Medipol — private codebase</span>
-                                    </div>
-                                </div>
-                                <div class="case-media"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_3Ih5RksuIE9koNwGBrvsdqW8kld/hf_20260927_105819_f50dc03c-a9c8-4634-a681-a00711ed5f3d_min.webp" alt="Abstract render of a dark grid with a single glowing anomalous cube" loading="lazy" width="1280" height="832"></div>
-                            </div>
-                        </div></div>
-                    </div>
-
-                    <div class="work-item reveal" data-preview="emotion">
-                        <button class="work-row" aria-expanded="false">
-                            <span class="work-num">04</span>
-                            <span class="work-title">Emotion Recognition</span>
-                            <span class="work-meta">Computer Vision<small>TEKNOFEST · CNN · 2025</small></span>
-                            <span class="work-toggle"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
-                        </button>
-                        <div class="work-panel"><div class="work-panel-inner">
-                            <div class="work-case">
-                                <div class="case-body">
-                                    <p class="case-desc">
-                                        A TEKNOFEST 2025 project that detects and classifies
-                                        <strong>seven facial expressions in real time</strong> from a live webcam
-                                        feed. A CNN trained on facial-expression datasets, an OpenCV pipeline for
-                                        multi-person face tracking, and an interactive timed game with scoring and
-                                        leaderboards — running smoothly on standard hardware at the festival stand.
-                                    </p>
-                                    <ul class="case-tags"><li>Python</li><li>TensorFlow</li><li>Keras</li><li>OpenCV</li><li>CNN</li></ul>
-                                    <div class="case-links">
-                                        <a class="u-link" href="https://github.com/ervasengul/real_time_emotion_recognition" target="_blank" rel="noopener noreferrer">View code <svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
-                                    </div>
-                                </div>
-                                <div class="case-media"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_3Ih5RksuIE9koNwGBrvsdqW8kld/hf_20260927_105820_e9b7dc34-0709-4754-a254-e032b87233d9_min.webp" alt="Abstract wireframe of a face formed by glowing points and lines" loading="lazy" width="1280" height="832"></div>
-                            </div>
-                        </div></div>
-                    </div>
-
-                    <div class="work-item reveal" data-preview="weather">
-                        <button class="work-row" aria-expanded="false">
-                            <span class="work-num">05</span>
-                            <span class="work-title">Weather Interpolation</span>
-                            <span class="work-meta">Numerical Analysis<small>NOAA Data · SciPy · 2025</small></span>
-                            <span class="work-toggle"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
-                        </button>
-                        <div class="work-panel"><div class="work-panel-inner">
-                            <div class="work-case">
-                                <div class="case-body">
-                                    <p class="case-desc">
-                                        Reconstructing and forecasting weather trends from NOAA meteorological data.
-                                        I implemented and compared <strong>linear, polynomial and cubic-spline
-                                        interpolation</strong>, alongside time-series decomposition with Fourier
-                                        analysis and autocorrelation to separate trend, seasonal and residual
-                                        components.
-                                    </p>
-                                    <ul class="case-tags"><li>Python</li><li>NumPy</li><li>SciPy</li><li>Cubic Splines</li><li>Fourier Analysis</li></ul>
-                                    <div class="case-links">
-                                        <a class="u-link" href="https://github.com/ervasengul/Numerical-Analysis-Cubic-Splines-in-Pythonc-Interpolation" target="_blank" rel="noopener noreferrer">View code <svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
-                                    </div>
-                                </div>
-                                <div class="case-media"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_3Ih5RksuIE9koNwGBrvsdqW8kld/hf_20260927_105819_ffd642ae-eae1-426a-a62b-c70e0eed7ee0_min.webp" alt="Abstract render of smooth flowing spline curves over a dark surface" loading="lazy" width="1280" height="832"></div>
-                            </div>
-                        </div></div>
-                    </div>
-
-                    <div class="work-item reveal" data-preview="battery">
-                        <button class="work-row" aria-expanded="false">
-                            <span class="work-num">06</span>
-                            <span class="work-title">Battery Monitor</span>
-                            <span class="work-meta">Embedded Systems<small>PIC16F877A · C · 2024</small></span>
-                            <span class="work-toggle"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
-                        </button>
-                        <div class="work-panel"><div class="work-panel-inner">
-                            <div class="work-case">
-                                <div class="case-body">
-                                    <p class="case-desc">
-                                        An embedded system on a PIC16F877A that monitors car battery voltage in real
-                                        time and reports a health status (GOOD / OK / LOW / CRITICAL) on an LCD.
-                                        I designed a <strong>voltage-divider circuit</strong> to safely scale the
-                                        8–15&nbsp;V battery range to the ADC's 0–5&nbsp;V input and wrote the firmware
-                                        in embedded C.
-                                    </p>
-                                    <ul class="case-tags"><li>PIC16F877A</li><li>Embedded C</li><li>MPLAB X</li><li>ADC</li><li>Circuit Design</li></ul>
-                                    <div class="case-links">
-                                        <a class="u-link" href="https://github.com/ervasengul/car-battery-voltage-monitoring" target="_blank" rel="noopener noreferrer">View code <svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
-                                    </div>
-                                </div>
-                                <div class="case-media"><img src="images/work/06-battery.webp" alt="Abstract macro render of a dark circuit board with one glowing trace" loading="lazy" width="1216" height="810"></div>
-                            </div>
-                        </div></div>
-                    </div>
-
-
-                    <div class="work-item reveal" data-preview="yedik">
-                        <button class="work-row" aria-expanded="false">
-                            <span class="work-num">07</span>
-                            <span class="work-title">Yedik</span>
-                            <span class="work-meta">Social Dining App<small>React Native · Go · 2026</small></span>
-                            <span class="work-toggle"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
-                        </button>
-                        <div class="work-panel"><div class="work-panel-inner">
-                            <div class="work-case">
-                                <div class="case-body">
-                                    <p class="case-desc">
-                                        A social restaurant-rating app for Istanbul that I built end to end. Your
-                                        feed only shows ratings from people you follow — no algorithm, no ads, no
-                                        sponsored spots. Rate a place out of ten with a note and a photo, keep two
-                                        lists (visited, sorted by rating, and want-to-go), and add new spots from
-                                        the map across <strong>225,000+ Istanbul venues</strong>. Behind it: a
-                                        <strong>Go API</strong> (chi, pgx, sqlc) and a <strong>React Native / Expo</strong>
-                                        app, with a <strong>GitHub Actions pipeline</strong> that vets, tests and
-                                        builds the API, type-checks and tests the mobile app, builds the Docker
-                                        image and generates the marketing site on every push — deployed on a
-                                        single Hetzner server behind Caddy and Cloudflare.
-                                    </p>
-                                    <ul class="case-tags"><li>React Native</li><li>Expo Router</li><li>Go</li><li>PostgreSQL</li><li>GitHub Actions</li><li>Docker</li></ul>
-                                    <div class="case-links">
-                                        <span class="case-note">Private repository · preparing for App Store launch</span>
-                                    </div>
-                                </div>
-                                <div class="case-media"><img src="images/work/07-yedik.webp" alt="Abstract render of a location pin and rating star connected by glowing chartreuse lines" loading="lazy" width="1280" height="832"></div>
-                            </div>
-                        </div></div>
-                    </div>
-
+                <!-- Screens: swap these files in images/work/yedik/ to update the gallery -->
+                <div class="screens reveal">
+                    <figure><img src="images/work/yedik/00-kapak.webp" alt="Yedik welcome screen: 'Where your friends ate, how much they liked it'" loading="lazy" width="600" height="1300"><figcaption class="mono">Welcome</figcaption></figure>
+                    <figure><img src="images/work/yedik/01-akis.webp" alt="Feed of restaurants rated by people you follow, each with a score out of ten" loading="lazy" width="600" height="1300"><figcaption class="mono">Feed</figcaption></figure>
+                    <figure><img src="images/work/yedik/02-kayit.webp" alt="A single rating: photo of the meal, the venue, a 9.4 score and a short note" loading="lazy" width="600" height="1300"><figcaption class="mono">Rating</figcaption></figure>
+                    <figure><img src="images/work/yedik/03-listelerim.webp" alt="Ranked list of visited venues, sorted by rating" loading="lazy" width="600" height="1300"><figcaption class="mono">Lists</figcaption></figure>
+                    <figure><img src="images/work/yedik/04-profil.webp" alt="Profile screen with visited count, followers, following and a grid of ratings" loading="lazy" width="600" height="1300"><figcaption class="mono">Profile</figcaption></figure>
                 </div>
-            </div>
 
-            <!-- floating hover preview -->
-            <div class="work-preview" aria-hidden="true">
-                <img data-key="cluster" src="images/work/01-cluster.webp" alt="" loading="lazy">
-                <img data-key="medical" src="images/work/02-medical.webp" alt="" loading="lazy">
-                <img data-key="yedik" src="images/work/07-yedik.webp" alt="" loading="lazy">
-                <img data-key="billing" src="https://d8j0ntlcm91z4.cloudfront.net/user_3Ih5RksuIE9koNwGBrvsdqW8kld/hf_20260927_105819_f50dc03c-a9c8-4634-a681-a00711ed5f3d_min.webp" alt="" loading="lazy">
-                <img data-key="emotion" src="https://d8j0ntlcm91z4.cloudfront.net/user_3Ih5RksuIE9koNwGBrvsdqW8kld/hf_20260927_105820_e9b7dc34-0709-4754-a254-e032b87233d9_min.webp" alt="" loading="lazy">
-                <img data-key="weather" src="https://d8j0ntlcm91z4.cloudfront.net/user_3Ih5RksuIE9koNwGBrvsdqW8kld/hf_20260927_105819_ffd642ae-eae1-426a-a62b-c70e0eed7ee0_min.webp" alt="" loading="lazy">
-                <img data-key="battery" src="images/work/06-battery.webp" alt="" loading="lazy">
+                <div class="yedik-body">
+                    <div class="yedik-copy reveal">
+                        <p>
+                            Rate a place out of ten with a note and a photo. Keep two lists — visited, sorted by
+                            rating, and want-to-go. Add new spots from a map that already knows
+                            <strong>225,000+ Istanbul venues</strong> (Foursquare Open Source Places). Share a
+                            rating as a story card, follow friends, get notified when they post.
+                        </p>
+                        <p>
+                            I built every layer myself: the <strong>Go API</strong> (chi, pgx, sqlc, goose migrations,
+                            JWT auth), the <strong>React Native / Expo</strong> app, the PostgreSQL schema, the
+                            Docker Compose deployment on a Hetzner server behind Caddy and Cloudflare, and the
+                            <strong>CI/CD pipeline</strong> that vets, tests and builds everything on each push.
+                        </p>
+                        <ul class="tags"><li>Go 1.25</li><li>chi · pgx · sqlc</li><li>PostgreSQL 17</li><li>React Native 0.86</li><li>Expo Router</li><li>TypeScript</li><li>Docker Compose</li><li>Caddy</li><li>Cloudflare</li><li>GitHub Actions</li></ul>
+                        <span class="note">Private repository · closed beta · App Store launch in preparation</span>
+                    </div>
+
+                    <div class="built reveal reveal-delay-1">
+                        <div>
+                            <h3>Backend</h3>
+                            <ul>
+                                <li>REST API in Go with chi</li>
+                                <li>Type-safe SQL via sqlc + pgx</li>
+                                <li>Versioned migrations (goose)</li>
+                                <li>JWT auth, follow graph, feed</li>
+                                <li>Venue search over 225k places</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>Mobile</h3>
+                            <ul>
+                                <li>React Native + Expo Router</li>
+                                <li>Feed, rating, lists, map, search</li>
+                                <li>Photo upload &amp; story-card share</li>
+                                <li>Push notifications</li>
+                                <li>Turkish-first UI, custom type</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>Infra &amp; CI/CD</h3>
+                            <ul>
+                                <li>Docker Compose: Postgres + API + Caddy</li>
+                                <li>Single Hetzner VM, Cloudflare in front</li>
+                                <li>Static marketing site → Cloudflare Pages</li>
+                                <li>Automated TLS, backups, health checks</li>
+                                <li>GitHub Actions on every push</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="pipeline reveal reveal-delay-2" aria-label="CI/CD pipeline steps">
+                        <span class="mono label">GitHub Actions · on every push</span>
+                        <span class="step push">git push</span><span class="sep">→</span>
+                        <span class="step">go vet</span><span class="sep">→</span>
+                        <span class="step">go test</span><span class="sep">→</span>
+                        <span class="step">go build</span><span class="sep">→</span>
+                        <span class="step">tsc --noEmit</span><span class="sep">→</span>
+                        <span class="step">jest</span><span class="sep">→</span>
+                        <span class="step">docker build</span><span class="sep">→</span>
+                        <span class="step">web build.sh</span><span class="sep">→</span>
+                        <span class="step">deploy</span>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -312,8 +442,8 @@
         <section id="archive" class="section">
             <div class="container">
                 <div class="section-head reveal">
-                    <h2 class="section-title">Archive<span class="count">(11)</span></h2>
-                    <p class="mono">Coursework · Systems · Experiments</p>
+                    <h2 class="section-title">Archive<span class="count">11 more repositories</span></h2>
+                    <p class="section-sub">Coursework, systems programming and small experiments — all public on GitHub.</p>
                 </div>
 
                 <ul class="archive-list reveal">
@@ -387,7 +517,7 @@
 
                 <p class="archive-cta reveal">
                     <a class="u-link" href="https://github.com/ervasengul?tab=repositories" target="_blank" rel="noopener noreferrer">
-                        Everything on GitHub <svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg>
+                        All repositories on GitHub <svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg>
                     </a>
                 </p>
             </div>
@@ -401,76 +531,73 @@
                     <p class="mono">Erva Şengül · Istanbul</p>
                 </div>
 
-                <p class="about-statement reveal">
-                    The iPhone wasn't the first smartphone. Kubernetes wasn't the first orchestrator.
-                    <span class="hl">They were just done better</span> — and that's the work I'm interested in.
-                </p>
-
-                <div class="about-cols">
+                <div class="about-grid">
                     <figure class="about-photo reveal">
-                        <!-- Portrait slot: replace the placeholder with images/portrait.jpg when ready -->
+                        <!-- Photo slot: drop images/portrait.jpg in and replace this placeholder with
+                             <img src="images/portrait.jpg" alt="Erva Şengül" width="800" height="1000"> -->
                         <div class="placeholder">
                             <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-6.5 8-6.5s8 2.5 8 6.5"/></svg>
-                            <span class="mono">Portrait — coming soon</span>
+                            <span class="mono">Photo — coming soon</span>
                         </div>
                     </figure>
 
                     <div class="about-copy reveal reveal-delay-1">
                         <p>
                             I'm a Computer Engineering student at <strong>Istanbul Medipol University</strong>
-                            (B.S., English), graduating June 2026 and heading toward a US master's at the
-                            intersection of <em>AI and business</em>.
+                            (B.S., English track), graduating in June 2026, and planning a master's in the US
+                            at the intersection of AI and business.
                         </p>
                         <p>
-                            My world revolves around three things: AI applied to healthcare, cloud infrastructure
-                            and Kubernetes, and computer vision. I've fine-tuned large language models to turn
-                            messy multilingual clinical documents into structured data, built a Go-based
-                            Kubernetes optimizer that cuts cloud waste safely — now a
+                            I like the whole stack: I've written a Go operator that right-sizes Kubernetes
+                            workloads — now a
                             <a href="https://arxiv.org/abs/2607.26503" target="_blank" rel="noopener noreferrer">published research paper</a> —
-                            and trained neural networks that recognize facial expressions in real time.
+                            fine-tuned language models to structure clinical documents at Medipol Healthcare
+                            Group, trained CNNs that recognise facial expressions live at TEKNOFEST, and I'm
+                            currently shipping <a href="#yedik">Yedik</a>, a mobile app with its own API, database,
+                            deployment and CI/CD pipeline.
                         </p>
                         <p>
-                            What I'm after isn't building something first — it's building something that actually
-                            makes sense. Finding the pain points everyone accepts as normal, and refusing to.
+                            What I'm after is not building something first, but building it so it actually
+                            makes sense — finding the pain points everyone accepts as normal and fixing them.
                         </p>
 
                         <div class="cap-groups">
                             <div class="cap-group">
-                                <h3>AI / ML</h3>
+                                <h3>Cloud &amp; DevOps</h3>
                                 <ul>
-                                    <li>LLM Fine-Tuning · QLoRA</li>
-                                    <li>Deep Learning · CNNs</li>
-                                    <li>NLP · Computer Vision</li>
-                                    <li>TensorFlow · PyTorch</li>
-                                    <li>OpenCV · Scikit-learn</li>
+                                    <li>Kubernetes · GKE · Operators</li>
+                                    <li>Docker · Docker Compose</li>
+                                    <li>GitHub Actions · CI/CD</li>
+                                    <li>Prometheus · Caddy · Cloudflare</li>
+                                    <li>Linux administration</li>
                                 </ul>
                             </div>
                             <div class="cap-group">
-                                <h3>Cloud / Systems</h3>
+                                <h3>AI / ML</h3>
                                 <ul>
-                                    <li>Kubernetes · GKE</li>
-                                    <li>Go · Custom Operators</li>
-                                    <li>Docker · Prometheus</li>
-                                    <li>Linux Administration</li>
-                                    <li>Embedded C · PIC · ESP32</li>
+                                    <li>LLM fine-tuning · QLoRA</li>
+                                    <li>Deep learning · CNNs</li>
+                                    <li>NLP · Computer vision</li>
+                                    <li>TensorFlow · PyTorch</li>
+                                    <li>OpenCV · scikit-learn</li>
                                 </ul>
                             </div>
                             <div class="cap-group">
                                 <h3>Software</h3>
                                 <ul>
-                                    <li>Python · Go · C# · C</li>
-                                    <li>SQL · JavaScript</li>
+                                    <li>Go · Python · TypeScript · C</li>
+                                    <li>React Native · Expo</li>
+                                    <li>PostgreSQL · SQL · sqlc</li>
                                     <li>ASP.NET Core · Django</li>
-                                    <li>MySQL · SQL Server</li>
-                                    <li>Git · GitHub</li>
+                                    <li>Embedded C · PIC · ESP32</li>
                                 </ul>
                             </div>
                         </div>
 
                         <ul class="fact-list">
                             <li><span class="k">Education</span><span class="v">B.S. Computer Engineering — Istanbul Medipol University, 2026</span></li>
-                            <li><span class="k">Based in</span><span class="v">Istanbul, Türkiye</span></li>
                             <li><span class="k">Publication</span><span class="v"><a href="https://arxiv.org/abs/2607.26503" target="_blank" rel="noopener noreferrer">Safety-Gated Autoscaling — arXiv:2607.26503, 2026</a></span></li>
+                            <li><span class="k">Competitions</span><span class="v">TEKNOFEST 2025 · TEI engineering program 2025</span></li>
                             <li><span class="k">Currently reading</span><span class="v">The Phoenix Project — Kim, Behr &amp; Spafford</span></li>
                             <li><span class="k">Résumé</span><span class="v"><a href="CVLER/Erva_Sengul_Resume.pdf" target="_blank" rel="noopener noreferrer">Download (PDF)</a></span></li>
                         </ul>
@@ -489,19 +616,24 @@
 
                 <ul class="xp-list">
                     <li class="xp-row reveal">
+                        <span class="xp-date">2026 — Present</span>
+                        <span class="xp-role">Founder &amp; Developer<small>Yedik: The App</small></span>
+                        <span class="xp-desc">Designing, building and operating a social dining app for Istanbul end to end — Go API, React Native client, PostgreSQL, Docker deployment on Hetzner, and a GitHub Actions CI/CD pipeline. Preparing the App Store launch.</span>
+                    </li>
+                    <li class="xp-row reveal">
                         <span class="xp-date">Aug — Oct 2025</span>
                         <span class="xp-role">Software Engineer Intern<small>Medipol Healthcare Group</small></span>
-                        <span class="xp-desc">AI and data solutions for healthcare workflows — ML-based billing anomaly detection, clinical document processing and IPAM modules for international patient operations, including time at the group's London office.</span>
+                        <span class="xp-desc">AI and data solutions for healthcare workflows — clinical document processing with fine-tuned language models and IPAM modules for international patient operations, including time at the group's London office.</span>
                     </li>
                     <li class="xp-row reveal">
                         <span class="xp-date">2025</span>
                         <span class="xp-role">Competitor<small>TEKNOFEST 2025</small></span>
-                        <span class="xp-desc">Real-time facial emotion recognition system, presented live as an interactive game at Turkey's national aerospace &amp; technology festival.</span>
+                        <span class="xp-desc">Real-time facial emotion recognition system, presented live as an interactive game at Türkiye's national aerospace &amp; technology festival.</span>
                     </li>
                     <li class="xp-row reveal">
                         <span class="xp-date">Mar — May 2025</span>
                         <span class="xp-role">Engineering Program<small>TEI — TUSAŞ Engine Industries</small></span>
-                        <span class="xp-desc">Selected for a competitive engineering program at one of Turkey's leading aerospace organizations.</span>
+                        <span class="xp-desc">Selected for a competitive engineering program at one of Türkiye's leading aerospace organisations.</span>
                     </li>
                     <li class="xp-row reveal">
                         <span class="xp-date">Sep — Oct 2024</span>
@@ -513,28 +645,33 @@
         </section>
 
         <!-- ================= CONTACT ================= -->
-        <section id="contact" class="section contact">
-            <div class="container">
-                <p class="mono contact-kicker reveal">Have an idea worth doing <span class="tick">better?</span></p>
-                <h2 class="contact-title reveal">
-                    <a class="email-link" href="mailto:ervasengul4@gmail.com">Let's <span class="outline">Talk</span></a>
-                </h2>
-                <p class="reveal reveal-delay-1"><a class="contact-email email-link email-text" href="mailto:ervasengul4@gmail.com">ervasengul4@gmail.com</a></p>
-                <div class="contact-row reveal reveal-delay-2">
-                    <a class="u-link" href="CVLER/Erva_Sengul_Resume.pdf" target="_blank" rel="noopener noreferrer">Résumé <svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
-                    <a class="u-link" href="https://github.com/ervasengul" target="_blank" rel="noopener noreferrer">GitHub <svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
-                    <a class="u-link" href="https://www.linkedin.com/in/erva-%C5%9Feng%C3%BCl-016945237/" target="_blank" rel="noopener noreferrer">LinkedIn <svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
-                    <a class="u-link email-link" href="mailto:ervasengul4@gmail.com">Email <svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+        <section id="contact" class="section">
+            <div class="container contact-grid">
+                <div class="reveal">
+                    <p class="mono">Contact</p>
+                    <h2 class="contact-title">Let's build something <em>that makes sense.</em></h2>
+                    <p class="contact-lead">
+                        Internships, new-grad roles, research collaborations or a coffee in Istanbul —
+                        my inbox is open.
+                    </p>
+                    <a class="contact-email email-link email-text" href="mailto:ervasengul4@gmail.com">ervasengul4@gmail.com</a>
                 </div>
+                <ul class="contact-links reveal reveal-delay-1">
+                    <li><a class="email-link" href="mailto:ervasengul4@gmail.com">Email <span>ervasengul4@gmail.com</span><svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></a></li>
+                    <li><a href="https://github.com/ervasengul" target="_blank" rel="noopener noreferrer">GitHub <span>@ervasengul</span><svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></a></li>
+                    <li><a href="https://www.linkedin.com/in/erva-%C5%9Feng%C3%BCl-016945237/" target="_blank" rel="noopener noreferrer">LinkedIn <span>erva-şengül</span><svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></a></li>
+                    <li><a href="https://arxiv.org/abs/2607.26503" target="_blank" rel="noopener noreferrer">arXiv <span>2607.26503</span><svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></a></li>
+                    <li><a href="CVLER/Erva_Sengul_Resume.pdf" target="_blank" rel="noopener noreferrer">Résumé <span>PDF</span><svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></a></li>
+                </ul>
             </div>
         </section>
 
     </main>
 
     <footer class="site-footer">
-        <div class="footer-inner">
+        <div class="container footer-inner">
             <p class="mono">© <span class="footer-year">2026</span> Erva Şengül</p>
-            <p class="mono">Designed &amp; built with intent</p>
+            <p class="mono">Hand-built · HTML, CSS &amp; JS · no frameworks</p>
             <p class="mono"><span class="footer-clock"></span></p>
         </div>
     </footer>
