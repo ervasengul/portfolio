@@ -90,7 +90,7 @@
         <section id="work" class="section">
             <div class="container">
                 <div class="section-head reveal">
-                    <h2 class="section-title">Selected Work<span class="count">(06)</span></h2>
+                    <h2 class="section-title">Selected Work<span class="count">(07)</span></h2>
                     <p class="mono">2024 — 2026</p>
                 </div>
 
@@ -100,23 +100,24 @@
                         <button class="work-row" aria-expanded="false">
                             <span class="work-num">01</span>
                             <span class="work-title">Cluster Optimizer</span>
-                            <span class="work-meta">Cloud Infrastructure<small>Go · Kubernetes · 2026</small></span>
+                            <span class="work-meta">Cloud Infrastructure<small>Go · Kubernetes · Published on arXiv</small></span>
                             <span class="work-toggle"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
                         </button>
                         <div class="work-panel"><div class="work-panel-inner">
                             <div class="work-case">
                                 <div class="case-body">
                                     <p class="case-desc">
-                                        My graduation project: a <strong>Go-based Kubernetes resource optimizer</strong>
-                                        that right-sizes CPU and memory requests to cut cloud waste without risking
-                                        workload stability. A statistical engine analyzes historical usage from
-                                        Prometheus; a four-layer safety framework validates every change before it
-                                        lands — designed after studying where VPA, KEDA, Goldilocks, Polaris and
-                                        Karpenter fall short.
+                                        My graduation project, <strong>published as a research paper on arXiv</strong>:
+                                        a Go-based Kubernetes optimizer that achieved <strong>20–40% cost savings on
+                                        GKE</strong> through ML-driven vertical right-sizing. A statistical engine with
+                                        Holt-Winters forecasting reads historical usage from Prometheus, and a
+                                        four-layer safety framework with memory-leak gating validates every change —
+                                        backed by 1,118 automated tests at 80.3% coverage.
                                     </p>
-                                    <ul class="case-tags"><li>Go</li><li>Kubernetes API</li><li>Custom Operators</li><li>Prometheus</li><li>Docker</li></ul>
+                                    <ul class="case-tags"><li>Go</li><li>Kubernetes API</li><li>Custom Operators</li><li>Prometheus</li><li>Holt-Winters</li><li>Docker</li></ul>
                                     <div class="case-links">
                                         <a class="u-link" href="https://github.com/medipol-srg/intelligent-cluster-optimizer" target="_blank" rel="noopener noreferrer">View code <svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+                                        <a class="u-link" href="https://arxiv.org/abs/2607.26503" target="_blank" rel="noopener noreferrer">Read the paper <svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
                                     </div>
                                 </div>
                                 <div class="case-media"><img src="images/work/01-cluster.webp" alt="Abstract render of dark containers balanced on luminous chartreuse lines" loading="lazy" width="1216" height="810"></div>
@@ -259,6 +260,39 @@
                         </div></div>
                     </div>
 
+
+                    <div class="work-item reveal" data-preview="yedik">
+                        <button class="work-row" aria-expanded="false">
+                            <span class="work-num">07</span>
+                            <span class="work-title">Yedik</span>
+                            <span class="work-meta">Social Dining App<small>React Native · Go · 2026</small></span>
+                            <span class="work-toggle"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></span>
+                        </button>
+                        <div class="work-panel"><div class="work-panel-inner">
+                            <div class="work-case">
+                                <div class="case-body">
+                                    <p class="case-desc">
+                                        A social restaurant-rating app for Istanbul that I built end to end. Your
+                                        feed only shows ratings from people you follow — no algorithm, no ads, no
+                                        sponsored spots. Rate a place out of ten with a note and a photo, keep two
+                                        lists (visited, sorted by rating, and want-to-go), and add new spots from
+                                        the map across <strong>225,000+ Istanbul venues</strong>. Behind it: a
+                                        <strong>Go API</strong> (chi, pgx, sqlc) and a <strong>React Native / Expo</strong>
+                                        app, with a <strong>GitHub Actions pipeline</strong> that vets, tests and
+                                        builds the API, type-checks and tests the mobile app, builds the Docker
+                                        image and generates the marketing site on every push — deployed on a
+                                        single Hetzner server behind Caddy and Cloudflare.
+                                    </p>
+                                    <ul class="case-tags"><li>React Native</li><li>Expo Router</li><li>Go</li><li>PostgreSQL</li><li>GitHub Actions</li><li>Docker</li></ul>
+                                    <div class="case-links">
+                                        <span class="case-note">Private repository · preparing for App Store launch</span>
+                                    </div>
+                                </div>
+                                <div class="case-media"><img src="images/work/07-yedik.webp" alt="Abstract render of a location pin and rating star connected by glowing chartreuse lines" loading="lazy" width="1280" height="832"></div>
+                            </div>
+                        </div></div>
+                    </div>
+
                 </div>
             </div>
 
@@ -266,6 +300,7 @@
             <div class="work-preview" aria-hidden="true">
                 <img data-key="cluster" src="images/work/01-cluster.webp" alt="" loading="lazy">
                 <img data-key="medical" src="images/work/02-medical.webp" alt="" loading="lazy">
+                <img data-key="yedik" src="images/work/07-yedik.webp" alt="" loading="lazy">
                 <img data-key="billing" src="https://d8j0ntlcm91z4.cloudfront.net/user_3Ih5RksuIE9koNwGBrvsdqW8kld/hf_20260927_105819_f50dc03c-a9c8-4634-a681-a00711ed5f3d_min.webp" alt="" loading="lazy">
                 <img data-key="emotion" src="https://d8j0ntlcm91z4.cloudfront.net/user_3Ih5RksuIE9koNwGBrvsdqW8kld/hf_20260927_105820_e9b7dc34-0709-4754-a254-e032b87233d9_min.webp" alt="" loading="lazy">
                 <img data-key="weather" src="https://d8j0ntlcm91z4.cloudfront.net/user_3Ih5RksuIE9koNwGBrvsdqW8kld/hf_20260927_105819_ffd642ae-eae1-426a-a62b-c70e0eed7ee0_min.webp" alt="" loading="lazy">
@@ -390,8 +425,9 @@
                             My world revolves around three things: AI applied to healthcare, cloud infrastructure
                             and Kubernetes, and computer vision. I've fine-tuned large language models to turn
                             messy multilingual clinical documents into structured data, built a Go-based
-                            Kubernetes optimizer that cuts cloud waste safely, and trained neural networks that
-                            recognize facial expressions in real time.
+                            Kubernetes optimizer that cuts cloud waste safely — now a
+                            <a href="https://arxiv.org/abs/2607.26503" target="_blank" rel="noopener noreferrer">published research paper</a> —
+                            and trained neural networks that recognize facial expressions in real time.
                         </p>
                         <p>
                             What I'm after isn't building something first — it's building something that actually
@@ -434,6 +470,7 @@
                         <ul class="fact-list">
                             <li><span class="k">Education</span><span class="v">B.S. Computer Engineering — Istanbul Medipol University, 2026</span></li>
                             <li><span class="k">Based in</span><span class="v">Istanbul, Türkiye</span></li>
+                            <li><span class="k">Publication</span><span class="v"><a href="https://arxiv.org/abs/2607.26503" target="_blank" rel="noopener noreferrer">Safety-Gated Autoscaling — arXiv:2607.26503, 2026</a></span></li>
                             <li><span class="k">Currently reading</span><span class="v">The Phoenix Project — Kim, Behr &amp; Spafford</span></li>
                             <li><span class="k">Résumé</span><span class="v"><a href="CVLER/Erva_Sengul_Resume.pdf" target="_blank" rel="noopener noreferrer">Download (PDF)</a></span></li>
                         </ul>
@@ -454,7 +491,7 @@
                     <li class="xp-row reveal">
                         <span class="xp-date">Aug — Oct 2025</span>
                         <span class="xp-role">Software Engineer Intern<small>Medipol Healthcare Group</small></span>
-                        <span class="xp-desc">AI and data solutions for healthcare workflows — ML-based billing anomaly detection and clinical document processing inside a hospital group's technology team.</span>
+                        <span class="xp-desc">AI and data solutions for healthcare workflows — ML-based billing anomaly detection, clinical document processing and IPAM modules for international patient operations, including time at the group's London office.</span>
                     </li>
                     <li class="xp-row reveal">
                         <span class="xp-date">2025</span>
