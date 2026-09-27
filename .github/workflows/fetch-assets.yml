@@ -4,6 +4,10 @@ name: Fetch illustration assets
 # and commits them to the branch the workflow is run on.
 on:
   workflow_dispatch:
+  push:
+    paths:
+      - scripts/fetch_illustrations.py
+      - .github/workflows/fetch-assets.yml
 
 permissions:
   contents: write
