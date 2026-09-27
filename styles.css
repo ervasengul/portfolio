@@ -248,7 +248,6 @@ strong { font-weight: 600; color: var(--text); }
 .polaroid .placeholder { width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; background: linear-gradient(135deg, #e6f0f9, #f3ebd9); }
 .polaroid .placeholder svg { width: 30px; height: 30px; fill: none; stroke: var(--muted); stroke-width: 1.5; stroke-linecap: round; }
 .polaroid .caption { position: absolute; left: 14px; right: 14px; bottom: 12px; text-align: center; }
-.about-label { display: inline-block; background: var(--paper); border: 1.5px solid var(--text); padding: 4px 12px; margin-bottom: 18px; font-family: var(--hand); font-size: 1.5rem; line-height: 1.2; transform: rotate(-1deg); box-shadow: 3px 3px 0 var(--butter); }
 .about-copy p { font-size: 16.5px; color: var(--text-2); }
 .about-copy p + p { margin-top: 14px; }
 .about-copy a { color: var(--accent); border-bottom: 1px solid transparent; }
@@ -358,7 +357,7 @@ strong { font-weight: 600; color: var(--text); }
     .archive-arrow { grid-column: 2; grid-row: 1 / span 2; }
 
     .about-grid { grid-template-columns: 1fr; }
-    .polaroid { max-width: 300px; margin: 8px auto 24px; }
+    .polaroid { width: 100%; max-width: 300px; margin: 8px auto 24px; }
     .fact-list li { grid-template-columns: 1fr; gap: 2px; }
     .xp-row { grid-template-columns: 1fr; gap: 6px; }
     .footer-inner { flex-direction: column; gap: 6px; }

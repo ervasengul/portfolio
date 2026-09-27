@@ -1,5 +1,5 @@
 // Erva Şengül — portfolio v4 behavior
-// nav state + mobile menu · scroll reveals · email obfuscation · footer clock
+// nav state + mobile menu · scroll reveals · email obfuscation
 
 (function () {
   function getEmail() {
@@ -17,22 +17,9 @@
       el.textContent = getEmail();
     });
 
-    // --- footer year + Istanbul local time ---
+    // --- footer year ---
     var year = document.querySelector('.footer-year');
     if (year) year.textContent = new Date().getFullYear();
-
-    var clock = document.querySelector('.footer-clock');
-    if (clock) {
-      var tick = function () {
-        try {
-          clock.textContent = 'Istanbul · ' + new Intl.DateTimeFormat('en-GB', {
-            hour: '2-digit', minute: '2-digit', timeZone: 'Europe/Istanbul'
-          }).format(new Date());
-        } catch (e) { clock.textContent = ''; }
-      };
-      tick();
-      setInterval(tick, 30000);
-    }
 
     // --- nav: scrolled state + mobile menu ---
     var nav = document.querySelector('.site-nav');
