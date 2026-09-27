@@ -3,7 +3,7 @@
 
 (function () {
   function getEmail() {
-    var user = 'ervasengul004';
+    var user = 'ervasengul4';
     var domain = 'gmail.com';
     return user + '@' + domain;
   }
