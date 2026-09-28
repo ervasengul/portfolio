@@ -25,6 +25,7 @@
     <header class="site-nav">
         <div class="container nav-inner">
             <a href="index.html" class="brand"><span class="brand-mark">E</span>Erva Şengül</a>
+            <a class="nav-cv-m" href="CVLER/Erva_Sengul_Resume.pdf" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></svg>Résumé</a>
             <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nav-links"><span></span></button>
             <nav aria-label="Primary">
                 <ul class="nav-links" id="nav-links">
@@ -32,7 +33,7 @@
                     <li><a href="#yedik">Yedik</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#contact">Contact</a></li>
-                    <li><a class="btn btn-solid nav-cv" href="CVLER/Erva_Sengul_Resume.pdf" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></svg>Résumé</a></li>
+                    <li class="nav-cv-item"><a class="btn btn-solid nav-cv" href="CVLER/Erva_Sengul_Resume.pdf" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></svg>Résumé</a></li>
                 </ul>
             </nav>
         </div>
@@ -375,7 +376,6 @@
                         <p class="mono">Part. 04 — About me</p>
                         <h2 class="section-title"><span class="scribble">Hi, I'm Erva</span></h2>
                     </div>
-                    <p class="section-sub">22, Istanbul, and happiest when I'm either building something or out finding somewhere new.</p>
                 </div>
 
                 <div class="about-grid">
@@ -386,16 +386,38 @@
                         <figcaption class="caption hand">on one of my long walks</figcaption>
                     </figure>
 
+                    <div class="cv-paper reveal">
+                        <a class="cv-doc" href="CVLER/Erva_Sengul_Resume.pdf" target="_blank" rel="noopener noreferrer" aria-label="Open my résumé (PDF, 2 pages) in a new tab">
+                            <span class="cv-doc-top">
+                                <img src="images/portrait.webp" alt="" width="800" height="1000" loading="lazy">
+                                <span class="cv-doc-head">
+                                    <strong>Erva Şengül</strong>
+                                    <span>Computer Engineer</span>
+                                    <i></i><i class="short"></i>
+                                </span>
+                            </span>
+                            <span class="cv-doc-checks" aria-hidden="true">
+                                <span><b></b><i></i></span><span><b></b><i></i></span>
+                                <span><b></b><i></i></span><span><b></b><i></i></span>
+                            </span>
+                            <span class="cv-doc-lines" aria-hidden="true"><i></i><i></i><i class="short"></i></span>
+                            <span class="cv-doc-sign hand" aria-hidden="true">Erva</span>
+                        </a>
+                        <a class="btn btn-solid cv-download" href="CVLER/Erva_Sengul_Resume.pdf" download="Erva_Sengul_Resume.pdf">Download résumé <svg viewBox="0 0 24 24"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg></a>
+                        <p class="mono cv-meta">PDF · 2 pages</p>
+                    </div>
+
                     <div class="about-copy reveal reveal-delay-1">
                         <p>
-                            I'm Erva — 22 and based in Istanbul. I love technology, and I love
-                            <strong>cosmetics</strong> just as much, especially <strong>dermatology</strong> and the
-                            science behind skincare.
+                            I'm Erva, a 22-year-old computer engineer in Istanbul, and technology is the thing I
+                            never get tired of. I like working across the whole stack — cloud infrastructure and
+                            Kubernetes, applied AI, and the mobile apps people actually hold in their hands.
                         </p>
                         <p>
-                            When I'm not at my desk you'll find me on long walks around the city, vibe coding
-                            late into the night, or trying a new place to eat. That last habit got out of hand
-                            in the best way — that's how <a href="#yedik">Yedik</a> came up!
+                            What pulls me in is taking something that already works and making it work better:
+                            a cluster that stops wasting money, a model that reads messy medical records, an app
+                            that makes deciding where to eat a little easier. Right now that's
+                            <a href="#yedik">Yedik</a> — I'm building it end to end, from the Go API to the App Store.
                         </p>
 
                         <ul class="stickers" aria-label="Things I love">
@@ -408,30 +430,6 @@
                             <li><span class="k">Publication</span><span class="v"><a href="https://arxiv.org/abs/2607.26503" target="_blank" rel="noopener noreferrer">Safety-Gated Autoscaling — arXiv:2607.26503, 2026</a></span></li>
                             <li><span class="k">Currently reading</span><span class="v">The Phoenix Project — Kim, Behr &amp; Spafford</span></li>
                         </ul>
-
-                        <div class="cv-card">
-                            <svg class="cv-art" viewBox="0 0 240 212" aria-hidden="true" focusable="false">
-                                <g stroke="#1d1d1b" stroke-width="4.5" stroke-linejoin="round" stroke-linecap="round">
-                                    <path d="M152 46 L172 42 L178 50 L200 47 L204 116 L154 118 Z" fill="#3d5bd9"/>
-                                    <path d="M62 34 Q62 24 71 24 L99 24 L107 34 L166 32 L170 120 L66 122 Z" fill="#ffffff"/>
-                                    <path d="M46 64 L76 60 L84 68 L158 64 L162 124 L50 126 Z" fill="#d9c48d"/>
-                                    <path d="M32 82 L60 78 L68 86 L140 84 L144 130 L36 132 Z" fill="#f0a892"/>
-                                    <path d="M172 188 L214 170 L218 178 L178 198 Z" fill="#1d1d1b"/>
-                                    <path d="M170 106 L212 94 L208 172 L166 190 Z" fill="#5e9c8c"/>
-                                    <path d="M24 112 L170 106 L166 190 L30 184 Z" fill="#ffffff"/>
-                                </g>
-                                <rect x="62" y="138" width="40" height="14" rx="7" fill="#1d1d1b" transform="rotate(-2 82 145)"/>
-                            </svg>
-                            <div class="cv-body">
-                                <p class="mono">Résumé · PDF</p>
-                                <h3>Everything on one page</h3>
-                                <p>Experience, projects and skills — the full picture in one PDF.</p>
-                                <div class="cv-actions">
-                                    <a class="btn btn-solid" href="CVLER/Erva_Sengul_Resume.pdf" download="Erva_Sengul_Resume.pdf">Download résumé <svg viewBox="0 0 24 24"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg></a>
-                                    <a class="u-link" href="CVLER/Erva_Sengul_Resume.pdf" target="_blank" rel="noopener noreferrer">Open in a new tab <svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
