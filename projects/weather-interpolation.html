@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; script-src 'self'; frame-ancestors 'none'; base-uri 'self'; upgrade-insecure-requests;">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <title>Weather Interpolation — Erva Şengül</title>
+    <meta name="description" content="Reconstructing smooth curves from sparse measurements — interpolation methods compared on NOAA weather data, with cubic splines at the core.">
+    <meta name="theme-color" content="#b4b5dd">
+    <meta property="og:title" content="Weather Interpolation — Erva Şengül">
+    <meta property="og:description" content="Reconstructing smooth curves from sparse measurements — interpolation methods compared on NOAA weather data, with cubic splines at the core.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://www.ervasengul.com/projects/weather-interpolation.html">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%2314304f'/%3E%3Ctext x='32' y='45' font-family='Arial,Helvetica,sans-serif' font-weight='700' font-size='36' fill='%23ffffff' text-anchor='middle'%3EE%3C/text%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600&family=Caveat:wght@500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body class="case-page" style="--tile:#b4b5dd">
+    <a class="skip-link" href="#case">Skip to content</a>
+
+    <header class="site-nav">
+        <div class="container nav-inner">
+            <a href="../index.html" class="brand"><span class="brand-mark">E</span>Erva Şengül</a>
+            <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nav-links"><span></span></button>
+            <nav aria-label="Primary">
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="../index.html#projects">Projects</a></li>
+                    <li><a href="../index.html#yedik">Yedik</a></li>
+                    <li><a href="../index.html#about">About</a></li>
+                    <li><a href="../index.html#contact">Contact</a></li>
+                    <li><a class="btn btn-solid nav-cv" href="../CVLER/Erva_Sengul_Resume.pdf" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></svg>Résumé</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="case-hero">
+            <div class="container">
+                <a class="back-link" href="../index.html#projects"><svg viewBox="0 0 24 24"><path d="M19 12H5M11 5l-7 7 7 7"/></svg> All projects</a>
+                <div class="case-hero-grid">
+                    <div class="case-hero-copy">
+                        <p class="mono case-kicker">Project 05 · Numerical analysis · 2025</p>
+                        <h1 class="case-title">Weather Interpolation</h1>
+                        <p class="case-lead">Reconstructing smooth curves from sparse measurements — interpolation methods compared on NOAA weather data, with cubic splines at the core.</p>
+                        <div class="case-actions">
+                            <a class="btn btn-solid" href="https://github.com/ervasengul/Numerical-Analysis-Cubic-Splines-in-Pythonc-Interpolation" target="_blank" rel="noopener noreferrer">Source code <svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+                        </div>
+                    </div>
+                    <div class="case-art">
+                        <img src="../images/illustrations/weather.webp" alt="Top-down illustration of a small weather station in a field: an anemometer mast, a rain gauge, an instrument box and Erva holding a tablet" width="1024" height="688" fetchpriority="high">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="case" class="section case">
+            <div class="container case-body">
+                <article class="case-main">
+                        <h2>Overview</h2>
+                        <p>Real measurements are sparse: a station reports at fixed times, a survey samples a handful of points. This project fills the gaps. I implemented and compared <strong>linear, polynomial and cubic-spline interpolation</strong> on NOAA weather data and looked at trend, seasonal and residual components with time-series decomposition, Fourier analysis and autocorrelation.</p>
+                        <p>Cubic splines win for smooth physical signals: the curve passes through every sample, and its slope and curvature stay continuous, so there are no kinks and none of the wild swings a single high-degree polynomial produces.</p>
+
+                        <h2>What the code computes</h2>
+                    <figure class="chart-card spline-chart">
+                        <figcaption class="chart-title">
+                            <strong>Elevation along the route</strong>
+                            <span>Natural cubic spline through the five samples in the script — hover or use the arrow keys to read the curve</span>
+                        </figcaption>
+                        <div class="chart-wrap">
+                            <svg viewBox="0 0 640 330" role="img" tabindex="0" aria-label="Natural cubic spline through five elevation samples from 0 to 20 km; at 7.5 km the curve gives 132.66 metres" data-points='[[0.0, 100.0, 56.0, 248.0], [0.25, 103.93, 63.0, 237.0], [0.5, 107.85, 70.1, 226.0], [0.75, 111.72, 77.2, 215.2], [1.0, 115.52, 84.2, 204.5], [1.25, 119.24, 91.2, 194.1], [1.5, 122.85, 98.3, 184.0], [1.75, 126.33, 105.3, 174.3], [2.0, 129.66, 112.4, 165.0], [2.25, 132.82, 119.5, 156.1], [2.5, 135.78, 126.5, 147.8], [2.75, 138.53, 133.6, 140.1], [3.0, 141.04, 140.6, 133.1], [3.25, 143.29, 147.7, 126.8], [3.5, 145.26, 154.7, 121.3], [3.75, 146.93, 161.8, 116.6], [4.0, 148.28, 168.8, 112.8], [4.25, 149.28, 175.8, 110.0], [4.5, 149.92, 182.9, 108.2], [4.75, 150.16, 189.9, 107.5], [5.0, 150.0, 197.0, 108.0], [5.25, 149.42, 204.1, 109.6], [5.5, 148.45, 211.1, 112.3], [5.75, 147.15, 218.2, 116.0], [6.0, 145.56, 225.2, 120.4], [6.25, 143.73, 232.2, 125.6], [6.5, 141.71, 239.3, 131.2], [6.75, 139.54, 246.3, 137.3], [7.0, 137.28, 253.4, 143.6], [7.25, 134.97, 260.4, 150.1], [7.5, 132.66, 267.5, 156.6], [7.75, 130.39, 274.6, 162.9], [8.0, 128.22, 281.6, 169.0], [8.25, 126.19, 288.6, 174.7], [8.5, 124.35, 295.7, 179.8], [8.75, 122.75, 302.8, 184.3], [9.0, 121.44, 309.8, 188.0], [9.25, 120.46, 316.9, 190.7], [9.5, 119.86, 323.9, 192.4], [9.75, 119.69, 330.9, 192.9], [10.0, 120.0, 338.0, 192.0], [10.25, 120.82, 345.1, 189.7], [10.5, 122.11, 352.1, 186.1], [10.75, 123.83, 359.1, 181.3], [11.0, 125.92, 366.2, 175.4], [11.25, 128.34, 373.2, 168.6], [11.5, 131.04, 380.3, 161.1], [11.75, 133.96, 387.4, 152.9], [12.0, 137.06, 394.4, 144.2], [12.25, 140.29, 401.4, 135.2], [12.5, 143.59, 408.5, 125.9], [12.75, 146.93, 415.6, 116.6], [13.0, 150.24, 422.6, 107.3], [13.25, 153.48, 429.6, 98.3], [13.5, 156.6, 436.7, 89.5], [13.75, 159.55, 443.8, 81.3], [14.0, 162.28, 450.8, 73.6], [14.25, 164.74, 457.9, 66.7], [14.5, 166.88, 464.9, 60.7], [14.75, 168.65, 471.9, 55.8], [15.0, 170.0, 479.0, 52.0], [15.25, 170.89, 486.1, 49.5], [15.5, 171.34, 493.1, 48.2], [15.75, 171.37, 500.1, 48.2], [16.0, 171.0, 507.2, 49.2], [16.25, 170.25, 514.2, 51.3], [16.5, 169.16, 521.3, 54.4], [16.75, 167.73, 528.4, 58.4], [17.0, 166.0, 535.4, 63.2], [17.25, 163.99, 542.5, 68.8], [17.5, 161.72, 549.5, 75.2], [17.75, 159.21, 556.5, 82.2], [18.0, 156.5, 563.6, 89.8], [18.25, 153.6, 570.6, 97.9], [18.5, 150.53, 577.7, 106.5], [18.75, 147.32, 584.8, 115.5], [19.0, 144.0, 591.8, 124.8], [19.25, 140.58, 598.9, 134.4], [19.5, 137.09, 605.9, 144.1], [19.75, 133.56, 613.0, 154.0], [20.0, 130.0, 620.0, 164.0]]'><line class="chart-grid" x1="56" x2="620" y1="248.0" y2="248.0"/><text class="chart-tick" x="46" y="252.0" text-anchor="end">100</text><line class="chart-grid" x1="56" x2="620" y1="178.0" y2="178.0"/><text class="chart-tick" x="46" y="182.0" text-anchor="end">125</text><line class="chart-grid" x1="56" x2="620" y1="108.0" y2="108.0"/><text class="chart-tick" x="46" y="112.0" text-anchor="end">150</text><line class="chart-grid" x1="56" x2="620" y1="38.0" y2="38.0"/><text class="chart-tick" x="46" y="42.0" text-anchor="end">175</text><line class="chart-axis" x1="56" x2="620" y1="276" y2="276"/><text class="chart-tick" x="56.0" y="296" text-anchor="middle">0</text><text class="chart-tick" x="197.0" y="296" text-anchor="middle">5</text><text class="chart-tick" x="338.0" y="296" text-anchor="middle">10</text><text class="chart-tick" x="479.0" y="296" text-anchor="middle">15</text><text class="chart-tick" x="620.0" y="296" text-anchor="middle">20</text><text class="chart-tick" x="338" y="326" text-anchor="middle">distance (km)</text><text class="chart-tick" x="46" y="16" text-anchor="end">m</text><path class="chart-line" d="M56.0 248.0 L63.0 237.0 L70.1 226.0 L77.2 215.2 L84.2 204.5 L91.2 194.1 L98.3 184.0 L105.3 174.3 L112.4 165.0 L119.5 156.1 L126.5 147.8 L133.6 140.1 L140.6 133.1 L147.7 126.8 L154.7 121.3 L161.8 116.6 L168.8 112.8 L175.8 110.0 L182.9 108.2 L189.9 107.5 L197.0 108.0 L204.1 109.6 L211.1 112.3 L218.2 116.0 L225.2 120.4 L232.2 125.6 L239.3 131.2 L246.3 137.3 L253.4 143.6 L260.4 150.1 L267.5 156.6 L274.6 162.9 L281.6 169.0 L288.6 174.7 L295.7 179.8 L302.8 184.3 L309.8 188.0 L316.9 190.7 L323.9 192.4 L330.9 192.9 L338.0 192.0 L345.1 189.7 L352.1 186.1 L359.1 181.3 L366.2 175.4 L373.2 168.6 L380.3 161.1 L387.4 152.9 L394.4 144.2 L401.4 135.2 L408.5 125.9 L415.6 116.6 L422.6 107.3 L429.6 98.3 L436.7 89.5 L443.8 81.3 L450.8 73.6 L457.9 66.7 L464.9 60.7 L471.9 55.8 L479.0 52.0 L486.1 49.5 L493.1 48.2 L500.1 48.2 L507.2 49.2 L514.2 51.3 L521.3 54.4 L528.4 58.4 L535.4 63.2 L542.5 68.8 L549.5 75.2 L556.5 82.2 L563.6 89.8 L570.6 97.9 L577.7 106.5 L584.8 115.5 L591.8 124.8 L598.9 134.4 L605.9 144.1 L613.0 154.0 L620.0 164.0"/><circle class="chart-dot" cx="56.0" cy="248.0" r="5"/><circle class="chart-dot" cx="197.0" cy="108.0" r="5"/><circle class="chart-dot" cx="338.0" cy="192.0" r="5"/><circle class="chart-dot" cx="479.0" cy="52.0" r="5"/><circle class="chart-dot" cx="620.0" cy="164.0" r="5"/><circle class="chart-dot chart-dot-key" cx="267.5" cy="156.6" r="6"/><text class="chart-label" x="255.5" y="180.6" text-anchor="end">7.5 km → 132.66 m</text><line class="chart-cross" x1="0" x2="0" y1="24" y2="276"/><circle class="chart-focus" cx="0" cy="0" r="6"/></svg>
+                            <div class="chart-tip" role="status" aria-live="polite"></div>
+                        </div>
+                        <details class="chart-data">
+                            <summary>Show the data</summary>
+                            <table class="data-table">
+                                <thead><tr><th>Distance (km)</th><th>Elevation (m)</th><th>Type</th></tr></thead>
+                                <tbody><tr><td>0</td><td>100</td><td>sample</td></tr><tr><td>5</td><td>150</td><td>sample</td></tr><tr><td>10</td><td>120</td><td>sample</td></tr><tr><td>15</td><td>170</td><td>sample</td></tr><tr><td>20</td><td>130</td><td>sample</td></tr><tr class="is-key"><td>7.5</td><td>132.66</td><td>spline value</td></tr></tbody>
+                            </table>
+                        </details>
+                    </figure>
+
+                        <h2>How it works</h2>
+                        <ol class="steps">
+                            <li><strong>Samples</strong><span>Start from the measured points — here five elevation samples between 0 and 20 km.</span></li>
+                            <li><strong>Fit</strong><span>Fit a natural cubic spline: a cubic between each pair of points, joined so slope and curvature are continuous, with zero curvature at both ends.</span></li>
+                            <li><strong>Evaluate</strong><span>Read the curve anywhere between the samples — the script reports the value at 7.5 km.</span></li>
+                            <li><strong>Plot</strong><span>Draw the curve on a 250-point grid together with the original samples.</span></li>
+                        </ol>
+
+                        <h2>What’s in the source code</h2>
+                        <p>The public repository holds the cubic-spline part of the coursework — the computation charted above.</p>
+                        <ul class="code-tree">
+                            <li><code>COE_ErvaSengul_Assignment1.py</code><span>Natural cubic spline with SciPy’s <code>CubicSpline(x, y, bc_type='natural')</code>, evaluated at 7.5 km and plotted with Matplotlib</span></li>
+                            <li><code>README.md</code><span>Project description</span></li>
+                        </ul>
+                        <pre class="snippet">from scipy.interpolate import CubicSpline
+spline = CubicSpline(x, y, bc_type='natural')
+print(f'{spline(7.5):.2f}')</pre>
+                </article>
+
+                <aside class="glance" aria-label="At a glance">
+                    <p class="mono">At a glance</p>
+                    <dl>
+                            <div><dt>Year</dt><dd>2025</dd></div>
+                            <div><dt>Field</dt><dd>Numerical analysis</dd></div>
+                            <div><dt>Language</dt><dd>Python</dd></div>
+                            <div><dt>Libraries</dt><dd>NumPy · SciPy · Matplotlib</dd></div>
+                            <div><dt>Method</dt><dd>Natural cubic spline</dd></div>
+                            <div><dt>Data</dt><dd>NOAA weather</dd></div>
+                    </dl>
+                    <ul class="tags"><li>Python</li><li>NumPy</li><li>SciPy</li><li>Matplotlib</li><li>Cubic splines</li><li>Fourier analysis</li></ul>
+                        <a class="btn btn-solid glance-btn" href="https://github.com/ervasengul/Numerical-Analysis-Cubic-Splines-in-Pythonc-Interpolation" target="_blank" rel="noopener noreferrer">Source code <svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+                </aside>
+            </div>
+        </section>
+
+        <nav class="case-pager container" aria-label="More projects">
+            <a class="pager-card" href="emotion-recognition.html">
+                <span class="mono"><svg viewBox="0 0 24 24"><path d="M19 12H5M11 5l-7 7 7 7"/></svg> Previous project</span>
+                <strong>Real-Time Emotion Recognition</strong>
+            </a>
+            <a class="pager-card pager-next" href="battery-monitor.html">
+                <span class="mono">Next project <svg viewBox="0 0 24 24"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+                <strong>Car Battery Monitor</strong>
+            </a>
+        </nav>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <p class="mono">© <span class="footer-year">2026</span> Erva Şengül</p>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+</html>

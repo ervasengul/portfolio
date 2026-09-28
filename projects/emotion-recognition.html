@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; script-src 'self'; frame-ancestors 'none'; base-uri 'self'; upgrade-insecure-requests;">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <title>Real-Time Emotion Recognition — Erva Şengül</title>
+    <meta name="description" content="Facial-expression recognition from a live webcam, turned into a game for visitors at our TEKNOFEST 2025 stand.">
+    <meta name="theme-color" content="#f09f86">
+    <meta property="og:title" content="Real-Time Emotion Recognition — Erva Şengül">
+    <meta property="og:description" content="Facial-expression recognition from a live webcam, turned into a game for visitors at our TEKNOFEST 2025 stand.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://www.ervasengul.com/projects/emotion-recognition.html">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%2314304f'/%3E%3Ctext x='32' y='45' font-family='Arial,Helvetica,sans-serif' font-weight='700' font-size='36' fill='%23ffffff' text-anchor='middle'%3EE%3C/text%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600&family=Caveat:wght@500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body class="case-page" style="--tile:#f09f86">
+    <a class="skip-link" href="#case">Skip to content</a>
+
+    <header class="site-nav">
+        <div class="container nav-inner">
+            <a href="../index.html" class="brand"><span class="brand-mark">E</span>Erva Şengül</a>
+            <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nav-links"><span></span></button>
+            <nav aria-label="Primary">
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="../index.html#projects">Projects</a></li>
+                    <li><a href="../index.html#yedik">Yedik</a></li>
+                    <li><a href="../index.html#about">About</a></li>
+                    <li><a href="../index.html#contact">Contact</a></li>
+                    <li><a class="btn btn-solid nav-cv" href="../CVLER/Erva_Sengul_Resume.pdf" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></svg>Résumé</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="case-hero">
+            <div class="container">
+                <a class="back-link" href="../index.html#projects"><svg viewBox="0 0 24 24"><path d="M19 12H5M11 5l-7 7 7 7"/></svg> All projects</a>
+                <div class="case-hero-grid">
+                    <div class="case-hero-copy">
+                        <p class="mono case-kicker">Project 04 · Computer vision · 2025</p>
+                        <h1 class="case-title">Real-Time Emotion Recognition</h1>
+                        <p class="case-lead">Facial-expression recognition from a live webcam, turned into a game for visitors at our TEKNOFEST 2025 stand.</p>
+                        <div class="case-actions">
+                            <a class="btn btn-solid" href="https://github.com/ervasengul/real_time_emotion_recognition" target="_blank" rel="noopener noreferrer">Source code <svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+                        </div>
+                    </div>
+                    <div class="case-art">
+                        <img src="../images/illustrations/emotion.webp" alt="Top-down illustration of a festival stand: a table with a monitor, laptop and webcam on a tripod, three visitors watching and Erva presenting" width="1024" height="688" fetchpriority="high">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="case" class="section case">
+            <div class="container case-body">
+                <article class="case-main">
+                        <h2>Overview</h2>
+                        <p>A convolutional neural network reads a live webcam feed and classifies each face into one of seven expressions — <strong>angry, disgust, fear, happy, sad, surprise and neutral</strong> — with a confidence score, in real time on ordinary hardware.</p>
+                        <p>At TEKNOFEST 2025 it ran as <em>Duygu Tanıma Oyunu</em>, the emotion-recognition game: visitors typed their name, played a round in front of the camera and landed on the leaderboard.</p>
+
+                        <figure class="case-photo">
+                            <img src="../images/projects/emotion-stand.webp" alt="The TEKNOFEST 2025 stand: the emotion-recognition game on a large screen with name entry and a leaderboard, a webcam on a tripod and a laptop" loading="lazy" width="1400" height="788">
+                            <figcaption class="hand">our stand at TEKNOFEST 2025</figcaption>
+                        </figure>
+
+                        <h2>How it works</h2>
+                        <ol class="steps">
+                            <li><strong>Detect</strong><span>OpenCV’s Haar cascade finds every face in each frame.</span></li>
+                            <li><strong>Prepare</strong><span>Each face is cropped, converted to grayscale and resized to 48 × 48.</span></li>
+                            <li><strong>Classify</strong><span>The CNN predicts one of seven expressions with a confidence score.</span></li>
+                            <li><strong>Show</strong><span>A box and the predicted label are drawn over each face as the video plays.</span></li>
+                        </ol>
+
+                        <h3 class="case-sub">The model</h3>
+                        <ol class="layer-stack"><li>Conv2D 32 · 3×3 · ReLU</li><li>MaxPooling 2×2</li><li>Conv2D 64 · 3×3 · ReLU</li><li>MaxPooling 2×2</li><li>Conv2D 128 · 3×3 · ReLU</li><li>MaxPooling 2×2</li><li>Flatten</li><li>Dense 128 · ReLU</li><li>Dropout 0.5</li><li>Dense 7 · softmax</li></ol>
+                        <p class="code-note">Trained with Adam and categorical cross-entropy for 30 epochs (batch 64), with rotation, shift, shear, zoom and horizontal-flip augmentation.</p>
+
+                        <h2>What’s in the source code</h2>
+                        <p>Two Python scripts — one to train the model, one to run it on the webcam — plus the trained weights.</p>
+                        <ul class="code-tree">
+                            <li><code>train_emotion_model.py</code><span>Builds and trains the CNN on <code>dataset/train</code>, validates on <code>dataset/test</code>, saves the model</span></li>
+                            <li><code>real_time_emotion.py</code><span>Webcam loop: face detection, 48×48 preprocessing, prediction and on-screen labels</span></li>
+                            <li><code>emotion_model.h5</code><span>Trained model weights</span></li>
+                            <li><code>dataset/</code><span>Training and test images for the seven classes</span></li>
+                        </ul>
+                </article>
+
+                <aside class="glance" aria-label="At a glance">
+                    <p class="mono">At a glance</p>
+                    <dl>
+                            <div><dt>Year</dt><dd>2025</dd></div>
+                            <div><dt>Event</dt><dd>TEKNOFEST 2025</dd></div>
+                            <div><dt>Language</dt><dd>Python</dd></div>
+                            <div><dt>Libraries</dt><dd>TensorFlow · Keras · OpenCV</dd></div>
+                            <div><dt>Classes</dt><dd>7 expressions</dd></div>
+                            <div><dt>Input</dt><dd>48 × 48 grayscale</dd></div>
+                    </dl>
+                    <ul class="tags"><li>Python</li><li>TensorFlow</li><li>Keras</li><li>OpenCV</li><li>CNN</li><li>Haar cascade</li></ul>
+                        <a class="btn btn-solid glance-btn" href="https://github.com/ervasengul/real_time_emotion_recognition" target="_blank" rel="noopener noreferrer">Source code <svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+                </aside>
+            </div>
+        </section>
+
+        <nav class="case-pager container" aria-label="More projects">
+            <a class="pager-card" href="medical-document-ai.html">
+                <span class="mono"><svg viewBox="0 0 24 24"><path d="M19 12H5M11 5l-7 7 7 7"/></svg> Previous project</span>
+                <strong>Medical Document AI</strong>
+            </a>
+            <a class="pager-card pager-next" href="weather-interpolation.html">
+                <span class="mono">Next project <svg viewBox="0 0 24 24"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+                <strong>Weather Interpolation</strong>
+            </a>
+        </nav>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <p class="mono">© <span class="footer-year">2026</span> Erva Şengül</p>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+</html>
