@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; script-src 'self'; frame-ancestors 'none'; base-uri 'self'; upgrade-insecure-requests;">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <title>Medical Document AI — Erva Şengül</title>
+    <meta name="description" content="An AI pipeline that turns messy, multilingual clinical documents into clean, structured data for medical-tourism pre-evaluation.">
+    <meta name="theme-color" content="#a4d2cc">
+    <meta property="og:title" content="Medical Document AI — Erva Şengül">
+    <meta property="og:description" content="An AI pipeline that turns messy, multilingual clinical documents into clean, structured data for medical-tourism pre-evaluation.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://www.ervasengul.com/projects/medical-document-ai.html">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%2314304f'/%3E%3Ctext x='32' y='45' font-family='Arial,Helvetica,sans-serif' font-weight='700' font-size='36' fill='%23ffffff' text-anchor='middle'%3EE%3C/text%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600&family=Caveat:wght@500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body class="case-page" style="--tile:#a4d2cc">
+    <a class="skip-link" href="#case">Skip to content</a>
+
+    <header class="site-nav">
+        <div class="container nav-inner">
+            <a href="../index.html" class="brand"><span class="brand-mark">E</span>Erva Şengül</a>
+            <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nav-links"><span></span></button>
+            <nav aria-label="Primary">
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="../index.html#projects">Projects</a></li>
+                    <li><a href="../index.html#yedik">Yedik</a></li>
+                    <li><a href="../index.html#about">About</a></li>
+                    <li><a href="../index.html#contact">Contact</a></li>
+                    <li><a class="btn btn-solid nav-cv" href="../CVLER/Erva_Sengul_Resume.pdf" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></svg>Résumé</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="case-hero">
+            <div class="container">
+                <a class="back-link" href="../index.html#projects"><svg viewBox="0 0 24 24"><path d="M19 12H5M11 5l-7 7 7 7"/></svg> All projects</a>
+                <div class="case-hero-grid">
+                    <div class="case-hero-copy">
+                        <p class="mono case-kicker">Project 03 · Healthcare NLP · 2025</p>
+                        <h1 class="case-title">Medical Document AI</h1>
+                        <p class="case-lead">An AI pipeline that turns messy, multilingual clinical documents into clean, structured data for medical-tourism pre-evaluation.</p>
+                        <div class="case-actions">
+                            <a class="btn btn-solid" href="https://github.com/ervasengul/ai-medical-document-structuring" target="_blank" rel="noopener noreferrer">Read the write-up <svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+                        </div>
+                    </div>
+                    <div class="case-art">
+                        <img src="../images/illustrations/medical.webp" alt="Top-down illustration of a clinic desk: a doctor at a laptop with a stack of medical documents, a stethoscope and a clipboard" width="1024" height="688" fetchpriority="high">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="case" class="section case">
+            <div class="container case-body">
+                <article class="case-main">
+                        <h2>Overview</h2>
+                        <p>International patients send their records in many languages and formats — scans, discharge letters, lab reports. Before a clinician can evaluate a case, someone has to read all of it.</p>
+                        <p>This pipeline translates the documents, extracts the clinical facts into structured JSON with a <strong>fine-tuned MedGemma-4B</strong>, and assembles them into one chronological timeline a clinician can review at a glance.</p>
+
+                        <h2>How it works</h2>
+                        <ol class="steps">
+                            <li><strong>Translate</strong><span>NLLB-200 normalises multilingual input into a single language.</span></li>
+                            <li><strong>Chunk</strong><span>Overlapping-window chunking keeps context across section and page boundaries.</span></li>
+                            <li><strong>Extract</strong><span>MedGemma-4B, fine-tuned with QLoRA in 4-bit, pulls diagnoses, medications, procedures and dates into structured JSON.</span></li>
+                            <li><strong>Assemble</strong><span>A deterministic step orders every clinical event into a timeline for pre-evaluation review.</span></li>
+                        </ol>
+
+                        <h3 class="case-sub">Output shape</h3>
+                        <pre class="snippet">{
+  "diagnoses":   [ … ],
+  "medications": [ … ],
+  "procedures":  [ … ],
+  "dates":       [ … ],
+  "timeline":    [ … ]
+}</pre>
+
+                        <h2>What’s in the source code</h2>
+                        <p>The public repository is a technical write-up of the architecture and integration approach; code and data are not included.</p>
+                        <ul class="code-tree">
+                            <li><code>README.md</code><span>Pipeline design, model choices and how the stages fit together</span></li>
+                        </ul>
+                        <p class="code-note">Built with Python, PyTorch, Hugging Face Transformers and PEFT.</p>
+                </article>
+
+                <aside class="glance" aria-label="At a glance">
+                    <p class="mono">At a glance</p>
+                    <dl>
+                            <div><dt>Year</dt><dd>2025</dd></div>
+                            <div><dt>Domain</dt><dd>Medical tourism</dd></div>
+                            <div><dt>Language</dt><dd>Python</dd></div>
+                            <div><dt>Models</dt><dd>MedGemma-4B · NLLB-200</dd></div>
+                            <div><dt>Fine-tuning</dt><dd>QLoRA (4-bit)</dd></div>
+                            <div><dt>Output</dt><dd>JSON + timeline</dd></div>
+                    </dl>
+                    <ul class="tags"><li>Python</li><li>PyTorch</li><li>Transformers</li><li>PEFT</li><li>QLoRA</li><li>MedGemma-4B</li><li>NLLB-200</li></ul>
+                        <a class="btn btn-solid glance-btn" href="https://github.com/ervasengul/ai-medical-document-structuring" target="_blank" rel="noopener noreferrer">Read the write-up <svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+                </aside>
+            </div>
+        </section>
+
+        <nav class="case-pager container" aria-label="More projects">
+            <a class="pager-card" href="yedik.html">
+                <span class="mono"><svg viewBox="0 0 24 24"><path d="M19 12H5M11 5l-7 7 7 7"/></svg> Previous project</span>
+                <strong>Yedik: The App</strong>
+            </a>
+            <a class="pager-card pager-next" href="emotion-recognition.html">
+                <span class="mono">Next project <svg viewBox="0 0 24 24"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+                <strong>Real-Time Emotion Recognition</strong>
+            </a>
+        </nav>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <p class="mono">© <span class="footer-year">2026</span> Erva Şengül</p>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+</html>

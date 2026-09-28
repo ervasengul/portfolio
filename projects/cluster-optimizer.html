@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; script-src 'self'; frame-ancestors 'none'; base-uri 'self'; upgrade-insecure-requests;">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <title>Intelligent Cluster Optimizer — Erva Şengül</title>
+    <meta name="description" content="A Kubernetes-native optimizer that right-sizes workloads from their real usage history — cutting cloud cost without trading away reliability. Published as a research paper on arXiv.">
+    <meta name="theme-color" content="#93ba9d">
+    <meta property="og:title" content="Intelligent Cluster Optimizer — Erva Şengül">
+    <meta property="og:description" content="A Kubernetes-native optimizer that right-sizes workloads from their real usage history — cutting cloud cost without trading away reliability. Published as a research paper on arXiv.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://www.ervasengul.com/projects/cluster-optimizer.html">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%2314304f'/%3E%3Ctext x='32' y='45' font-family='Arial,Helvetica,sans-serif' font-weight='700' font-size='36' fill='%23ffffff' text-anchor='middle'%3EE%3C/text%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600&family=Caveat:wght@500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body class="case-page" style="--tile:#93ba9d">
+    <a class="skip-link" href="#case">Skip to content</a>
+
+    <header class="site-nav">
+        <div class="container nav-inner">
+            <a href="../index.html" class="brand"><span class="brand-mark">E</span>Erva Şengül</a>
+            <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nav-links"><span></span></button>
+            <nav aria-label="Primary">
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="../index.html#projects">Projects</a></li>
+                    <li><a href="../index.html#yedik">Yedik</a></li>
+                    <li><a href="../index.html#about">About</a></li>
+                    <li><a href="../index.html#contact">Contact</a></li>
+                    <li><a class="btn btn-solid nav-cv" href="../CVLER/Erva_Sengul_Resume.pdf" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></svg>Résumé</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="case-hero">
+            <div class="container">
+                <a class="back-link" href="../index.html#projects"><svg viewBox="0 0 24 24"><path d="M19 12H5M11 5l-7 7 7 7"/></svg> All projects</a>
+                <div class="case-hero-grid">
+                    <div class="case-hero-copy">
+                        <p class="mono case-kicker">Project 01 · Cloud infrastructure · 2026</p>
+                        <h1 class="case-title">Intelligent Cluster Optimizer</h1>
+                        <p class="case-lead">A Kubernetes-native optimizer that right-sizes workloads from their real usage history — cutting cloud cost without trading away reliability. Published as a research paper on arXiv.</p>
+                        <div class="case-actions">
+                            <a class="btn btn-solid" href="https://github.com/medipol-srg/intelligent-cluster-optimizer" target="_blank" rel="noopener noreferrer">Source code <svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+                            <a class="btn btn-ghost" href="https://arxiv.org/abs/2607.26503" target="_blank" rel="noopener noreferrer">Read the paper <svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+                        </div>
+                    </div>
+                    <div class="case-art">
+                        <img src="../images/illustrations/cluster.webp" alt="Top-down illustration of a small data-center room: three rows of server racks and a person with a laptop crouching beside one" width="1024" height="688" fetchpriority="high">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="case" class="section case">
+            <div class="container case-body">
+                <article class="case-main">
+                        <h2>Overview</h2>
+                        <p>Most Kubernetes workloads ask for far more CPU and memory than they ever use, and the cluster pays for that gap every hour. The optimizer watches what each workload actually consumes, forecasts what it will need next, and rewrites its resource requests — but only when a chain of safety checks agrees the change is safe.</p>
+                        <p>In evaluation on Google Kubernetes Engine it cut cost by <strong>20–40%</strong>. The approach is published as <a href="https://arxiv.org/abs/2607.26503" target="_blank" rel="noopener noreferrer">Safety-Gated Autoscaling (arXiv:2607.26503)</a>.</p>
+
+                        <h2>How it works</h2>
+                        <ol class="steps">
+                            <li><strong>Collect</strong><span>Scrapes CPU and memory usage from the Kubernetes metrics API into an in-memory time-series store.</span></li>
+                            <li><strong>Analyse</strong><span>Flags anomalies (Z-score, IQR, moving average), detects memory leaks with regression and forecasts demand with Holt-Winters.</span></li>
+                            <li><strong>Recommend</strong><span>Computes P95/P99 usage with a 1.2× safety margin and gives every recommendation a 0–100% confidence score.</span></li>
+                            <li><strong>Optimise</strong><span>Balances cost, performance, reliability, efficiency and stability with multi-objective (Pareto) optimisation, then applies YAML policies and SLA checks.</span></li>
+                            <li><strong>Gate</strong><span>Checks for HPA/PDB conflicts, OOM risk and the circuit-breaker state before anything changes.</span></li>
+                            <li><strong>Apply &amp; roll back</strong><span>Patches the deployment and reverts automatically if health checks fail; changes can also be exported as Kustomize/Helm for GitOps.</span></li>
+                        </ol>
+
+                        <h2>What’s in the source code</h2>
+                        <p>Written entirely in Go. The controller, collector and CLI live in <code>cmd/</code>; each part of the pipeline is its own package under <code>pkg/</code>.</p>
+                        <ul class="code-tree">
+                            <li><code>cmd/</code><span>Controller, metrics collector and the <code>optctl</code> CLI</span></li>
+                            <li><code>pkg/recommendation</code><span>P95/P99 percentile engine</span></li>
+                            <li><code>pkg/prediction</code><span>Holt-Winters forecasting</span></li>
+                            <li><code>pkg/anomaly</code><span>Z-score, IQR and moving-average detection</span></li>
+                            <li><code>pkg/leakdetector</code><span>Memory-leak detection via regression</span></li>
+                            <li><code>pkg/pareto</code><span>Multi-objective optimisation</span></li>
+                            <li><code>pkg/policy · pkg/sla</code><span>Policy engine and SLA monitoring</span></li>
+                            <li><code>pkg/safety</code><span>OOM checks and circuit breaker</span></li>
+                            <li><code>pkg/gitops</code><span>Kustomize / Helm export</span></li>
+                            <li><code>pkg/cost</code><span>AWS, GCP and Azure pricing models</span></li>
+                        </ul>
+                        <pre class="snippet">go build -o bin/optimizer-controller ./cmd/controller/
+kubectl apply -f config/crd/
+./bin/optimizer-controller</pre>
+                        <p class="code-note">The repository README reports 91 test files with 959 test cases, 83.0% coverage of <code>pkg/</code>, a clean race-detector run and about 50 ms per recommendation.</p>
+                </article>
+
+                <aside class="glance" aria-label="At a glance">
+                    <p class="mono">At a glance</p>
+                    <dl>
+                            <div><dt>Year</dt><dd>2026</dd></div>
+                            <div><dt>Type</dt><dd>Research · open source</dd></div>
+                            <div><dt>Language</dt><dd>Go</dd></div>
+                            <div><dt>Platform</dt><dd>Kubernetes (GKE)</dd></div>
+                            <div><dt>Result</dt><dd>20–40% lower cost</dd></div>
+                            <div><dt>Paper</dt><dd><a href="https://arxiv.org/abs/2607.26503" target="_blank" rel="noopener noreferrer">arXiv:2607.26503</a></dd></div>
+                    </dl>
+                    <ul class="tags"><li>Go</li><li>Kubernetes API</li><li>Custom Operator</li><li>Holt-Winters</li><li>Pareto optimisation</li><li>Docker</li></ul>
+                        <a class="btn btn-solid glance-btn" href="https://github.com/medipol-srg/intelligent-cluster-optimizer" target="_blank" rel="noopener noreferrer">Source code <svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+                </aside>
+            </div>
+        </section>
+
+        <nav class="case-pager container" aria-label="More projects">
+            <a class="pager-card" href="battery-monitor.html">
+                <span class="mono"><svg viewBox="0 0 24 24"><path d="M19 12H5M11 5l-7 7 7 7"/></svg> Previous project</span>
+                <strong>Car Battery Monitor</strong>
+            </a>
+            <a class="pager-card pager-next" href="yedik.html">
+                <span class="mono">Next project <svg viewBox="0 0 24 24"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+                <strong>Yedik: The App</strong>
+            </a>
+        </nav>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <p class="mono">© <span class="footer-year">2026</span> Erva Şengül</p>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+</html>

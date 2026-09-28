@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; script-src 'self'; frame-ancestors 'none'; base-uri 'self'; upgrade-insecure-requests;">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <title>Car Battery Monitor — Erva Şengül</title>
+    <meta name="description" content="An embedded system that reads a car battery’s voltage in real time and shows its health on an LCD — before a flat battery surprises you.">
+    <meta name="theme-color" content="#efcf7b">
+    <meta property="og:title" content="Car Battery Monitor — Erva Şengül">
+    <meta property="og:description" content="An embedded system that reads a car battery’s voltage in real time and shows its health on an LCD — before a flat battery surprises you.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://www.ervasengul.com/projects/battery-monitor.html">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%2314304f'/%3E%3Ctext x='32' y='45' font-family='Arial,Helvetica,sans-serif' font-weight='700' font-size='36' fill='%23ffffff' text-anchor='middle'%3EE%3C/text%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600&family=Caveat:wght@500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body class="case-page" style="--tile:#efcf7b">
+    <a class="skip-link" href="#case">Skip to content</a>
+
+    <header class="site-nav">
+        <div class="container nav-inner">
+            <a href="../index.html" class="brand"><span class="brand-mark">E</span>Erva Şengül</a>
+            <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nav-links"><span></span></button>
+            <nav aria-label="Primary">
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="../index.html#projects">Projects</a></li>
+                    <li><a href="../index.html#yedik">Yedik</a></li>
+                    <li><a href="../index.html#about">About</a></li>
+                    <li><a href="../index.html#contact">Contact</a></li>
+                    <li><a class="btn btn-solid nav-cv" href="../CVLER/Erva_Sengul_Resume.pdf" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></svg>Résumé</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="case-hero">
+            <div class="container">
+                <a class="back-link" href="../index.html#projects"><svg viewBox="0 0 24 24"><path d="M19 12H5M11 5l-7 7 7 7"/></svg> All projects</a>
+                <div class="case-hero-grid">
+                    <div class="case-hero-copy">
+                        <p class="mono case-kicker">Project 06 · Embedded systems · 2024</p>
+                        <h1 class="case-title">Car Battery Monitor</h1>
+                        <p class="case-lead">An embedded system that reads a car battery’s voltage in real time and shows its health on an LCD — before a flat battery surprises you.</p>
+                        <div class="case-actions">
+                            <a class="btn btn-solid" href="https://github.com/ervasengul/car-battery-voltage-monitoring" target="_blank" rel="noopener noreferrer">Source code <svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+                        </div>
+                    </div>
+                    <div class="case-art">
+                        <img src="../images/illustrations/battery.webp" alt="Top-down illustration of an electronics workbench: a breadboard with jumper wires, an LCD module, a bench power supply, a multimeter and a car battery" width="1024" height="688" fetchpriority="high">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="case" class="section case">
+            <div class="container case-body">
+                <article class="case-main">
+                        <h2>Overview</h2>
+                        <p>A PIC16F877A microcontroller measures the battery through a voltage divider, converts the reading with its 10-bit ADC and prints both the voltage and a health status on a 16 × 2 LCD. I designed the divider circuit and wrote the firmware in embedded C.</p>
+                        <p>The photo is the working prototype on the bench, reading <strong>13.3 V — Status: OK</strong>.</p>
+
+                        <figure class="case-photo">
+                            <img src="../images/projects/battery-bench.webp" alt="The prototype on a breadboard: a PIC microcontroller wired to a 16×2 LCD reading ‘Battery: 13.3V, Status: OK’, powered from a bench supply" loading="lazy" width="1400" height="643">
+                            <figcaption class="hand">the prototype on the bench</figcaption>
+                        </figure>
+
+                        <h2>How it works</h2>
+                        <ol class="steps">
+                            <li><strong>Scale</strong><span>A 1 : 4 voltage divider brings the battery voltage into the ADC’s 0–5 V range on pin RA0/AN0.</span></li>
+                            <li><strong>Measure</strong><span>The 10-bit ADC samples the input against VDD/VSS and the firmware multiplies the result back by four.</span></li>
+                            <li><strong>Classify</strong><span>The reading is mapped to one of six health states (table below).</span></li>
+                            <li><strong>Display</strong><span>Voltage on the first LCD row, status on the second — refreshed every second and redrawn only when the value moves by 0.1 V or more.</span></li>
+                        </ol>
+
+                        <h3 class="case-sub">Health states</h3>
+                        <table class="data-table">
+                            <thead><tr><th>Battery voltage</th><th>LCD status</th></tr></thead>
+                            <tbody><tr><td>above 14.8 V</td><td><span class="state state-high">HIGH</span></td></tr><tr><td>14.4 – 14.8 V</td><td><span class="state state-charging">CHARGING</span></td></tr><tr><td>13.8 – 14.4 V</td><td><span class="state state-good">GOOD</span></td></tr><tr><td>12.6 – 13.8 V</td><td><span class="state state-ok">OK</span></td></tr><tr><td>11.5 – 12.6 V</td><td><span class="state state-low">LOW</span></td></tr><tr><td>below 11.5 V</td><td><span class="state state-critical">CRITICAL</span></td></tr></tbody>
+                        </table>
+
+                        <h2>What’s in the source code</h2>
+                        <p>A single C source file for Microchip’s XC8 compiler.</p>
+                        <ul class="code-tree">
+                            <li><code>voltage-monitoring-sys.c</code><span>ADC setup, 4-bit LCD driver on PORTD, the status thresholds and the main loop</span></li>
+                            <li><code>README.md</code><span>System overview and hardware description</span></li>
+                        </ul>
+                </article>
+
+                <aside class="glance" aria-label="At a glance">
+                    <p class="mono">At a glance</p>
+                    <dl>
+                            <div><dt>Year</dt><dd>2024</dd></div>
+                            <div><dt>MCU</dt><dd>PIC16F877A</dd></div>
+                            <div><dt>Language</dt><dd>Embedded C (XC8)</dd></div>
+                            <div><dt>Display</dt><dd>16 × 2 LCD, 4-bit mode</dd></div>
+                            <div><dt>ADC</dt><dd>10-bit, channel AN0</dd></div>
+                            <div><dt>Refresh</dt><dd>1 second</dd></div>
+                    </dl>
+                    <ul class="tags"><li>PIC16F877A</li><li>Embedded C</li><li>XC8</li><li>MPLAB X</li><li>ADC</li><li>Circuit design</li></ul>
+                        <a class="btn btn-solid glance-btn" href="https://github.com/ervasengul/car-battery-voltage-monitoring" target="_blank" rel="noopener noreferrer">Source code <svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+                </aside>
+            </div>
+        </section>
+
+        <nav class="case-pager container" aria-label="More projects">
+            <a class="pager-card" href="weather-interpolation.html">
+                <span class="mono"><svg viewBox="0 0 24 24"><path d="M19 12H5M11 5l-7 7 7 7"/></svg> Previous project</span>
+                <strong>Weather Interpolation</strong>
+            </a>
+            <a class="pager-card pager-next" href="cluster-optimizer.html">
+                <span class="mono">Next project <svg viewBox="0 0 24 24"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+                <strong>Intelligent Cluster Optimizer</strong>
+            </a>
+        </nav>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <p class="mono">© <span class="footer-year">2026</span> Erva Şengül</p>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+</html>
