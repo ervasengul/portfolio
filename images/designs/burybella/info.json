@@ -1,4 +1,5 @@
 {
+  "tried": [],
   "url": "https://burybella.com/",
   "final_url": "https://burybella.com/",
   "title": "Bury Bella",
@@ -13,6 +14,7 @@
   ],
   "full_height": 900,
   "sections": 0,
+  "cta_error": "Timeout 45000ms exceeded.\n=========================== logs ===========================\n\"load\" event fired\n============================================================",
   "mobile": [
     780,
     1688

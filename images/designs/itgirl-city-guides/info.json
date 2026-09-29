@@ -1,4 +1,25 @@
 {
-  "url": "https://itgirlcityguides.com/",
-  "error": "Page.goto: net::ERR_NAME_NOT_RESOLVED at https://itgirlcityguides.com/\nCall log:\n  - navigating to \"https://itgirlcityguides.com/\", waiting until \"networkidle\"\n"
+  "tried": [
+    [
+      "https://www.itgirlcityguides.com/",
+      "Page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.itgirlcityguides.com/\nCall log:\n  - navigating to \"https://www.itgirlcityguides.com/\", waiting until \"netwo"
+    ],
+    [
+      "https://itgirlcityguides.com/",
+      "Page.goto: net::ERR_NAME_NOT_RESOLVED at https://itgirlcityguides.com/\nCall log:\n  - navigating to \"https://itgirlcityguides.com/\", waiting until \"networkidle\"\n"
+    ],
+    [
+      "https://www.itgirlcityguide.com/",
+      "Page.goto: Navigation to \"https://www.itgirlcityguide.com/\" is interrupted by another navigation to \"chrome-error://chromewebdata/\"\nCall log:\n  - navigating to "
+    ],
+    [
+      "https://itgirlcityguide.com/",
+      "Page.goto: Navigation to \"https://itgirlcityguide.com/\" is interrupted by another navigation to \"https://itgirlcityguide.com/\"\nCall log:\n  - navigating to \"http"
+    ],
+    [
+      "http://itgirlcityguides.com/",
+      "Page.goto: net::ERR_NAME_NOT_RESOLVED at http://itgirlcityguides.com/\nCall log:\n  - navigating to \"http://itgirlcityguides.com/\", waiting until \"networkidle\"\n"
+    ]
+  ],
+  "error": "no candidate URL loaded"
 }
