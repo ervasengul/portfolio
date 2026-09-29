@@ -8,6 +8,14 @@
     return user + '@' + domain;
   }
 
+  // the site used to be one long page; send old #section links to their new pages
+  var legacy = { '#projects': 'projects.html', '#archive': 'projects.html#archive', '#yedik': 'designs.html#yedik',
+                 '#about': 'about.html', '#experience': 'about.html', '#contact': 'contact.html' };
+  if (/(^|\/)(index\.html)?$/.test(location.pathname) && legacy[location.hash]) {
+    location.replace(legacy[location.hash]);
+    return;
+  }
+
   document.addEventListener('DOMContentLoaded', function () {
     // --- email obfuscation ---
     document.querySelectorAll('.email-link').forEach(function (link) {
