@@ -14,7 +14,10 @@
   ],
   "full_height": 900,
   "sections": 0,
-  "cta_error": "Timeout 45000ms exceeded.\n=========================== logs ===========================\n\"load\" event fired\n============================================================",
+  "cta_url": "https://shopier.com/burybella",
+  "cta_title": "Just a moment...",
+  "cta_text": "shopier.com\nPerforming security verification\n\nThis website uses a security service to protect against malicious bots. This page is displayed while the website verifies you are not a bot.\n\nRay ID: a42af635dd1717d6\nPerformance and Security by Cloudflare\nPrivacy",
+  "cta_full_height": 900,
   "mobile": [
     780,
     1688

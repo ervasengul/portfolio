@@ -2,11 +2,11 @@
   "tried": [
     [
       "https://www.itgirlcityguides.com/",
-      "Page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.itgirlcityguides.com/\nCall log:\n  - navigating to \"https://www.itgirlcityguides.com/\", waiting until \"netwo"
+      "Page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.itgirlcityguides.com/\nCall log:\n  - navigating to \"https://www.itgirlcityguides.com/\", waiting until \"load\""
     ],
     [
       "https://itgirlcityguides.com/",
-      "Page.goto: net::ERR_NAME_NOT_RESOLVED at https://itgirlcityguides.com/\nCall log:\n  - navigating to \"https://itgirlcityguides.com/\", waiting until \"networkidle\"\n"
+      "Page.goto: net::ERR_NAME_NOT_RESOLVED at https://itgirlcityguides.com/\nCall log:\n  - navigating to \"https://itgirlcityguides.com/\", waiting until \"load\"\n"
     ],
     [
       "https://www.itgirlcityguide.com/",
@@ -18,7 +18,7 @@
     ],
     [
       "http://itgirlcityguides.com/",
-      "Page.goto: net::ERR_NAME_NOT_RESOLVED at http://itgirlcityguides.com/\nCall log:\n  - navigating to \"http://itgirlcityguides.com/\", waiting until \"networkidle\"\n"
+      "Page.goto: net::ERR_NAME_NOT_RESOLVED at http://itgirlcityguides.com/\nCall log:\n  - navigating to \"http://itgirlcityguides.com/\", waiting until \"load\"\n"
     ]
   ],
   "error": "no candidate URL loaded"
