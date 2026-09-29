@@ -1,0 +1,24 @@
+{
+  "tried": [],
+  "url": "https://vendisyn.com/",
+  "final_url": "https://vendisyn.com/",
+  "title": "CLARIDELTA",
+  "description": "CLARIDELTA — Intelligence Engineered for Growth. AI-Native Platform.",
+  "headings": [],
+  "text": "Intelligence Engineered for Growth.\n✦ AI-Native Platform",
+  "links": [],
+  "fonts": [
+    "Inter"
+  ],
+  "desktop": [
+    1440,
+    900
+  ],
+  "full_height": 900,
+  "sections": 0,
+  "cta_error": "Locator.click: Timeout 5000ms exceeded.\nCall log:\n  - waiting for get_by_role(\"button\", name=re.compile(r\"shop now|shop|explore|discover|start|guides?|keşfet|alışveriş\", re.IGNORECASE)).first\n",
+  "mobile": [
+    780,
+    1688
+  ]
+}

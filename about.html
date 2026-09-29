@@ -3,23 +3,122 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'unsafe-inline'; script-src 'unsafe-inline'; frame-ancestors 'none'; base-uri 'self';">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; script-src 'self'; frame-ancestors 'none'; base-uri 'self'; upgrade-insecure-requests;">
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta name="referrer" content="strict-origin-when-cross-origin">
-    <title>Erva Şengül — Redirecting…</title>
-    <meta name="robots" content="noindex">
-    <!-- The about page now lives on index.html#about. -->
-    <meta http-equiv="refresh" content="0; url=index.html#about">
-    <style>
-        body { font-family: system-ui, sans-serif; background: #f8f6f1; color: #1b1b19;
-               display: grid; place-items: center; min-height: 100vh; margin: 0; }
-        a { color: #2f4d8f; }
-    </style>
+    <title>About — Erva Şengül</title>
+    <meta name="description" content="About Erva Şengül, a computer engineer in Istanbul.">
+    <meta name="theme-color" content="#75b2e2">
+    <meta property="og:title" content="About — Erva Şengül">
+    <meta property="og:description" content="About Erva Şengül, a computer engineer in Istanbul.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.ervasengul.com/about.html">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%2314304f'/%3E%3Ctext x='32' y='45' font-family='Arial,Helvetica,sans-serif' font-weight='700' font-size='36' fill='%23ffffff' text-anchor='middle'%3EE%3C/text%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600&family=Caveat:wght@500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css?v=20260929">
 </head>
-<body>
-    <p>This page has moved — <a href="index.html#about">continue to the portfolio</a>.</p>
-    <script>
-        location.replace('index.html#about');
-    </script>
+<body class="about-page">
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-nav">
+        <div class="container nav-inner">
+            <a href="index.html" class="brand"><span class="brand-mark">E</span>Erva Şengül</a>
+            <a class="nav-cv-m" href="CVLER/Erva_Sengul_Resume.pdf" target="_blank" rel="noopener noreferrer" hidden><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></svg>Résumé</a>
+            <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nav-links"><span></span></button>
+            <nav aria-label="Primary">
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="designs.html">Designs</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="about.html" aria-current="page">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li class="nav-cv-item"><a class="btn btn-solid nav-cv" href="CVLER/Erva_Sengul_Resume.pdf" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></svg>Résumé</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main">
+
+        <section class="page-hero">
+            <div class="container">
+                <p class="mono page-kicker">About me</p>
+                <h1 class="page-title">Hi, I’m Erva</h1>
+                <p class="page-sub">Computer engineer in Istanbul — I design, build and ship.</p>
+            </div>
+        </section>
+
+        <!-- ================= ABOUT ================= -->
+        <section id="about" class="section about page-first">
+            <div class="container">
+
+                <div class="about-grid">
+                    <figure class="polaroid reveal">
+                        <div class="frame">
+                            <img src="images/portrait.webp" alt="Erva Şengül smiling on a waterfront path, with green lawns, hills and a pale blue house behind her" loading="lazy" width="800" height="1000">
+                        </div>
+                        <figcaption class="caption hand">on one of my long walks</figcaption>
+                    </figure>
+
+                    <div class="cv-paper reveal">
+                        <a class="cv-doc" href="CVLER/Erva_Sengul_Resume.pdf" target="_blank" rel="noopener noreferrer" aria-label="Open my résumé (PDF, 2 pages) in a new tab">
+                            <span class="cv-doc-top">
+                                <img src="images/portrait.webp" alt="" width="800" height="1000" loading="lazy">
+                                <span class="cv-doc-head">
+                                    <strong>Erva Şengül</strong>
+                                    <span>Computer Engineer</span>
+                                    <i></i><i class="short"></i>
+                                </span>
+                            </span>
+                            <span class="cv-doc-checks" aria-hidden="true">
+                                <span><b></b><i></i></span><span><b></b><i></i></span>
+                                <span><b></b><i></i></span><span><b></b><i></i></span>
+                            </span>
+                            <span class="cv-doc-lines" aria-hidden="true"><i></i><i></i><i class="short"></i></span>
+                            <span class="cv-doc-sign hand" aria-hidden="true">Erva</span>
+                        </a>
+                        <a class="btn btn-solid cv-download" href="CVLER/Erva_Sengul_Resume.pdf" download="Erva_Sengul_Resume.pdf">Download résumé <svg viewBox="0 0 24 24"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg></a>
+                        <p class="mono cv-meta">PDF · 2 pages</p>
+                    </div>
+
+                    <div class="about-copy reveal reveal-delay-1">
+                        <p>
+                            I'm Erva, a 22-year-old computer engineer in Istanbul, and technology is the thing I
+                            never get tired of. I like working across the whole stack — cloud infrastructure and
+                            Kubernetes, applied AI, and the mobile apps people actually hold in their hands.
+                        </p>
+                        <p>
+                            What pulls me in is taking something that already works and making it work better:
+                            a cluster that stops wasting money, a model that reads messy medical records, an app
+                            that makes deciding where to eat a little easier. Right now that's
+                            <a href="designs.html#yedik">Yedik</a> — I'm building it end to end, from the Go API to the App Store.
+                        </p>
+
+                        <ul class="stickers" aria-label="Things I love">
+                            <li>Long walks</li><li>Vibe coding</li><li>Trying new places</li>
+                            <li>Technology</li><li>Cosmetics</li><li>Dermatology</li>
+                        </ul>
+
+                        <ul class="fact-list">
+                            <li><span class="k">Based in</span><span class="v">Istanbul, Türkiye</span></li>
+                            <li><span class="k">Publication</span><span class="v"><a href="https://arxiv.org/abs/2607.26503" target="_blank" rel="noopener noreferrer">Safety-Gated Autoscaling — arXiv:2607.26503, 2026</a></span></li>
+                            <li><span class="k">Currently reading</span><span class="v">The Phoenix Project — Kim, Behr &amp; Spafford</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <p class="mono">© <span class="footer-year">2026</span> Erva Şengül</p>
+            <p class="mono"><a class="email-link email-text" href="mailto:ervasengul4@gmail.com">ervasengul4@gmail.com</a></p>
+        </div>
+    </footer>
+
+    <script src="script.js?v=20260929"></script>
 </body>
 </html>

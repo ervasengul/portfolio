@@ -6,21 +6,21 @@
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; script-src 'self'; frame-ancestors 'none'; base-uri 'self'; upgrade-insecure-requests;">
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta name="referrer" content="strict-origin-when-cross-origin">
-    <title>Erva Şengül — Computer Engineer</title>
-    <meta name="description" content="Erva Şengül — computer engineer in Istanbul building cloud infrastructure, applied AI and mobile products. Published on arXiv; building Yedik, a social dining app.">
+    <title>Erva Şengül — Computer Engineer & Designer</title>
+    <meta name="description" content="Erva Şengül designs and builds websites and mobile apps, and engineers the cloud and AI systems behind them. Based in Istanbul.">
     <meta name="theme-color" content="#75b2e2">
-    <meta property="og:title" content="Erva Şengül — Computer Engineer">
-    <meta property="og:description" content="Cloud infrastructure · applied AI · mobile. Computer engineer based in Istanbul.">
+    <meta property="og:title" content="Erva Şengül — Computer Engineer & Designer">
+    <meta property="og:description" content="Erva Şengül designs and builds websites and mobile apps, and engineers the cloud and AI systems behind them. Based in Istanbul.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.ervasengul.com/">
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%2314304f'/%3E%3Ctext x='32' y='45' font-family='Arial,Helvetica,sans-serif' font-weight='700' font-size='36' fill='%23ffffff' text-anchor='middle'%3EE%3C/text%3E%3C/svg%3E">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600&family=Caveat:wght@500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css?v=20260928">
+    <link rel="stylesheet" href="styles.css?v=20260929">
 </head>
-<body>
-    <a class="skip-link" href="#projects">Skip to content</a>
+<body class="home">
+    <a class="skip-link" href="#main">Skip to content</a>
 
     <header class="site-nav">
         <div class="container nav-inner">
@@ -29,17 +29,17 @@
             <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nav-links"><span></span></button>
             <nav aria-label="Primary">
                 <ul class="nav-links" id="nav-links">
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#yedik">Yedik</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="designs.html">Designs</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
                     <li class="nav-cv-item"><a class="btn btn-solid nav-cv" href="CVLER/Erva_Sengul_Resume.pdf" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></svg>Résumé</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <main>
+    <main id="main">
 
         <!-- ================= HERO ================= -->
         <section class="hero" aria-label="Intro">
@@ -48,15 +48,15 @@
                     <div class="hero-copy">
                         <p class="mono hero-eyebrow">Based in Istanbul · Computer Engineer</p>
                         <h1 class="hero-title">Erva Şengül</h1>
-                        <p class="hero-role">Computer engineer building infrastructure, applied AI and mobile products.</p>
+                        <p class="hero-role">Computer engineer who designs and builds websites, apps and the systems behind them.</p>
                         <p class="hero-lead">
-                            A Kubernetes cost optimizer that became a published paper, clinical-document
-                            pipelines with fine-tuned language models, and Yedik — a social dining app
-                            for Istanbul I'm taking to the App Store.
+                            I design and build websites and mobile apps for brands — and I engineer the
+                            infrastructure and AI behind them, from a Kubernetes optimizer published on arXiv
+                            to Yedik, a social dining app for Istanbul.
                         </p>
                         <div class="hero-actions">
-                            <a class="btn btn-solid" href="#projects">See projects <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12l7 7 7-7"/></svg></a>
-                            <a class="btn btn-ghost" href="CVLER/Erva_Sengul_Resume.pdf" target="_blank" rel="noopener noreferrer">Résumé (PDF) <svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+                            <a class="btn btn-solid" href="designs.html">See my designs <svg viewBox="0 0 24 24"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+                            <a class="btn btn-ghost" href="projects.html">See projects <svg viewBox="0 0 24 24"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
                         </div>
                         <p class="hero-hint" aria-hidden="true">
                             <svg viewBox="0 0 34 24"><path d="M2 4c8 2 16 14 30 12"/><path d="M27 10l5 6-7 2"/></svg>
@@ -72,8 +72,8 @@
                              sizes="(max-width: 860px) 100vw, 60vw"
                              width="2048" height="1382" fetchpriority="high"
                              alt="Top-down illustration of Erva at a wooden desk, coding on an iMac, with a coffee cup and a plant, casting a long afternoon shadow">
-                        <a class="hotspot" href="#projects" aria-label="Open the projects section" style="--x:58%; --y:15%; --w:24%; --h:15%">
-                            <span class="hotspot-tip">See what I'm building ↓</span>
+                        <a class="hotspot" href="projects.html" aria-label="Open the projects page" style="--x:58%; --y:15%; --w:24%; --h:15%">
+                            <span class="hotspot-tip">See what I'm building →</span>
                         </a>
                         </div>
                     </div>
@@ -85,383 +85,15 @@
             </div>
         </section>
 
-        <!-- ================= PROJECTS ================= -->
-        <section id="projects" class="section projects">
-            <div class="container">
-                <div class="section-head reveal">
-                    <div>
-                        <p class="mono">Part. 01 — Selected work</p>
-                        <h2 class="section-title"><span class="scribble">Projects</span><span class="count">06 · 2024 — 2026</span></h2>
-                    </div>
-                    <p class="section-sub">Six things I built end to end — from Kubernetes operators to a mobile app with its own API, database and CI/CD.</p>
-                </div>
-
-                <div class="project-grid">
-
-                    <article class="project reveal" style="--tile:#93ba9d">
-                        <a class="project-media" href="projects/cluster-optimizer.html" aria-label="Open the Intelligent Cluster Optimizer project page">
-                            <img src="images/illustrations/cluster.webp" alt="Top-down illustration of a small data-center room: three rows of server racks and a person with a laptop crouching beside one" loading="lazy" width="1024" height="688">
-                            <span class="project-num">01</span>
-                            <span class="view-chip">View project <svg viewBox="0 0 24 24"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
-                        </a>
-                        <div class="project-meta">
-                            <span class="mono">Cloud infrastructure</span>
-                            <span class="mono">Go · Kubernetes · 2026</span>
-                        </div>
-                        <h3 class="project-title"><a href="projects/cluster-optimizer.html">Intelligent Cluster Optimizer</a></h3>
-                        <p class="project-desc">
-                            My graduation project, now a <strong>published arXiv paper</strong>. A Go operator reads
-                            container usage history, forecasts demand with Holt-Winters and right-sizes
-                            Kubernetes resource requests — every change passes a chain of safety checks before
-                            it is applied. It cut cost by <strong>20–40% on GKE</strong> in evaluation.
-                        </p>
-                        <ul class="tags"><li>Go</li><li>Kubernetes API</li><li>Custom Operator</li><li>Holt-Winters</li><li>Docker</li></ul>
-                        <div class="project-links">
-                            <a class="u-link" href="projects/cluster-optimizer.html">Project details <svg viewBox="0 0 24 24"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
-                            <a class="u-link" href="https://github.com/medipol-srg/intelligent-cluster-optimizer" target="_blank" rel="noopener noreferrer">Source code <svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
-                            <a class="u-link" href="https://arxiv.org/abs/2607.26503" target="_blank" rel="noopener noreferrer">Read the paper <svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
-                        </div>
-                    </article>
-
-                    <article class="project reveal reveal-delay-1" style="--tile:#e6c595">
-                        <a class="project-media" href="projects/yedik.html" aria-label="Open the Yedik: The App project page">
-                            <img src="images/illustrations/yedik.webp" alt="Top-down illustration of a round restaurant table with plates of food; a woman photographs the meal with her phone while a friend sits across" loading="lazy" width="1024" height="688">
-                            <span class="project-num">02</span>
-                            <span class="view-chip">View project <svg viewBox="0 0 24 24"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
-                        </a>
-                        <div class="project-meta">
-                            <span class="mono">Mobile product</span>
-                            <span class="mono">React Native · Go · 2026</span>
-                        </div>
-                        <h3 class="project-title"><a href="projects/yedik.html">Yedik: The App</a></h3>
-                        <p class="project-desc">
-                            A social restaurant-rating app for Istanbul, built end to end: <strong>Go API</strong>,
-                            <strong>React Native</strong> client, PostgreSQL with 225,000+ venues and a GitHub
-                            Actions pipeline that tests and ships every push. Your feed shows only the people you
-                            follow — no algorithm, no ads.
-                        </p>
-                        <ul class="tags"><li>React Native</li><li>Expo</li><li>Go</li><li>PostgreSQL</li><li>Docker</li><li>GitHub Actions</li></ul>
-                        <div class="project-links">
-                            <a class="u-link" href="projects/yedik.html">Project details <svg viewBox="0 0 24 24"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
-                            <span class="note">Private repo · App Store launch in preparation</span>
-                        </div>
-                    </article>
-
-                    <article class="project reveal" style="--tile:#a4d2cc">
-                        <a class="project-media" href="projects/medical-document-ai.html" aria-label="Open the Medical Document AI project page">
-                            <img src="images/illustrations/medical.webp" alt="Top-down illustration of a clinic desk: a doctor at a laptop with a stack of medical documents, a stethoscope and a clipboard" loading="lazy" width="1024" height="688">
-                            <span class="project-num">03</span>
-                            <span class="view-chip">View project <svg viewBox="0 0 24 24"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
-                        </a>
-                        <div class="project-meta">
-                            <span class="mono">Healthcare NLP</span>
-                            <span class="mono">Python · MedGemma · 2025</span>
-                        </div>
-                        <h3 class="project-title"><a href="projects/medical-document-ai.html">Medical Document AI</a></h3>
-                        <p class="project-desc">
-                            Turns messy, multilingual clinical documents into clean structured data for
-                            medical-tourism pre-evaluation. I <strong>fine-tuned MedGemma-4B with QLoRA</strong> to
-                            extract diagnoses, medications, procedures and dates into JSON, paired it with
-                            NLLB-200 for translation, and assembled a chronological timeline clinicians can read
-                            at a glance.
-                        </p>
-                        <ul class="tags"><li>Python</li><li>MedGemma-4B</li><li>QLoRA</li><li>NLLB-200</li><li>Hugging Face</li></ul>
-                        <div class="project-links">
-                            <a class="u-link" href="projects/medical-document-ai.html">Project details <svg viewBox="0 0 24 24"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
-                            <a class="u-link" href="https://github.com/ervasengul/ai-medical-document-structuring" target="_blank" rel="noopener noreferrer">Technical write-up <svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
-                        </div>
-                    </article>
-
-                    <article class="project reveal reveal-delay-1" style="--tile:#f09f86">
-                        <a class="project-media" href="projects/emotion-recognition.html" aria-label="Open the Real-Time Emotion Recognition project page">
-                            <img src="images/illustrations/emotion.webp" alt="Top-down illustration of a festival stand: a table with a monitor, laptop and webcam on a tripod, three visitors watching and Erva presenting" loading="lazy" width="1024" height="688">
-                            <span class="project-num">04</span>
-                            <span class="view-chip">View project <svg viewBox="0 0 24 24"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
-                        </a>
-                        <div class="project-meta">
-                            <span class="mono">Computer vision</span>
-                            <span class="mono">TEKNOFEST · CNN · 2025</span>
-                        </div>
-                        <h3 class="project-title"><a href="projects/emotion-recognition.html">Real-Time Emotion Recognition</a></h3>
-                        <p class="project-desc">
-                            Detects and classifies <strong>seven facial expressions in real time</strong> from a
-                            webcam: a CNN trained on facial-expression datasets, an OpenCV pipeline for
-                            multi-person face tracking, and a timed game with scoring and a leaderboard — run
-                            live for visitors at our TEKNOFEST 2025 stand.
-                        </p>
-                        <ul class="tags"><li>Python</li><li>TensorFlow</li><li>Keras</li><li>OpenCV</li><li>CNN</li></ul>
-                        <div class="project-links">
-                            <a class="u-link" href="projects/emotion-recognition.html">Project details <svg viewBox="0 0 24 24"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
-                            <a class="u-link" href="https://github.com/ervasengul/real_time_emotion_recognition" target="_blank" rel="noopener noreferrer">Source code <svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
-                        </div>
-                    </article>
-
-                    <article class="project reveal" style="--tile:#b4b5dd">
-                        <a class="project-media" href="projects/weather-interpolation.html" aria-label="Open the Weather Interpolation project page">
-                            <img src="images/illustrations/weather.webp" alt="Top-down illustration of a small weather station in a field: an anemometer mast, a rain gauge, an instrument box and Erva holding a tablet" loading="lazy" width="1024" height="688">
-                            <span class="project-num">05</span>
-                            <span class="view-chip">View project <svg viewBox="0 0 24 24"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
-                        </a>
-                        <div class="project-meta">
-                            <span class="mono">Numerical analysis</span>
-                            <span class="mono">Python · SciPy · 2025</span>
-                        </div>
-                        <h3 class="project-title"><a href="projects/weather-interpolation.html">Weather Interpolation</a></h3>
-                        <p class="project-desc">
-                            Reconstructs and forecasts weather trends from NOAA meteorological data. I implemented
-                            and compared <strong>linear, polynomial and cubic-spline interpolation</strong>, then
-                            separated trend, seasonal and residual components with time-series decomposition,
-                            Fourier analysis and autocorrelation.
-                        </p>
-                        <ul class="tags"><li>Python</li><li>NumPy</li><li>SciPy</li><li>Cubic Splines</li><li>Fourier Analysis</li></ul>
-                        <div class="project-links">
-                            <a class="u-link" href="projects/weather-interpolation.html">Project details <svg viewBox="0 0 24 24"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
-                            <a class="u-link" href="https://github.com/ervasengul/Numerical-Analysis-Cubic-Splines-in-Pythonc-Interpolation" target="_blank" rel="noopener noreferrer">Source code <svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
-                        </div>
-                    </article>
-
-                    <article class="project reveal reveal-delay-1" style="--tile:#efcf7b">
-                        <a class="project-media" href="projects/battery-monitor.html" aria-label="Open the Car Battery Monitor project page">
-                            <img src="images/illustrations/battery.webp" alt="Top-down illustration of an electronics workbench: a breadboard with jumper wires, an LCD module, a bench power supply, a multimeter and a car battery" loading="lazy" width="1024" height="688">
-                            <span class="project-num">06</span>
-                            <span class="view-chip">View project <svg viewBox="0 0 24 24"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
-                        </a>
-                        <div class="project-meta">
-                            <span class="mono">Embedded systems</span>
-                            <span class="mono">PIC16F877A · C · 2024</span>
-                        </div>
-                        <h3 class="project-title"><a href="projects/battery-monitor.html">Car Battery Monitor</a></h3>
-                        <p class="project-desc">
-                            An embedded system on a PIC16F877A that reads car-battery voltage in real time and
-                            shows its health — from CRITICAL to CHARGING — on an LCD. I designed the
-                            <strong>voltage-divider circuit</strong> that brings the battery into the ADC's
-                            0–5&nbsp;V range and wrote the firmware in embedded C.
-                        </p>
-                        <ul class="tags"><li>PIC16F877A</li><li>Embedded C</li><li>MPLAB X</li><li>ADC</li><li>Circuit Design</li></ul>
-                        <div class="project-links">
-                            <a class="u-link" href="projects/battery-monitor.html">Project details <svg viewBox="0 0 24 24"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
-                            <a class="u-link" href="https://github.com/ervasengul/car-battery-voltage-monitoring" target="_blank" rel="noopener noreferrer">Source code <svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
-                        </div>
-                    </article>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- ================= YEDIK ================= -->
-        <section id="yedik" class="section yedik">
-            <div class="container">
-                <div class="yedik-head reveal">
-                    <p class="mono">Part. 02 — Yedik: The App · 2026 · founder &amp; sole developer</p>
-                    <h2 class="yedik-title">Where your friends ate, and how much they liked it.</h2>
-                    <p class="yedik-tagline">
-                        A social restaurant-rating app for Istanbul. No algorithm, no ads, no sponsored
-                        spots: your feed is only the people you follow.
-                    </p>
-                </div>
-
-                <!-- Screens: swap the files in images/work/yedik/ to update the gallery -->
-                <div class="screens reveal">
-                    <figure><img src="images/work/yedik/00-acilis.webp" alt="Yedik welcome screen: the Yedik wordmark and 'Where your friends ate, how much they liked it'" loading="lazy" width="600" height="1300"><figcaption class="mono">Welcome</figcaption></figure>
-                    <figure><img src="images/work/yedik/00-puanla.webp" alt="Onboarding step 'Rate the place you went': a card for Çiya Sofrası rated 9.4 out of 10 with a short note" loading="lazy" width="600" height="1300"><figcaption class="mono">Rate</figcaption></figure>
-                    <figure><img src="images/work/yedik/01-akis.webp" alt="Feed of restaurants rated by people you follow, each with a score out of ten" loading="lazy" width="600" height="1300"><figcaption class="mono">Feed</figcaption></figure>
-                    <figure><img src="images/work/yedik/02-kayit.webp" alt="A single rating: photo of the meal, the venue, a 9.4 score and a short note" loading="lazy" width="600" height="1300"><figcaption class="mono">Place</figcaption></figure>
-                    <figure><img src="images/work/yedik/03-listelerim.webp" alt="Ranked list of visited venues, sorted by rating" loading="lazy" width="600" height="1300"><figcaption class="mono">Lists</figcaption></figure>
-                    <figure><img src="images/work/yedik/04-profil.webp" alt="Profile screen with visited count, followers, following and a grid of ratings" loading="lazy" width="600" height="1300"><figcaption class="mono">Profile</figcaption></figure>
-                </div>
-
-                <div class="yedik-body">
-                    <div class="yedik-copy reveal">
-                        <p>
-                            Rate a place out of ten with a note and a photo. Keep two lists — visited, sorted by
-                            rating, and want-to-go. Add new spots from a map that already knows
-                            <strong>225,000+ Istanbul venues</strong>. Share a rating as a story card, follow
-                            friends, get notified when they post.
-                        </p>
-                        <p>
-                            I built every layer myself: the <strong>Go API</strong> (chi, pgx, sqlc, goose migrations,
-                            JWT auth), the <strong>React Native / Expo</strong> app, the PostgreSQL schema, the
-                            Docker Compose deployment on a Hetzner server behind Caddy and Cloudflare, and the
-                            <strong>CI/CD pipeline</strong> that vets, tests and builds everything on each push.
-                        </p>
-                        <ul class="tags"><li>Go 1.25</li><li>chi · pgx · sqlc</li><li>PostgreSQL 17</li><li>React Native 0.86</li><li>Expo Router</li><li>TypeScript</li><li>Docker Compose</li><li>Caddy</li><li>Cloudflare</li><li>GitHub Actions</li></ul>
-                        <span class="note">Private repository · closed beta · App Store launch in preparation</span>
-                    </div>
-
-                    <div class="built reveal reveal-delay-1">
-                        <div>
-                            <h3>Backend</h3>
-                            <ul>
-                                <li>REST API in Go with chi</li>
-                                <li>Type-safe SQL via sqlc + pgx</li>
-                                <li>Versioned migrations (goose)</li>
-                                <li>JWT auth, follow graph, feed</li>
-                                <li>Venue search over 225k places</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h3>Mobile</h3>
-                            <ul>
-                                <li>React Native + Expo Router</li>
-                                <li>Feed, rating, lists, map, search</li>
-                                <li>Photo upload &amp; story-card share</li>
-                                <li>Push notifications</li>
-                                <li>Turkish-first UI</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h3>Infra &amp; CI/CD</h3>
-                            <ul>
-                                <li>Docker Compose: Postgres + API + Caddy</li>
-                                <li>Single Hetzner VM, Cloudflare in front</li>
-                                <li>Static site → Cloudflare Pages</li>
-                                <li>Automated TLS, backups, health checks</li>
-                                <li>GitHub Actions on every push</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div class="pipeline reveal reveal-delay-2" aria-label="CI/CD pipeline steps">
-                        <span class="mono label">GitHub Actions · on every push</span>
-                        <span class="step push">git push</span><span class="sep">→</span>
-                        <span class="step">go vet</span><span class="sep">→</span>
-                        <span class="step">go test</span><span class="sep">→</span>
-                        <span class="step">go build</span><span class="sep">→</span>
-                        <span class="step">tsc --noEmit</span><span class="sep">→</span>
-                        <span class="step">jest</span><span class="sep">→</span>
-                        <span class="step">docker build</span><span class="sep">→</span>
-                        <span class="step">web build.sh</span><span class="sep">→</span>
-                        <span class="step">deploy</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ================= ARCHIVE ================= -->
-        <section id="archive" class="section">
-            <div class="container">
-                <div class="section-head reveal">
-                    <div>
-                        <p class="mono">Part. 03 — More code</p>
-                        <h2 class="section-title">Archive<span class="count">11 repositories</span></h2>
-                    </div>
-                    <p class="section-sub">Coursework, systems programming and small experiments — all public on GitHub.</p>
-                </div>
-
-                <ul class="archive-list reveal">
-                    <li><a class="archive-row" href="https://github.com/ervasengul/ck_dataset_project" target="_blank" rel="noopener noreferrer"><span class="archive-name">ck_dataset_project</span><span class="archive-desc">CK+ facial-expression dataset experiments</span><span class="archive-lang">Python</span><span class="archive-arrow"><svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></span></a></li>
-                    <li><a class="archive-row" href="https://github.com/ervasengul/CSMA_CD" target="_blank" rel="noopener noreferrer"><span class="archive-name">CSMA_CD</span><span class="archive-desc">Medium-access protocol simulation</span><span class="archive-lang">Python</span><span class="archive-arrow"><svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></span></a></li>
-                    <li><a class="archive-row" href="https://github.com/ervasengul/ASP.NET-core-MVC-example" target="_blank" rel="noopener noreferrer"><span class="archive-name">ASP.NET-core-MVC-example</span><span class="archive-desc">Example web application, ASP.NET Core MVC</span><span class="archive-lang">C#</span><span class="archive-arrow"><svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></span></a></li>
-                    <li><a class="archive-row" href="https://github.com/ervasengul/CustomCommandLine-in-C" target="_blank" rel="noopener noreferrer"><span class="archive-name">CustomCommandLine-in-C</span><span class="archive-desc">Shell with command execution &amp; process management</span><span class="archive-lang">C</span><span class="archive-arrow"><svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></span></a></li>
-                    <li><a class="archive-row" href="https://github.com/ervasengul/Matter-of-life-and-death-game-in-C-" target="_blank" rel="noopener noreferrer"><span class="archive-name">Matter-of-life-and-death</span><span class="archive-desc">Josephus-problem simulation on process creation</span><span class="archive-lang">C</span><span class="archive-arrow"><svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></span></a></li>
-                    <li><a class="archive-row" href="https://github.com/ervasengul/Dcitonary-Merging-in-C" target="_blank" rel="noopener noreferrer"><span class="archive-name">Dictionary-Merging-in-C</span><span class="archive-desc">Dictionary merging via binary search trees</span><span class="archive-lang">C</span><span class="archive-arrow"><svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></span></a></li>
-                    <li><a class="archive-row" href="https://github.com/ervasengul/Turkish-to-English-Dictionary-in-C" target="_blank" rel="noopener noreferrer"><span class="archive-name">Turkish-to-English-Dictionary</span><span class="archive-desc">Menu-driven dictionary management utility</span><span class="archive-lang">C</span><span class="archive-arrow"><svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></span></a></li>
-                    <li><a class="archive-row" href="https://github.com/ervasengul/Circular-Matrix-in-C-" target="_blank" rel="noopener noreferrer"><span class="archive-name">Circular-Matrix-in-C</span><span class="archive-desc">2D matrix generation with circular row shifting</span><span class="archive-lang">C</span><span class="archive-arrow"><svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></span></a></li>
-                    <li><a class="archive-row" href="https://github.com/ervasengul/XOXO-game-in-C" target="_blank" rel="noopener noreferrer"><span class="archive-name">XOXO-game-in-C</span><span class="archive-desc">Tic-tac-toe variant with win detection</span><span class="archive-lang">C</span><span class="archive-arrow"><svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></span></a></li>
-                    <li><a class="archive-row" href="https://github.com/ervasengul/Paint-Calculator-in-JAVA" target="_blank" rel="noopener noreferrer"><span class="archive-name">Paint-Calculator-in-JAVA</span><span class="archive-desc">Shape-based paint cost calculation with inheritance</span><span class="archive-lang">Java</span><span class="archive-arrow"><svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></span></a></li>
-                    <li><a class="archive-row" href="https://github.com/ervasengul/DB-PROJECT" target="_blank" rel="noopener noreferrer"><span class="archive-name">DB-PROJECT</span><span class="archive-desc">Web front end for a database course project</span><span class="archive-lang">HTML</span><span class="archive-arrow"><svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></span></a></li>
-                </ul>
-
-                <p class="archive-cta reveal">
-                    <a class="u-link" href="https://github.com/ervasengul?tab=repositories" target="_blank" rel="noopener noreferrer">All repositories on GitHub <svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
-                </p>
-            </div>
-        </section>
-
-        <!-- ================= ABOUT ================= -->
-        <section id="about" class="section about">
-            <div class="container">
-                <div class="section-head reveal">
-                    <div>
-                        <p class="mono">Part. 04 — About me</p>
-                        <h2 class="section-title"><span class="scribble">Hi, I'm Erva</span></h2>
-                    </div>
-                </div>
-
-                <div class="about-grid">
-                    <figure class="polaroid reveal">
-                        <div class="frame">
-                            <img src="images/portrait.webp" alt="Erva Şengül smiling on a waterfront path, with green lawns, hills and a pale blue house behind her" loading="lazy" width="800" height="1000">
-                        </div>
-                        <figcaption class="caption hand">on one of my long walks</figcaption>
-                    </figure>
-
-                    <div class="cv-paper reveal">
-                        <a class="cv-doc" href="CVLER/Erva_Sengul_Resume.pdf" target="_blank" rel="noopener noreferrer" aria-label="Open my résumé (PDF, 2 pages) in a new tab">
-                            <span class="cv-doc-top">
-                                <img src="images/portrait.webp" alt="" width="800" height="1000" loading="lazy">
-                                <span class="cv-doc-head">
-                                    <strong>Erva Şengül</strong>
-                                    <span>Computer Engineer</span>
-                                    <i></i><i class="short"></i>
-                                </span>
-                            </span>
-                            <span class="cv-doc-checks" aria-hidden="true">
-                                <span><b></b><i></i></span><span><b></b><i></i></span>
-                                <span><b></b><i></i></span><span><b></b><i></i></span>
-                            </span>
-                            <span class="cv-doc-lines" aria-hidden="true"><i></i><i></i><i class="short"></i></span>
-                            <span class="cv-doc-sign hand" aria-hidden="true">Erva</span>
-                        </a>
-                        <a class="btn btn-solid cv-download" href="CVLER/Erva_Sengul_Resume.pdf" download="Erva_Sengul_Resume.pdf">Download résumé <svg viewBox="0 0 24 24"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg></a>
-                        <p class="mono cv-meta">PDF · 2 pages</p>
-                    </div>
-
-                    <div class="about-copy reveal reveal-delay-1">
-                        <p>
-                            I'm Erva, a 22-year-old computer engineer in Istanbul, and technology is the thing I
-                            never get tired of. I like working across the whole stack — cloud infrastructure and
-                            Kubernetes, applied AI, and the mobile apps people actually hold in their hands.
-                        </p>
-                        <p>
-                            What pulls me in is taking something that already works and making it work better:
-                            a cluster that stops wasting money, a model that reads messy medical records, an app
-                            that makes deciding where to eat a little easier. Right now that's
-                            <a href="#yedik">Yedik</a> — I'm building it end to end, from the Go API to the App Store.
-                        </p>
-
-                        <ul class="stickers" aria-label="Things I love">
-                            <li>Long walks</li><li>Vibe coding</li><li>Trying new places</li>
-                            <li>Technology</li><li>Cosmetics</li><li>Dermatology</li>
-                        </ul>
-
-                        <ul class="fact-list">
-                            <li><span class="k">Based in</span><span class="v">Istanbul, Türkiye</span></li>
-                            <li><span class="k">Publication</span><span class="v"><a href="https://arxiv.org/abs/2607.26503" target="_blank" rel="noopener noreferrer">Safety-Gated Autoscaling — arXiv:2607.26503, 2026</a></span></li>
-                            <li><span class="k">Currently reading</span><span class="v">The Phoenix Project — Kim, Behr &amp; Spafford</span></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ================= CONTACT ================= -->
-        <section id="contact" class="section contact">
-            <div class="container contact-grid">
-                <div class="reveal">
-                    <p class="mono">Part. 05 — Contact</p>
-                    <h2 class="contact-title">Let's build something that makes sense.</h2>
-                    <p class="contact-lead">New opportunities, research collaborations, new product recommendations — my inbox is open.</p>
-                    <a class="contact-email email-link email-text" href="mailto:ervasengul4@gmail.com">ervasengul4@gmail.com</a>
-                </div>
-                <ul class="contact-links reveal reveal-delay-1">
-                    <li><a class="email-link" href="mailto:ervasengul4@gmail.com">Email <span>ervasengul4@gmail.com</span><svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></a></li>
-                    <li><a href="https://github.com/ervasengul" target="_blank" rel="noopener noreferrer">GitHub <span>@ervasengul</span><svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></a></li>
-                    <li><a href="https://www.linkedin.com/in/erva-%C5%9Feng%C3%BCl-016945237/" target="_blank" rel="noopener noreferrer">LinkedIn <span>erva-şengül</span><svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></a></li>
-                    <li><a href="https://arxiv.org/abs/2607.26503" target="_blank" rel="noopener noreferrer">arXiv <span>2607.26503</span><svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></a></li>
-                    <li><a href="CVLER/Erva_Sengul_Resume.pdf" target="_blank" rel="noopener noreferrer">Résumé <span>PDF</span><svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></a></li>
-                </ul>
-            </div>
-        </section>
-
     </main>
 
     <footer class="site-footer">
         <div class="container footer-inner">
             <p class="mono">© <span class="footer-year">2026</span> Erva Şengül</p>
+            <p class="mono"><a class="email-link email-text" href="mailto:ervasengul4@gmail.com">ervasengul4@gmail.com</a></p>
         </div>
     </footer>
 
-    <script src="script.js?v=20260928"></script>
+    <script src="script.js?v=20260929"></script>
 </body>
 </html>

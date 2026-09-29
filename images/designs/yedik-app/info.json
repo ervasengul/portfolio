@@ -1,0 +1,53 @@
+{
+  "tried": [],
+  "url": "https://yedik.app/",
+  "final_url": "https://yedik.app/",
+  "title": "Yedik · Arkadaşların nerede yedi",
+  "description": "Yedik: gittiğin yeri puanla, arkadaşlarının nerede yediğini ve ne kadar beğendiğini gör. İstanbul'da.",
+  "headings": [
+    "Yedik"
+  ],
+  "text": "YAKINDA APP STORE'DA · İSTANBUL\nYedik\n\nGittiğin yeri puanla, bir not bırak. Akışında yalnızca takip ettiğin insanların yedikleri var; reklam yok, algoritma yok.\n\nAPP STORE\n@YEDİKTHEAPP\nGİZLİLİKKOŞULLARDESTEK",
+  "links": [
+    [
+      "GİZLİLİK",
+      "https://yedik.app/gizlilik/"
+    ],
+    [
+      "KOŞULLAR",
+      "https://yedik.app/kosullar/"
+    ],
+    [
+      "DESTEK",
+      "https://yedik.app/destek/"
+    ]
+  ],
+  "fonts": [
+    "Fraunces",
+    "Archivo"
+  ],
+  "desktop": [
+    1440,
+    900
+  ],
+  "full_height": 958,
+  "sections": 0,
+  "pages": [
+    [
+      "https://yedik.app/gizlilik/",
+      "Gizlilik politikası · Yedik"
+    ],
+    [
+      "https://yedik.app/kosullar/",
+      "Kullanım koşulları · Yedik"
+    ],
+    [
+      "https://yedik.app/destek/",
+      "Destek · Yedik"
+    ]
+  ],
+  "mobile": [
+    780,
+    1688
+  ]
+}
