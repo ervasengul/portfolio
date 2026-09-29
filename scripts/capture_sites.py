@@ -18,10 +18,14 @@ from urllib.parse import urljoin, urlparse
 from PIL import Image
 from playwright.sync_api import sync_playwright
 
+# each site lists candidate URLs; the first one that loads is used
 SITES = [
-    ('burybella', 'https://burybella.com/'),
-    ('itgirl-city-guides', 'https://itgirlcityguides.com/'),
+    ('burybella', ['https://burybella.com/']),
+    ('itgirl-city-guides', ['https://www.itgirlcityguides.com/', 'https://itgirlcityguides.com/',
+                            'https://www.itgirlcityguide.com/', 'https://itgirlcityguide.com/',
+                            'http://itgirlcityguides.com/']),
 ]
+CTA = re.compile(r'shop now|shop|explore|discover|start|guides?|keşfet|alışveriş', re.I)
 ROOT = os.path.join(os.path.dirname(__file__), '..', 'images', 'designs')
 
 DISMISS = ['Accept', 'Accept all', 'Kabul et', 'Tümünü kabul et', 'Got it', 'OK', 'Close', 'Kapat']
@@ -57,14 +61,24 @@ def main():
     report = {}
     with sync_playwright() as p:
         browser = p.chromium.launch()
-        for slug, url in SITES:
+        for slug, candidates in SITES:
             out = os.path.join(ROOT, slug)
             os.makedirs(out, exist_ok=True)
-            info = {'url': url}
+            info = {'tried': []}
             try:
                 ctx = browser.new_context(viewport={'width': 1440, 'height': 900}, device_scale_factor=1)
                 page = ctx.new_page()
-                page.goto(url, wait_until='networkidle', timeout=60000)
+                url = None
+                for cand in candidates:
+                    try:
+                        page.goto(cand, wait_until='networkidle', timeout=45000)
+                        url = cand
+                        break
+                    except Exception as e:
+                        info['tried'].append([cand, str(e)[:160]])
+                if url is None:
+                    raise RuntimeError('no candidate URL loaded')
+                info['url'] = url
                 settle(page)
                 info['final_url'] = page.url
                 info['title'] = page.title()
@@ -96,6 +110,41 @@ def main():
                     buf = io.BytesIO(); crop.save(buf, 'PNG')
                     save_webp(buf.getvalue(), os.path.join(out, f'section-{n}.webp'))
                 info['sections'] = n
+
+                # follow the main call to action (e.g. SHOP NOW) when the home page has no inner links
+                if not inner:
+                    try:
+                        cta = page.get_by_role('link', name=CTA).first
+                        if not cta.count():
+                            cta = page.get_by_role('button', name=CTA).first
+                        cta.click(timeout=5000)
+                        page.wait_for_load_state('networkidle', timeout=45000)
+                        settle(page)
+                        info['cta_url'] = page.url
+                        info['cta_title'] = page.title()
+                        info['cta_text'] = page.evaluate("() => document.body.innerText.slice(0, 3000)")
+                        save_webp(page.screenshot(), os.path.join(out, 'cta.webp'))
+                        full = Image.open(io.BytesIO(page.screenshot(full_page=True)))
+                        info['cta_full_height'] = full.height
+                        k = 0
+                        for y in range(900, min(full.height, 900 * 5), 900):
+                            crop = full.crop((0, y, 1440, min(full.height, y + 900)))
+                            if crop.height < 300:
+                                break
+                            k += 1
+                            buf = io.BytesIO(); crop.save(buf, 'PNG')
+                            save_webp(buf.getvalue(), os.path.join(out, f'cta-section-{k}.webp'))
+                        host2 = urlparse(page.url).netloc
+                        more = page.evaluate("() => Array.from(document.querySelectorAll('a[href]')).map(a => [a.innerText.trim(), a.href])")
+                        for text, href in more:
+                            u = urlparse(href)
+                            if u.netloc == host2 and u.path not in ('', '/') and '#' not in href and href != page.url:
+                                clean = urljoin(href, u.path)
+                                if clean not in [h for _, h in inner]:
+                                    inner.append((text, clean))
+                        info['links'] = inner[:20]
+                    except Exception as e:
+                        info['cta_error'] = str(e)[:300]
 
                 for i, (_, href) in enumerate(inner[:3], start=1):
                     try:
