@@ -1,0 +1,4 @@
+{
+  "url": "https://itgirlcityguides.com/",
+  "error": "Page.goto: net::ERR_NAME_NOT_RESOLVED at https://itgirlcityguides.com/\nCall log:\n  - navigating to \"https://itgirlcityguides.com/\", waiting until \"networkidle\"\n"
+}
