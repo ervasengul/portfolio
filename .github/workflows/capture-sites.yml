@@ -1,0 +1,39 @@
+name: Capture design screenshots
+
+# Takes screenshots of the websites listed in scripts/capture_sites.py and
+# commits them to images/designs/ on the branch the workflow runs on.
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - scripts/capture_sites.py
+      - .github/workflows/capture-sites.yml
+
+permissions:
+  contents: write
+
+jobs:
+  capture:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install Playwright and Pillow
+        run: |
+          pip install --quiet playwright pillow
+          python -m playwright install --with-deps chromium
+
+      - name: Capture
+        run: python3 scripts/capture_sites.py
+
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add images/designs
+          git commit -m "Add design screenshots" || echo "nothing to commit"
+          git push
