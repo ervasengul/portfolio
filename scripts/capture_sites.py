@@ -24,6 +24,8 @@ SITES = [
     ('itgirl-city-guides', ['https://www.itgirlcityguides.com/', 'https://itgirlcityguides.com/',
                             'https://www.itgirlcityguide.com/', 'https://itgirlcityguide.com/',
                             'http://itgirlcityguides.com/']),
+    ('vendisyn', ['https://vendisyn.com/', 'https://www.vendisyn.com/']),
+    ('yedik-app', ['https://yedik.app/']),
 ]
 CTA = re.compile(r'shop now|shop|explore|discover|start|guides?|keşfet|alışveriş', re.I)
 ROOT = os.path.join(os.path.dirname(__file__), '..', 'images', 'designs')
@@ -40,7 +42,7 @@ def save_webp(png_bytes, path, width=None):
 
 
 def settle(page):
-    page.wait_for_timeout(1500)
+    page.wait_for_timeout(3000)
     for label in DISMISS:
         try:
             btn = page.get_by_role('button', name=label, exact=True)
@@ -71,7 +73,7 @@ def main():
                 url = None
                 for cand in candidates:
                     try:
-                        page.goto(cand, wait_until='networkidle', timeout=45000)
+                        page.goto(cand, wait_until='load', timeout=45000)
                         url = cand
                         break
                     except Exception as e:
@@ -118,7 +120,7 @@ def main():
                         if not cta.count():
                             cta = page.get_by_role('button', name=CTA).first
                         cta.click(timeout=5000)
-                        page.wait_for_load_state('networkidle', timeout=45000)
+                        page.wait_for_load_state('load', timeout=45000)
                         settle(page)
                         info['cta_url'] = page.url
                         info['cta_title'] = page.title()
@@ -148,7 +150,7 @@ def main():
 
                 for i, (_, href) in enumerate(inner[:3], start=1):
                     try:
-                        page.goto(href, wait_until='networkidle', timeout=45000)
+                        page.goto(href, wait_until='load', timeout=45000)
                         settle(page)
                         save_webp(page.screenshot(), os.path.join(out, f'page-{i}.webp'))
                         info.setdefault('pages', []).append([href, page.title()])
@@ -158,7 +160,7 @@ def main():
 
                 mctx = browser.new_context(viewport={'width': 390, 'height': 844}, device_scale_factor=2, is_mobile=True, has_touch=True)
                 mpage = mctx.new_page()
-                mpage.goto(url, wait_until='networkidle', timeout=60000)
+                mpage.goto(url, wait_until='load', timeout=60000)
                 settle(mpage)
                 info['mobile'] = save_webp(mpage.screenshot(), os.path.join(out, 'mobile.webp'), width=780)
                 mctx.close()
